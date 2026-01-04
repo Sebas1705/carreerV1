@@ -2,15 +2,18 @@
 interface Props {
     href: string;
     text: string;
+    className?: string;
 }
 
-const { href, text } = Astro.props;
+const { href, text, className = '' } = Astro.props;
 ---
 
 <a href={href}
     data-backlink
-    class="inline-flex items-center gap-2 text-xl font-black text-white 
-    bg-primary-v py-1 px-5 hover:bg-secondary-v rounded-full transition-colors"
+    class={`inline-flex items-center gap-2 font-black text-white 
+    text-xs xs:text-sm md:text-lg lg:text-xl
+    bg-primary-v py-1 px-5 hover:bg-secondary-v rounded-full 
+    transition-colors ${className}`}
 >{text}</a>
 
 <script>

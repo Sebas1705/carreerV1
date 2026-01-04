@@ -50,7 +50,7 @@ const typeLabels: Record<string, Translations> = {
     
     <Section background='dotted' bottomFade>
         <div class="w-full flex flex-col gap-5 px-5 md:px-10 lg:px-15 mt-5">
-            <BackLink href={`/${lang}/projects`} text={translate(commonLabels.back, lang)} />
+            <BackLink href={`/${lang}/projects`} text={translate(commonLabels.back, lang)} className="w-min" />
             <div class="flex justify-between gap-4 mt-3">
                 <span class="px-3 py-1 rounded-md text-lg sm:text-4xl font-semibold uppercase tracking-wide text-primary-v">{translate(typeLabels[project.type], lang)}</span>
                 <span class="text-secondary-v text-lg sm:text-4xl">{formatMonthYear(project.startDate, lang)}</span>
