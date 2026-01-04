@@ -27,3 +27,11 @@ services:
       - web1
       - web2
     restart: unless-stopped
+    networks:
+      default: {}
+      nginx_proxy_network:
+        aliases:
+          - my-portfolio_lb
+networks:
+  nginx_proxy_network:
+    external: true
