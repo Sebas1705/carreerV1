@@ -7,12 +7,12 @@ describe('GetRelatedProjectsUseCase', () => {
         const repository = new InMemoryProjectRepository();
         const useCase = new GetRelatedProjectsUseCase(repository);
 
-        const projects = await useCase.execute('work-1');
+        const projects = await useCase.execute('solusoft-junior-0');
 
         expect(projects).toBeDefined();
         expect(Array.isArray(projects)).toBe(true);
         projects.forEach(project => {
-            expect(project.relatedTo?.includes('work-1')).toBe(true);
+            expect(project.relatedTo?.includes('solusoft-junior-0')).toBe(true);
         });
     });
 
@@ -31,7 +31,7 @@ describe('GetRelatedProjectsUseCase', () => {
         const repository = new InMemoryProjectRepository();
         const useCase = new GetRelatedProjectsUseCase(repository);
 
-        const projects = await useCase.execute('work-1');
+        const projects = await useCase.execute('solusoft-junior-0');
 
         if (projects.length > 1) {
             for (let i = 0; i < projects.length - 1; i++) {

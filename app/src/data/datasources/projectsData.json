@@ -27,9 +27,9 @@
         },
         "technologies": ["csharp", "dotnet", "sqlserver", "microsoft-powerbi", "sqlservermagment", "azure", "azure-data-studio", "html", "css", "javascript", "git", "source-tree"],
         "startDate": "2024-10-01",
-        "imageUrl": "/projects/agedi.jpg",
+        "imageUrl": "/projects/agedi.webp",
         "type": "work",
-        "relatedTo": ["work-1", "work-2"]
+        "relatedTo": ["solusoft-junior-0", "solusoft-practices"]
     },
     {
         "id": "sisley",
@@ -60,8 +60,8 @@
         "technologies": ["csharp", "dotnet", "sqlserver", "azure", "mvc"],
         "startDate": "2024-10-01",
         "type": "work",
-        "imageUrl": "/projects/sisley.png",
-        "relatedTo": ["work-1", "work-2"]
+        "imageUrl": "/projects/sisley.webp",
+        "relatedTo": ["solusoft-junior-0", "solusoft-practices"]
     },
     {
         "id": "iberext",
@@ -92,8 +92,8 @@
         "technologies": ["kotlin", "jetpack-compose", "csharp", "dotnet", "sqlserver", "firebase", "git", "source-tree"],
         "startDate": "2024-10-01",
         "type": "work",
-        "imageUrl": "/projects/iberext.jpg",
-        "relatedTo": ["work-1", "work-2"]
+        "imageUrl": "/projects/iberext.webp",
+        "relatedTo": ["solusoft-junior-0", "solusoft-practices"]
     },
     {
         "id": "epdm",
@@ -122,11 +122,11 @@
             "ja": "AGEDIが管理する権利を持つ音楽コンテンツの管理を備えた音楽ポータル向けモバイルアプリケーション"
         },
         "technologies": ["kotlin", "jetpack-compose", "csharp", "dotnet", "sqlserver", "firebase", "git", "source-tree"],
-        "imageUrl": "/projects/epdm.png",
+        "imageUrl": "/projects/epdm.webp",
         "demoUrl": "https://play.google.com/store/apps/details?id=es.solusoft.epdm&hl=es_419&pli=1",
         "startDate": "2025-03-01",
         "type": "work",
-        "relatedTo": ["work-1", "work-2"]
+        "relatedTo": ["solusoft-junior-0", "solusoft-practices"]
     },
     {
         "id": "youknow",
@@ -155,12 +155,12 @@
             "ja": "チャット、グループ化、教育ゲームをプレイするためのソーシャルネットワークに基づくモバイルアプリケーションで、ゲーミフィケーションが実装されています。"
         },
         "technologies": ["kotlin", "jetpack-compose", "firebase", "git", "source-tree", "figma", "xml"],
-        "imageUrl": "/projects/YouKnow.svg",
+        "imageUrl": "/projects/YouKnow.webp",
         "repoUrl": "https://github.com/Sebas1705/YouKnow",
         "startDate": "2024-01-09",
         "endDate": "2025-08-30",
         "type": "academic",
-        "relatedTo": ["academic-2"]
+        "relatedTo": ["university"]
     },
     {
         "id": "vpslocalorchestrator",
@@ -189,11 +189,11 @@
             "ja": "Linuxオペレーティングシステムを搭載したVPSシステム向けのローカルリソースオーケストレーター。単純なリソースとメトリクスから高度な自動化まで管理できます。"
         },
         "technologies": ["express", "nodejs", "typescript", "docker", "mongodb", "jest"],
-        "imageUrl": "/projects/vpslocalorchestrator.png",
+        "imageUrl": "/projects/vpslocalorchestrator.webp",
         "repoUrl": "https://github.com/Sebas1705/VPSLocalOrchestrator",
         "startDate": "2025-12-20",
         "type": "academic",
-        "relatedTo": ["academic-3"]
+        "relatedTo": ["master-ia"]
     },
     {
         "id": "oortfolio",
@@ -222,10 +222,43 @@
             "ja": "AstroとNodejsで作成されたウェブサイトで、私のプロジェクトとスキルを紹介しています。tailwindcssで最適化および設計されており、独自のVPSにテストスイートとエラー認識を備えた自動展開で展開されています。"
         },
         "technologies": ["astro", "nodejs", "typescript", "docker", "docker-compose", "tailwindcss", "vitest", "playright"],
-        "imageUrl": "/projects/portfolio.png",
+        "imageUrl": "/projects/portfolio.webp",
         "repoUrl": "https://github.com/Sebas1705/my-portfolio",
         "startDate": "2025-12-20",
         "type": "academic",
-        "relatedTo": ["academic-3"]
+        "relatedTo": ["master-ia"]
+    },
+    {
+        "id": "codewars",
+        "title": {
+            "es": "Codewars Katas",
+            "en": "Codewars Katas",
+            "fr": "Katas Codewars",
+            "de": "Codewars Katas",
+            "it": "Katas di Codewars",
+            "pt": "Katas do Codewars",
+            "nl": "Codewars Katas",
+            "pl": "Katy Codewars",
+            "ru": "Каты Codewars",
+            "ja": "Codewarsのカタ"
+        },
+        "description": {
+            "es": "Repositorio con soluciones a katas de Codewars en varios lenguajes de programación.",
+            "en": "Repository with solutions to Codewars katas in various programming languages.",
+            "fr": "Dépôt avec des solutions aux katas Codewars dans plusieurs langages de programmation.",
+            "de": "Repository mit Lösungen zu Codewars-Katas in verschiedenen Programmiersprachen.",
+            "it": "Repository con soluzioni ai katas di Codewars in vari linguaggi di programmazione.",
+            "pt": "Repositório com soluções para katas do Codewars em várias linguagens de programação.",
+            "nl": "Repository met oplossingen voor Codewars-kata's in verschillende programmeertalen.",
+            "pl": "Repozytorium z rozwiązaniami katów Codewars w różnych językach programowania.",
+            "ru": "Репозиторий с решениями катов Codewars на различных языках программирования.",
+            "ja": "さまざまなプログラミング言語でのCodewarsカタのソリューションを含むリポジトリ。"
+        },
+        "technologies": ["javascript", "python", "c", "java", "kotlin", "bash", "typescript", "source-tree", "git"],
+        "imageUrl": "/projects/codewars.webp",
+        "repoUrl": "https://github.com/Sebas1705/Codewars",
+        "startDate": "2023-06-15",
+        "type": "academic",
+        "relatedTo": ["university"]
     }
 ]

@@ -62,8 +62,8 @@ describe('InMemoryProjectRepository', () => {
 
     describe('getByRelatedTo', () => {
         it('should return projects related to an experience', async () => {
-            const projects = await repository.getByRelatedTo('work-1');
-            expect(projects.every(p => p.relatedTo?.includes('work-1'))).toBe(true);
+            const projects = await repository.getByRelatedTo('solusoft-junior-0');
+            expect(projects.every(p => p.relatedTo?.includes('solusoft-junior-0'))).toBe(true);
         });
 
         it('should return empty array for non-existent relation', async () => {

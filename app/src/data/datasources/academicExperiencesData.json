@@ -1,6 +1,6 @@
 [
     {
-        "id": "academic-1",
+        "id": "baccalaureate",
         "institution": {
             "es": "IES Maestro Matías Bravo",
             "en": "IES Maestro Matías Bravo",
@@ -115,7 +115,7 @@
         ]
     },
     {
-        "id": "academic-2",
+        "id": "university",
         "institution": {
             "es": "Universidad Rey Juan Carlos",
             "en": "Rey Juan Carlos University",
@@ -242,7 +242,7 @@
         ]
     },
     {
-        "id": "academic-3",
+        "id": "master-ia",
         "institution": {
             "es": "BigSchool & Universidad Isabel I",
             "en": "BigSchool & Isabel I University",

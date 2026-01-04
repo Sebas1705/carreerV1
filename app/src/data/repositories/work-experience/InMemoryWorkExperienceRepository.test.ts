@@ -12,10 +12,10 @@ describe('InMemoryWorkExperienceRepository', () => {
 
     it('should return a work experience by id', async () => {
         const repository = new InMemoryWorkExperienceRepository();
-        const experience = await repository.getById('work-1');
+        const experience = await repository.getById('solusoft-junior-0');
         
         expect(experience).toBeDefined();
-        expect(experience?.id).toBe('work-1');
+        expect(experience?.id).toBe('solusoft-junior-0');
     });
 
     it('should return null for non-existent id', async () => {

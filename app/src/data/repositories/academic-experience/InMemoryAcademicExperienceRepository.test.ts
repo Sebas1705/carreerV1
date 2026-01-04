@@ -12,10 +12,10 @@ describe('InMemoryAcademicExperienceRepository', () => {
 
     it('should return an academic experience by id', async () => {
         const repository = new InMemoryAcademicExperienceRepository();
-        const experience = await repository.getById('academic-1');
+        const experience = await repository.getById('baccalaureate');
         
         expect(experience).toBeDefined();
-        expect(experience?.id).toBe('academic-1');
+        expect(experience?.id).toBe('baccalaureate');
     });
 
     it('should return null for non-existent id', async () => {
