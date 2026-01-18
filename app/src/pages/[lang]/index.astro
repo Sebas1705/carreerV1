@@ -1,16 +1,16 @@
 ---
 import Layout from '@/presentation/layouts/Layout.astro';
-import Header from '@/presentation/components/sections/Header.astro';
-import Hero from '@/presentation/components/sections/Hero.astro';
-import Skills from '@/presentation/components/sections/Skills.astro';
-import SoftSkills from '@/presentation/components/sections/SoftSkills.astro';
-import About from '@/presentation/components/sections/About.astro';
-import WorkExperience from '@/presentation/components/sections/WorkExperience.astro';
-import Education from '@/presentation/components/sections/Education.astro';
-import Projects from '@/presentation/components/sections/Projects.astro';
-import Courses from '@/presentation/components/sections/Courses.astro';
-import Contact from '@/presentation/components/sections/Contact.astro';
-import Footer from '@/presentation/components/sections/Footer.astro';
+import Header from '@/presentation/features/ui/Header.astro';
+import Hero from '@/presentation/features/home/Hero.astro';
+import Skills from '@/presentation/features/skills/Skills.astro';
+import SoftSkills from '@/presentation/features/skills/SoftSkills.astro';
+import About from '@/presentation/features/home/About.astro';
+import WorkExperience from '@/presentation/features/work/WorkExperience.astro';
+import Education from '@/presentation/features/education/Education.astro';
+import Projects from '@/presentation/features/projects/Projects.astro';
+import Courses from '@/presentation/features/courses/Courses.astro';
+import Contact from '@/presentation/features/home/Contact.astro';
+import Footer from '@/presentation/features/ui/Footer.astro';
 
 import type { Language } from '@/domain';
 import { supportedLanguages, translate } from '@/domain';
@@ -18,6 +18,7 @@ import { supportedLanguages, translate } from '@/domain';
 export async function getStaticPaths() {
     return supportedLanguages.map((lang) => ({ params: { lang } }));
 }
+export const prerender = true;
 const lang: Language = Astro.params.lang as Language;
 
 import { InMemoryPersonalInfoRepository, InMemoryCommonLabelsRepository } from '@/data';
@@ -30,7 +31,7 @@ const commonLabels = await new GetCommonLabelsUseCase(new InMemoryCommonLabelsRe
 <Layout lang={lang} title={`${personalInfo.name} - ${translate(personalInfo.title, lang)}`} description={translate(personalInfo.bio, lang)}>
     <Header lang={lang} personalInfo={personalInfo} />
     <Hero lang={lang} personalInfo={personalInfo} />
-    <Skills commonLabels={commonLabels} lang={lang}/>
+    <Skills lang={lang}/>
     <SoftSkills lang={lang} />
     <About lang={lang} personalInfo={personalInfo} />
     <WorkExperience commonLabels={commonLabels} lang={lang} />

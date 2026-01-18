@@ -2,19 +2,21 @@
 import { supportedLanguages, translate } from '@/domain';
 import type { Language } from '@domain/models/Language';
 import Layout from '@/presentation/layouts/Layout.astro';
-import Header from '@/presentation/components/sections/Header.astro';
-import Footer from '@/presentation/components/sections/Footer.astro';
+import Header from '@/presentation/features/ui/Header.astro';
+import Footer from '@/presentation/features/ui/Footer.astro';
 
 export async function getStaticPaths() {
     return supportedLanguages.map((lang) => ({ params: { lang } }));
 }
 
+export const prerender = true;
+
 const lang: Language = Astro.params.lang as Language;
 
 import { InMemorySkillRepository, InMemorySkillsLabelsRepository, InMemoryPersonalInfoRepository, InMemoryCommonLabelsRepository } from '@/data';
 import { GetSkillsUseCase, GetSkillsLabelsUseCase, GetPersonalInfoUseCase, GetCommonLabelsUseCase } from '@/domain';
-import Section from '@/presentation/components/common/Section.astro';
-import BackLink from '@/presentation/components/ui/BackLink.astro';
+import Section from '@/presentation/features/common/Section.astro';
+import BackLink from '@/presentation/features/common/BackLink.astro';
 
 const skillsLabels = await new GetSkillsLabelsUseCase(new InMemorySkillsLabelsRepository()).execute();
 const skills = await new GetSkillsUseCase(new InMemorySkillRepository()).execute();
@@ -46,33 +48,33 @@ const categoryLabels: Record<string, string> = {
 <Layout lang={lang} title={`${translate(skillsLabels.title, lang)} - ${personalInfo.name}`} description={translate(skillsLabels.title, lang)}>
     <Header lang={lang} personalInfo={personalInfo} />
     
-    <Section class="mt-10" background='circuit'>
-        <div class="w-full px-5">
+    <Section class="mt-10 lg:mt-20" background='circuit'>
+        <div class="w-full res-px-md">
             <BackLink href={`/${lang}/#skills`} text={translate(commonLabels.back, lang)} />
 
-            <div class="bg-bg-surface-alt-v border-2 border-primary-v rounded-3xl p-8 my-15 text-center mx-auto max-w-4xl">
-                <h1 class="text-3xl xs:text-5xl text-primary-v font-bold mt-4">{translate(skillsLabels.title, lang)}</h1>
-                <p class="text-2xl text-secondary-v my-5">{translate(skillsLabels.subtitle, lang)}</p>
-                <div class="flex flex-col xs:flex-row justify-center gap-8 items-center mt-10 mb-5">
+            <div class="bg-bg-surface-alt-v border-2 border-primary-v rounded-3xl p-8 my-15 text-center">
+                <h1 class="res-title text-primary-v font-bold mt-4">{translate(skillsLabels.title, lang)}</h1>
+                <p class="res-subtitle text-secondary-v my-5">{translate(skillsLabels.subtitle, lang)}</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-8 items-center mt-10 mb-5">
                     <div class="flex flex-col items-center gap-2">
-                        <span class="text-accent-v text-lg tracking-wider">★</span>
-                        <span class="text-sm font-medium text-bg-inverse-alt-v">{translate(skillsLabels.tierBasic, lang)}</span>
+                        <span class="text-accent-v res-h2 tracking-wider">★</span>
+                        <span class="res-h3 font-medium text-bg-inverse-alt-v">{translate(skillsLabels.tierBasic, lang)}</span>
                     </div>
                     <div class="flex flex-col items-center gap-2">
-                        <span class="text-accent-v text-lg tracking-wider">★★</span>
-                        <span class="text-sm font-medium text-bg-inverse-alt-v">{translate(skillsLabels.tierBeginner, lang)}</span>
+                        <span class="text-accent-v res-h2 tracking-wider">★★</span>
+                        <span class="res-h3 font-medium text-bg-inverse-alt-v">{translate(skillsLabels.tierBeginner, lang)}</span>
                     </div>
                     <div class="flex flex-col items-center gap-2">
-                        <span class="text-accent-v text-lg tracking-wider">★★★</span>
-                        <span class="text-sm font-medium text-bg-inverse-alt-v">{translate(skillsLabels.tierIntermediate, lang)}</span>
+                        <span class="text-accent-v res-h2 tracking-wider">★★★</span>
+                        <span class="res-h3 font-medium text-bg-inverse-alt-v">{translate(skillsLabels.tierIntermediate, lang)}</span>
                     </div>
                     <div class="flex flex-col items-center gap-2">
-                        <span class="text-accent-v text-lg tracking-wider">★★★★</span>
-                        <span class="text-sm font-medium text-bg-inverse-alt-v">{translate(skillsLabels.tierAdvanced, lang)}</span>
+                        <span class="text-accent-v res-h2 tracking-wider">★★★★</span>
+                        <span class="res-h3 font-medium text-bg-inverse-alt-v">{translate(skillsLabels.tierAdvanced, lang)}</span>
                     </div>
                     <div class="flex flex-col items-center gap-2">
-                        <span class="text-accent-v text-lg tracking-wider">★★★★★</span>
-                        <span class="text-sm font-medium text-bg-inverse-alt-v">{translate(skillsLabels.tierExpert, lang)}</span>
+                        <span class="text-accent-v res-h2 tracking-wider">★★★★★</span>
+                        <span class="res-h3 font-medium text-bg-inverse-alt-v">{translate(skillsLabels.tierExpert, lang)}</span>
                     </div>
                 </div>
             </div>

@@ -39,42 +39,15 @@ import "../styles/global.css";
         <script is:inline>
             // Initialize theme before page loads to prevent flash
             const getThemePreference = () => {
-                if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-                    return localStorage.getItem('theme');
-                }
-                return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                try {
+                    const v = typeof localStorage !== 'undefined' ? localStorage.getItem('theme') : null;
+                    if (v) return v;
+                } catch (e) {}
+                return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
             };
-            
+
             const theme = getThemePreference();
             document.documentElement.setAttribute('data-theme', theme);
-            
-            // Initialize language from localStorage
-            const supportedLanguages = ['es', 'en', 'fr', 'de', 'it', 'pt', 'nl', 'pl', 'ru', 'ja'];
-            
-            // Get saved language from localStorage
-            const savedLanguage = typeof localStorage !== 'undefined' ? localStorage.getItem('language') : null;
-            
-            // Get browser language
-            const browserLang = navigator.language.split('-')[0];
-            
-            let targetLanguage = 'es'; // Default language
-            
-            if (savedLanguage && supportedLanguages.includes(savedLanguage)) {
-                targetLanguage = savedLanguage;
-            } else if (supportedLanguages.includes(browserLang)) {
-                targetLanguage = browserLang;
-            }
-            
-            // Save language preference
-            if (typeof localStorage !== 'undefined') {
-                localStorage.setItem('language', targetLanguage);
-            }
-            
-            // Update HTML lang attribute
-            document.documentElement.setAttribute('lang', targetLanguage);
-            
-            // Store current language in window for components to access
-            window.__currentLanguage = targetLanguage;
         </script>
     </head>
     <body>

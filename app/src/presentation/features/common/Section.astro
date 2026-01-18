@@ -1,0 +1,62 @@
+---
+import BinaryCodeBackground from '@/presentation/features/common/backgrounds/BinaryCodeBackground.astro';
+import BinaryRainBackground from '@/presentation/features/common/backgrounds/BinaryRainBackground.astro';
+import BlueprintGridBackground from '@/presentation/features/common/backgrounds/BlueprintGridBackground.astro';
+import CircuitPatternBackground from '@/presentation/features/common/backgrounds/CircuitPatternBackground.astro';
+import DiagonalStripesBackground from '@/presentation/features/common/backgrounds/DiagonalStripesBackground.astro';
+import DottedPatternBackground from '@/presentation/features/common/backgrounds/DottedPatternBackground.astro';
+import IsometricBackground from '@/presentation/features/common/backgrounds/IsometricBackground.astro';
+import NotebookPaperBackground from '@/presentation/features/common/backgrounds/NotebookPaperBackground.astro';
+import PixelRainBackground from '@/presentation/features/common/backgrounds/PixelRainBackground.astro';
+
+interface Props {
+    id?: string;
+    title?: string;
+    subtitle?: string;
+    class?: string;
+    /** show a dark gradient fade at the top of the section */
+    topFade?: boolean;
+    /** show a dark gradient fade at the bottom of the section */
+    bottomFade?: boolean;
+    background?: 'isometric' | 'circuit' | 'dotted' | 'diagonal' | 'blueprint' | 'notebook'  | 'pixel-rain'  | 'binary-code' | 'binary-rain' | 'none';
+    fill?: boolean;
+}
+
+const { id, title, subtitle, class: className, topFade = false, bottomFade = false, background = 'none', fill = true } = Astro.props;
+---
+
+<section id={id} class={`relative w-full py-16 md:py-24 ${fill ? 'min-h-screen' : ''} ${className ?? ''}`}>
+    {background === 'isometric' && <IsometricBackground />}
+    {background === 'circuit' && <CircuitPatternBackground />}
+    {background === 'dotted' && <DottedPatternBackground />}
+    {background === 'diagonal' && <DiagonalStripesBackground />}
+    {background === 'blueprint' && <BlueprintGridBackground />}
+    {background === 'notebook' && <NotebookPaperBackground />}
+    {background === 'pixel-rain' && <PixelRainBackground />}
+    {background === 'binary-code' && <BinaryCodeBackground />}
+    {background === 'binary-rain' && <BinaryRainBackground />}
+
+    {topFade && (
+        <div class="pointer-events-none absolute top-0 left-0 right-0 h-16 z-10 bg-linear-to-t from-20% from-transparent to-95% to-bg-surface-v/80"></div>
+    )}
+
+    {(title || subtitle) && (
+        <header class="mb-8 relative z-20">
+
+            {title && <h2 class="text-center mb-8 res-title
+            font-bold text-primary-v px-5 md:px-10 lg:px-15">{title}</h2>}
+
+            {subtitle && <p class="text-center res-subtitle
+            font-extrabold text-secondary-v mt-4 px-5 md:px-10 lg:px-15">{subtitle}</p>}
+
+        </header>
+    )}
+
+    <div class="w-full flex justify-center gap-8 relative z-20">
+        <slot />
+    </div>
+    {bottomFade && (
+        <div class="pointer-events-none absolute bottom-0 left-0 right-0 h-16 z-10 bg-linear-to-b from-20% from-transparent to-95% to-bg-surface-v/80"></div>
+    )}
+</section>
+

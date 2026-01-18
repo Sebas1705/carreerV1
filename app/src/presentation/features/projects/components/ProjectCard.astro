@@ -1,0 +1,93 @@
+---
+import type { CommonLabels, Language, Project, ProjectLabels, Skill, Translations } from '@/domain';
+import TechBadge from './TechBadge.astro';
+
+interface Props {
+    project: Project;
+    lang: Language;
+    commonLabels: CommonLabels;
+    projectLabels: ProjectLabels;
+    showImage?: boolean;
+    showTechnologies?: boolean;
+    maxTech?: number;
+    skills?: Skill[];
+}
+
+const { 
+    project, 
+    lang, 
+    commonLabels, 
+    projectLabels,
+    showImage = false, 
+    showTechnologies = true,
+    maxTech = 5,
+    skills = []
+} = Astro.props;
+
+const translate = (obj: Translations | Record<string, string>, lang: Language) => {
+    const map = obj as Record<string, string>;
+    if (map[lang]) return map[lang];
+    if (map.en) return map.en;
+    const vals = Object.values(map);
+    return (vals && vals[0]) || '';
+};
+---
+
+<article class="group bg-bg-surface-v rounded-lg shadow-sm overflow-hidden flex flex-col">
+    {showImage && project.imageUrl && (
+        <div class="w-full h-48 overflow-hidden bg-bg-surface-alt-v">
+            <img 
+                src={project.imageUrl} 
+                alt={translate(project.title, lang)} 
+                width="400" 
+                height="200"
+                loading="lazy"
+                class="w-full h-full object-cover transition-transform duration-200 group-hover:scale-105"
+            />
+        </div>
+    )}
+    
+    <div class="p-6 flex flex-col grow gap-4 items-center text-center md:items-stretch md:text-left">
+        <div>
+            <h3 class="res-h3 font-semibold text-primary-v m-0">{translate(project.title, lang)}</h3>
+        </div>
+        <p class="res-p text-bg-inverse-alt-v leading-relaxed grow max-w-prose mx-auto md:mx-0">{translate(project.description, lang)}</p>
+        
+        {showTechnologies && project.technologies && project.technologies.length > 0 && (
+            <div class="flex flex-wrap gap-2 mt-2 justify-center md:justify-start">
+                {project.technologies.slice(0, maxTech).map((techId: string) => {
+                    const skill = skills.find((s: Skill) => s.id === techId);
+                    return (
+                        <TechBadge 
+                            text={skill?.name || techId} 
+                            iconUrl={skill?.iconUrl}
+                        />
+                    );
+                })}
+                {project.technologies.length > maxTech && (
+                    <TechBadge 
+                        text={`+${project.technologies.length - maxTech}`} 
+                        variant="more"
+                    />
+                )}
+            </div>
+        )}
+        
+        <div class="flex flex-wrap gap-3 mt-auto pt-4 border-t border-secondary-v justify-center md:justify-start">
+            <a href={`/${lang}/projects/${project.id}`} class="inline-flex items-center gap-2 res-h4 font-medium text-white bg-primary-v py-2 px-5 hover:bg-secondary-v rounded-full transition-colors">
+                {translate(commonLabels.viewMore, lang)}
+            </a>
+            {project.demoUrl && (
+                <a href={project.demoUrl} target="_blank" rel="noopener noreferrer" class="text-accent-v hover:text-secondary-v transition-colors inline-flex items-center gap-2 res-pbutton rounded-md res-h4 font-medium duration-150 hover-border-primary">
+                    {translate(projectLabels.viewDemo, lang)}
+                </a>
+            )}
+            {project.repoUrl && (
+                <a href={project.repoUrl} target="_blank" rel="noopener noreferrer" class="text-accent-v hover:text-secondary-v transition-colors inline-flex items-center gap-2 res-pbutton rounded-md res-h4 font-medium duration-150 hover-border-primary">
+                    {translate(projectLabels.viewCode, lang)}
+                </a>
+            )}
+        </div>
+    </div>
+</article>
+

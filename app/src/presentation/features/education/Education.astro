@@ -1,0 +1,82 @@
+---
+import type { Language, CommonLabels } from '@/domain';
+import { translate } from '@/domain';
+import { formatDateRange } from '@/core';
+import Section from '@/presentation/features/common/Section.astro';
+
+interface Props {
+	lang: Language;
+	commonLabels: CommonLabels;
+}
+
+const { lang, commonLabels } = Astro.props as Props;
+
+import { InMemoryEducationLabelsRepository, InMemoryAcademicExperienceRepository, InMemoryProjectRepository } from '@/data';
+import { GetEducationLabelsUseCase, GetAcademicExperiencesUseCase, GetProjectsByTypeUseCase } from '@/domain';
+import ViewMoreSpec from '@/presentation/features/common/ViewMoreSpec.astro';
+
+const educationLabels = await new GetEducationLabelsUseCase(new InMemoryEducationLabelsRepository()).execute();
+const experiences = await new GetAcademicExperiencesUseCase(new InMemoryAcademicExperienceRepository()).execute();
+const projects = await new GetProjectsByTypeUseCase(new InMemoryProjectRepository()).execute('academic');
+---
+
+<Section id="education" bottomFade topFade background='diagonal' title={translate(educationLabels.title, lang)} subtitle={translate(educationLabels.subtitle, lang)}>
+	<div class="grid gap-8 res-px-md">
+		{experiences.map((experience, index) => {
+			return (
+				<article class="bg-bg-surface-alt-v rounded-2xl p-6 shadow-md transition-transform duration-200 hover:-translate-y-1 hover:shadow-xl border border-primary-v" data-index={index}>
+					<div class="flex flex-col gap-4 mb-4 pb-4 border-b-2 border-secondary-v md:flex-row md:justify-between md:items-start">
+						<div>
+							<h3 class="res-h2 font-bold text-primary-v mb-3">{translate(experience.degree, lang)}</h3>
+							<p class="res-h3 font-semibold text-secondary-v mb-2">{translate(experience.field, lang)}</p>
+							<p class="res-h4 text-bg-inverse-alt-v font-medium mb-2">{translate(experience.institution, lang)}</p>
+						</div>
+						<div class="flex flex-col gap-1 res-h4 text-bg-inverse-alt-v mt-2">
+							<span>{formatDateRange(experience.startDate, experience.endDate, lang, translate(commonLabels.current, lang))}</span>
+							<span>{translate(experience.location, lang)}</span>
+						</div>
+					</div>
+
+					<p class="res-h4 text-bg-inverse-alt-v leading-relaxed mb-4 text-justify">{translate(experience.description, lang)}</p>
+
+					{experience.achievements.length > 0 && (
+						<div class="mb-4">
+							<h4 class="res-h3 font-semibold text-secondary-v mb-5">{translate(educationLabels.achievements, lang)}</h4>
+							<ul class="space-y-2">
+								{experience.achievements.map((achievement) => (
+									<li class="flex items-start gap-2 text-bg-inverse-alt-v">
+										<span class="shrink-0">🎓</span>
+										<span class="res-h4">{translate(achievement, lang)}</span>
+									</li>
+								))}
+							</ul>
+						</div>
+					)}
+
+					{projects.filter((project) => project.relatedTo && project.relatedTo.includes(experience.id)).length > 0 && (
+						<div>
+							<h4 class="res-h3 font-semibold text-secondary-v mb-5">{translate(educationLabels.projects, lang)}</h4>
+							<div class="grid gap-3">
+								{projects.filter((project) => project.relatedTo && project.relatedTo.includes(experience.id)).map(project => (
+									<div class="p-4 bg-bg-surface-v rounded-md border-l-4 border-accent-v">
+										<h5 class="res-h2 font-semibold text-primary-v mb-2">{translate(project.title, lang)}</h5>
+										<p class="res-h4 text-bg-inverse-alt-v mb-3">{translate(project.description, lang)}</p>
+										<div class="flex gap-4">
+											{project.demoUrl && (
+												<a href={project.demoUrl} target="#" rel="noopener noreferrer" class="res-h4 font-semibold text-accent-v hover:text-secondary-v">{translate(commonLabels.demo, lang)}</a>
+											)}
+											{project.repoUrl && (
+												<a href={project.repoUrl} target="#" rel="noopener noreferrer" class="res-h4 font-semibold text-accent-v hover:text-secondary-v">{translate(commonLabels.code, lang)}</a>
+											)}
+										</div>
+										<ViewMoreSpec lang={lang} href={`/${lang}/projects/${project.id}`}/>
+									</div>
+								))}
+							</div>
+						</div>
+					)}
+				</article>
+			);
+		})}
+	</div>
+</Section>

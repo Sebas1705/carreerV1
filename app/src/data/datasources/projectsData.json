@@ -316,7 +316,7 @@
         "relatedTo": ["master-ia"]
     },
     {
-        "id": "oortfolio",
+        "id": "portfolio",
         "title": {
             "es": "Portafolio Personal",
             "en": "Personal Portfolio",
@@ -365,7 +365,7 @@
         "imageUrl": "/projects/portfolio.webp",
         "repoUrl": "https://github.com/Sebas1705/my-portfolio",
         "startDate": "2025-12-20",
-        "type": "academic",
+        "type": "personal",
         "relatedTo": ["master-ia"]
     },
     {

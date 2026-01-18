@@ -1,0 +1,41 @@
+---
+import type { Language, CommonLabels } from '@/domain';
+import { translate } from '@/domain';
+import CourseCard from './components/CourseCard.astro';
+import Section from '@/presentation/features/common/Section.astro';
+
+interface Props {
+	lang: Language;
+	commonLabels: CommonLabels;
+}
+
+const { lang, commonLabels } = Astro.props as Props;
+void commonLabels;
+
+import { InMemoryCourseRepository, InMemoryCourseLabelsRepository } from '@/data';
+import { GetAllCoursesUseCase, GetCourseLabelsUseCase } from '@/domain';
+import ViewMore from '@/presentation/features/common/ViewMore.astro';
+
+const courseLabels = await new GetCourseLabelsUseCase(new InMemoryCourseLabelsRepository()).execute();
+const courses = await new GetAllCoursesUseCase(new InMemoryCourseRepository()).execute();
+
+const visibleCourses = courses
+	.sort((a, b) => new Date(b.completionDate).getTime() - new Date(a.completionDate).getTime())
+	.slice(0, 3);
+---
+<Section fill={false} id="courses" background="binary-rain" bottomFade topFade title={translate(courseLabels.title, lang)} subtitle={translate(courseLabels.subtitle, lang)}>
+    
+	<div class="flex flex-col gap-5 mt-10 px-5 md:px-10 lg:px-15">
+		<div class="grid grid-cols-1 md:grid-cols-3
+		gap-5 mt-8 mb-10">
+			{visibleCourses.map((course) => (
+				<CourseCard course={course} lang={lang} courseLabels={courseLabels} />
+			))}
+		</div>
+        
+		<ViewMore lang={lang} href={`/${lang}/courses`}/>
+	</div>
+</Section>
+<style>
+	.courses-grid { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+</style>

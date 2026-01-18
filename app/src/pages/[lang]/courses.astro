@@ -1,7 +1,7 @@
 ---
 import Layout from '@/presentation/layouts/Layout.astro';
-import Header from '@/presentation/components/sections/Header.astro';
-import Footer from '@/presentation/components/sections/Footer.astro';
+import Header from '@/presentation/features/ui/Header.astro';
+import Footer from '@/presentation/features/ui/Footer.astro';
 
 import { formatMonthYear } from '@/core';
 import type { Language } from '@/domain';
@@ -10,13 +10,14 @@ import { supportedLanguages, translate } from '@/domain';
 export async function getStaticPaths() {
     return supportedLanguages.map((lang) => ({ params: { lang } }));
 }
+export const prerender = true;
 const lang: Language = Astro.params.lang as Language;
 
 import { InMemoryCourseRepository, InMemoryPersonalInfoRepository, InMemoryCourseLabelsRepository, InMemoryCommonLabelsRepository, InMemorySkillRepository } from '@/data';
 import { GetAllCoursesUseCase, GetPersonalInfoUseCase, GetCourseLabelsUseCase, GetCommonLabelsUseCase, GetAllSkillsUseCase } from '@/domain';
-import Section from '@/presentation/components/common/Section.astro';
-import BackLink from '@/presentation/components/ui/BackLink.astro';
-import PageHeader from '@/presentation/components/ui/PageHeader.astro';
+import Section from '@/presentation/features/common/Section.astro';
+import BackLink from '@/presentation/features/common/BackLink.astro';
+import PageHeader from '@/presentation/features/common/PageHeader.astro';
 
 const courses = await new GetAllCoursesUseCase(new InMemoryCourseRepository()).execute();
 const skills = await new GetAllSkillsUseCase(new InMemorySkillRepository()).execute();
@@ -28,31 +29,31 @@ const commonLabels = await new GetCommonLabelsUseCase(new InMemoryCommonLabelsRe
 <Layout lang={lang} title={`${translate(coursesLabels.pageTitle, lang)} - ${personalInfo.name}`} description={translate(coursesLabels.pageTitle, lang)}>
     <Header lang={lang} personalInfo={personalInfo} />
     
-    <Section background='circuit' bottomFade >
-        <div class="w-full px-5 md:px-10 lg:px-15 mt-8">
+    <Section class="mt-5 lg:mt-10" background='circuit' bottomFade >
+        <div class="w-full res-px-md mt-8">
             <BackLink href={`/${lang}/#courses`} text={translate(commonLabels.back, lang)} />
             <PageHeader 
                 title={translate(coursesLabels.title, lang)}
                 subtitle={translate(coursesLabels.subtitle, lang)}
             />
 
-            <div class="flex flex-col gap-6 w-full">
+            <div class="flex flex-col gap-6 w-full mt-10">
                 {courses
                     .sort((a, b) => new Date(b.completionDate).getTime() - new Date(a.completionDate).getTime())
                     .map((course) => (
                         <article class="bg-bg-surface-alt-v border border-primary-v rounded-lg p-6 transition-all duration-200 hover:border-primary-v hover:shadow-lg hover:-translate-y-1">
                             <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4 mb-4">
                                 <div>
-                                    <h3 class="text-3xl font-semibold text-primary-v mb-3">{translate(course.title, lang)}</h3>
-                                    <p class="text-xl text-secondary-v font-medium">{translate(course.institution, lang)}</p>
+                                    <h3 class="res-h2 font-semibold text-primary-v mb-3">{translate(course.title, lang)}</h3>
+                                    <p class="res-h3 text-secondary-v font-medium">{translate(course.institution, lang)}</p>
                                 </div>
-                                <span class="text-bg-inverse-alt-v font-semibold whitespace-nowrap text-sm">{formatMonthYear(new Date(course.completionDate), lang)}</span>
+                                <span class="text-bg-inverse-alt-v font-semibold whitespace-nowrap res-h4">{formatMonthYear(new Date(course.completionDate), lang)}</span>
                             </div>
 
-                            <p class="text-bg-inverse-alt-v my-4 leading-relaxed">{translate(course.description, lang)}</p>
+                            <p class="text-bg-inverse-alt-v my-4 leading-relaxed res-h4">{translate(course.description, lang)}</p>
                             {course.skills && course.skills.length > 0 && (
                                 <div class="flex items-center gap-4 my-4 flex-wrap">
-                                    <span class="font-semibold text-secondary-v">{translate(coursesLabels.skillsLabel, lang)}</span>
+                                    <span class="font-semibold text-secondary-v res-h3">{translate(coursesLabels.skillsLabel, lang)}</span>
                                     <div class="flex flex-wrap gap-2">
                                         {course.skills.map((skillId) => {
                                             const skill = skills.find((s) => s.id === skillId);
@@ -63,7 +64,7 @@ const commonLabels = await new GetCommonLabelsUseCase(new InMemoryCommonLabelsRe
                                                             src={skill.iconUrl}
                                                             alt={skill.name}
                                                             loading="lazy"
-                                                            class="w-7 h-7 object-contain"
+                                                            class="res-img-sm object-contain"
                                                             width="28"
                                                             height="28"
                                                         />
@@ -83,7 +84,7 @@ const commonLabels = await new GetCommonLabelsUseCase(new InMemoryCommonLabelsRe
                                         href={course.url}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        class="text-xl text-accent-v hover:text-secondary-v transition-colors inline-flex items-center px-4 py-3 rounded-md font-semibold"
+                                        class="res-h4 text-accent-v hover:text-secondary-v transition-colors inline-flex items-center px-4 py-3 rounded-md font-semibold"
                                     >
                                             {translate(coursesLabels.viewCourse, lang)}
                                     </a>
@@ -93,7 +94,7 @@ const commonLabels = await new GetCommonLabelsUseCase(new InMemoryCommonLabelsRe
                                         href={course.certificateUrl}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        class="text-xl text-accent-v hover:text-secondary-v transition-colors inline-flex items-center px-4 py-3 rounded-md font-semibold"
+                                        class="res-h4 text-accent-v hover:text-secondary-v transition-colors inline-flex items-center px-4 py-3 rounded-md font-semibold"
                                     >
                                             {translate(coursesLabels.certificate, lang)}
                                     </a>

@@ -1,14 +1,15 @@
 ---
 import Layout from '@/presentation/layouts/Layout.astro';
-import Header from '@/presentation/components/sections/Header.astro';
-import BackLink from '@/presentation/components/ui/BackLink.astro';
-import PageHeader from '@/presentation/components/ui/PageHeader.astro';
+import Header from '@/presentation/features/ui/Header.astro';
+import BackLink from '@/presentation/features/common/BackLink.astro';
+import PageHeader from '@/presentation/features/common/PageHeader.astro';
 import type { Language, Translations } from '@/domain';
 import { supportedLanguages, translate } from '@/domain';
 
 export async function getStaticPaths() {
     return supportedLanguages.map((lang) => ({ params: { lang } }));
 }
+export const prerender = true;
 const lang: Language = Astro.params.lang as Language;
 
 import { InMemoryProjectRepository } from '@/data';
@@ -23,9 +24,11 @@ const projectsByType = {
 
 import { InMemoryPersonalInfoRepository, InMemoryCommonLabelsRepository, InMemoryProjectLabelsRepository } from '@/data';
 import { GetPersonalInfoUseCase, GetCommonLabelsUseCase, GetProjectLabelsUseCase } from '@/domain';
-import Section from '@/presentation/components/common/Section.astro';
-import Footer from '@/presentation/components/sections/Footer.astro';
-import NotebookPaperBackground from '@/presentation/backgrounds/NotebookPaperBackground.astro';
+import Section from '@/presentation/features/common/Section.astro';
+import Footer from '@/presentation/features/ui/Footer.astro';
+import NotebookPaperBackground from '@/presentation/features/common/backgrounds/NotebookPaperBackground.astro';
+import Card from '@/presentation/features/common/components/Card.astro';
+import Button from '@/presentation/features/common/components/Button.astro';
 
 const personalInfo = await new GetPersonalInfoUseCase(new InMemoryPersonalInfoRepository()).execute();
 const commonLabels = await new GetCommonLabelsUseCase(new InMemoryCommonLabelsRepository()).execute();
@@ -41,7 +44,7 @@ const typeLabels: Record<string, Translations> = {
 <Layout lang={lang} title={`${translate(projectLabels.title, lang)} - ${personalInfo.name}`} description={translate(projectLabels.subtitle, lang)}>
     <Header lang={lang} personalInfo={personalInfo} />
     
-    <Section background='blueprint' bottomFade>
+    <Section class="mt-10 lg:mt-20" background='blueprint' bottomFade>
         <div class="w-full px-5 md:px-10 lg:px-15 mt-5">
             <BackLink href={`/${lang}/#projects`} text={translate(commonLabels.back, lang)} />
             <PageHeader 
@@ -52,10 +55,10 @@ const typeLabels: Record<string, Translations> = {
             {Object.entries(projectsByType).map(([type, projects]) => (
                 projects.length > 0 && (
                     <section class="mb-16 w-full">
-                        <h2 class="text-2xl font-semibold text-secondary-v mb-8 pb-4 border-b-2 border-secondary-v">{translate(typeLabels[type], lang)}</h2>
+                        <h2 class="res-h2 font-semibold text-secondary-v mb-8 pb-4 border-b-2 border-secondary-v">{translate(typeLabels[type], lang)}</h2>
                         <div class="w-full grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                             {projects.map((project: { id: string; title: Translations; description: Translations; imageUrl?: string; demoUrl?: string; repoUrl?: string; technologies?: string[] }) => (
-                                <article class="group bg-bg-surface-alt-v rounded-2xl overflow-hidden shadow-md border-2 border-primary-v transition-transform duration-200 hover:-translate-y-2 hover:shadow-xl flex flex-col">
+                                <Card class="group">
                                     {project.imageUrl ? (
                                         <div class="relative h-48 m-5 rounded-2xl flex items-center justify-center overflow-hidden">
                                             <img src={project.imageUrl} alt={translate(project.title, lang)} loading="lazy" class="w-full h-full object-fill transition-transform duration-500 group-hover:scale-110" />
@@ -66,7 +69,7 @@ const typeLabels: Record<string, Translations> = {
                                                             href={project.demoUrl}
                                                             target="_blank"
                                                             rel="noopener noreferrer"
-                                                            class="hover:bg-secondary-v bg-primary-v text-white inline-flex items-center gap-2 px-4 py-2 rounded-md font-semibold text-sm transform hover:scale-105"
+                                                            class="btn-primary"
                                                             aria-label={translate(projectLabels.viewDemo, lang)}
                                                         >
                                                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="stroke-current">
@@ -82,7 +85,7 @@ const typeLabels: Record<string, Translations> = {
                                                             href={project.repoUrl}
                                                             target="_blank"
                                                             rel="noopener noreferrer"
-                                                            class="hover:bg-secondary-v bg-primary-v text-white inline-flex items-center gap-2 px-4 py-2 rounded-md font-semibold text-sm transform hover:scale-105"
+                                                            class="btn-primary"
                                                             aria-label={translate(projectLabels.viewCode, lang)}
                                                         >
                                                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="fill-current">
@@ -97,22 +100,21 @@ const typeLabels: Record<string, Translations> = {
                                     ) : (
                                         <div class="relative h-48 m-5 rounded-2xl flex items-center justify-center overflow-hidden">
                                             <NotebookPaperBackground />
-                                            <span class="text-accent-v font-bold text-2xl italic z-10">{translate(projectLabels.noImage, lang)}</span>
+                                            <span class="text-accent-v font-bold res-h2 italic z-10">{translate(projectLabels.noImage, lang)}</span>
                                         </div>
                                     )}
 
-                                    <div class="p-6 flex-1 flex flex-col">
-                                        <h3 class="text-3xl font-bold text-primary-v mb-3">{translate(project.title, lang)}</h3>
+                                    <div class="card-body">
+                                        <h3 class="res-h2 font-bold text-primary-v mb-3">{translate(project.title, lang)}</h3>
                                         <p class="text-bg-inverse-alt-v leading-relaxed mb-4 flex-1">{translate(project.description, lang)}</p>
                                     </div>
 
                                     <div class="flex justify-end mb-5 pr-5">
-                                        <a href={`/${lang}/projects/${project.id}`} class="hover:bg-secondary-v
-                                        font-bold bg-primary-v rounded-md px-4 py-2 text-white" >
+                                        <Button href={`/${lang}/projects/${project.id}`} class="font-bold res-h4">
                                             {translate(commonLabels.viewMore, lang)}<span class="ml-2 transition-transform">→</span>
-                                        </a>
+                                        </Button>
                                     </div>
-                                </article>
+                                </Card>
                             ))}
                         </div>
                     </section>

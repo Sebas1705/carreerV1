@@ -1,0 +1,31 @@
+---
+import type { Skill } from '@/domain';
+
+interface Props {
+    skillId: string;
+    skills: Skill[];
+}
+
+const { skillId, skills } = Astro.props;
+
+const skill = skills.find((s) => s.id === skillId);
+const displayName = skill?.name ?? skillId;
+const fallbackLabel = displayName.slice(0, 2).toUpperCase();
+---
+
+<div class="res-p-sm bg-bg-surface-alt-v border border-primary-v rounded-lg text-center transition-transform duration-200 flex flex-col items-center justify-center hover:shadow-lg hover:-translate-y-1 hover:border-primary-v">
+    <div class='flex flex-col justify-around place-items-center bg-bg-surface-alt-v rounded-full'>
+        {skill?.iconUrl ? (
+            <img 
+                src={skill.iconUrl} 
+                alt={displayName} 
+                loading="lazy"
+                class="object-contain res-img-md" 
+            />
+            ) : (
+            <span class="res-h2 font-bold text-primary-v" aria-hidden="true">{fallbackLabel}</span>
+        )}
+    </div>
+    <h3 class="res-h3 font-semibold text-secondary-v mb-5 line-clamp-2">{displayName}</h3>
+</div>
+

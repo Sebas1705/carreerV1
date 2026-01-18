@@ -1,12 +1,12 @@
 ---
 import Layout from '@/presentation/layouts/Layout.astro';
-import Header from '@/presentation/components/sections/Header.astro';
-import Footer from '@/presentation/components/sections/Footer.astro';
-import BackLink from '@/presentation/components/ui/BackLink.astro';
-import MetaPill from '@/presentation/components/ui/MetaPill.astro';
-import Section from '@/presentation/components/common/Section.astro';
-import SkillsGrid from '@/presentation/components/skills/SkillsGrid.astro';
-import ProjectsGrid from '@/presentation/components/projects/ProjectsGrid.astro';
+import Header from '@/presentation/features/ui/Header.astro';
+import Footer from '@/presentation/features/ui/Footer.astro';
+import BackLink from '@/presentation/features/common/BackLink.astro';
+import MetaPill from '@/presentation/features/work/components/MetaPill.astro';
+import Section from '@/presentation/features/common/Section.astro';
+import SkillsGrid from '@/presentation/features/skills/components/SkillsGrid.astro';
+import ProjectsGrid from '@/presentation/features/projects/components/ProjectsGrid.astro';
 
 import type { Language } from '@domain/models/Language';
 import { supportedLanguages, translate } from '@domain/models/Language';
@@ -28,6 +28,7 @@ export async function getStaticPaths() {
     }
     return paths;
 }
+export const prerender = true;
 const lang: Language = Astro.params.lang as Language;
 const workId = Astro.params.id as string;
 
@@ -54,13 +55,13 @@ const workLabels = await new GetWorkLabelsUseCase(new InMemoryWorkLabelsReposito
 <Layout lang={lang} title={`${translate(workExperience.position, lang)} - ${personalInfo.name}`} description={translate(workExperience.description, lang)}>
     <Header lang={lang} personalInfo={personalInfo} />
 
-    <Section background="binary-rain">
+    <Section class="mt-10 lg:mt-20" background="binary-rain">
         <div class="px-5 md:px-10 lg:px-15 mt-5">
             <BackLink href={`/${lang}/#work`} text={translate(commonLabels.back, lang)} />
             <section class="mb-5 mt-5">
                 <div class="bg-bg-surface-alt-v border border-primary-v rounded-2xl p-9">
                     <div class="flex flex-col gap-2 mb-4">
-                        <h1 class="text-4xl md:text-5xl font-extrabold leading-tight text-primary-v">{translate(workExperience.position, lang)}</h1>
+                        <h1 class="res-title font-extrabold leading-tight text-primary-v">{translate(workExperience.position, lang)}</h1>
                     </div>
 
                     <div class="flex flex-wrap gap-3 mb-4">
@@ -71,26 +72,26 @@ const workLabels = await new GetWorkLabelsUseCase(new InMemoryWorkLabelsReposito
                         <MetaPill variant="subtle">{formatDateRange(workExperience.startDate, workExperience.endDate, lang, translate(commonLabels.current, lang))}</MetaPill>
                     </div>
 
-                    <p class="text-bg-inverse-alt-v text-md leading-relaxed">{translate(workExperience.description, lang)}</p>
+                    <p class="text-bg-inverse-alt-v res-h4 leading-relaxed">{translate(workExperience.description, lang)}</p>
                 </div>
             </section>
 
-            <Section title={translate(projectLabels.technologies, lang)}>
+            <Section fill={false} title={translate(projectLabels.technologies, lang)}>
                 <SkillsGrid skillIds={workExperience.technologies} skills={skills.filter(skill => workExperience.technologies.includes(skill.id))}/>
             </Section>
 
             {workExperience.achievements.length > 0 && (
-                <Section title={translate(workLabels.achievements, lang)}>
+                <Section fill={false} title={translate(workLabels.achievements, lang)}>
                     <ul class="list-none space-y-3 mt-5">
                         {workExperience.achievements.map((achievement) => (
-                            <li class="p-5 bg-bg-surface-v border-l-4 border-primary-v rounded-md text-bg-inverse-alt-v leading-relaxed" set:html={linkify(translate(achievement, lang))}></li>
+                            <li class="p-5 res-h4 bg-bg-surface-v border-l-4 border-primary-v rounded-md text-bg-inverse-alt-v leading-relaxed" set:html={linkify(translate(achievement, lang))}></li>
                         ))}
                     </ul>
                 </Section>
             )}
 
             {relatedProjects.length > 0 && (
-                <Section title={translate(workLabels.projects, lang)}>
+                <Section fill={false} title={translate(workLabels.projects, lang)}>
                     <ProjectsGrid 
                         projects={relatedProjects}
                         lang={lang}

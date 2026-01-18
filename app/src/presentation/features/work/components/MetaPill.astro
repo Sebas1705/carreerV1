@@ -1,0 +1,21 @@
+---
+interface Props {
+    variant?: 'primary' | 'subtle';
+    href?: string;
+    target?: string;
+    rel?: string;
+}
+
+const { variant = 'subtle', href, target, rel } = Astro.props;
+---
+
+<span class={`inline-flex items-center gap-2 res-h4 font-medium res-pbutton rounded-full ${variant === 'primary' ? 'bg-primary-v text-white' : 'bg-accent-v text-white'}`}>
+    {href ? (
+        <a href={href} target={target} rel={rel} class="no-underline hover:opacity-80 transition-opacity">
+            <slot />
+        </a>
+    ) : (
+        <slot />
+    )}
+</span>
+

@@ -4,8 +4,8 @@ import type { Translations } from './Language';
 
 describe('Language utilities', () => {
     describe('supportedLanguages', () => {
-        it('should have exactly 10 supported languages', () => {
-            expect(supportedLanguages).toHaveLength(10);
+        it('should have exactly 20 supported languages', () => {
+            expect(supportedLanguages).toHaveLength(20);
         });
 
         it('should contain all expected languages', () => {
@@ -19,10 +19,23 @@ describe('Language utilities', () => {
             expect(supportedLanguages).toContain('pl');
             expect(supportedLanguages).toContain('ru');
             expect(supportedLanguages).toContain('ja');
+            expect(supportedLanguages).toContain('zh');
+            expect(supportedLanguages).toContain('ar');
+            expect(supportedLanguages).toContain('sv');
+            expect(supportedLanguages).toContain('no');
+            expect(supportedLanguages).toContain('fi');
+            expect(supportedLanguages).toContain('ko');
+            expect(supportedLanguages).toContain('tr');
+            expect(supportedLanguages).toContain('cs');
+            expect(supportedLanguages).toContain('hu');
+            expect(supportedLanguages).toContain('el');
         });
 
         it('should be in correct order', () => {
-            expect(supportedLanguages).toEqual(['es', 'en', 'fr', 'de', 'it', 'pt', 'nl', 'pl', 'ru', 'ja']);
+            expect(supportedLanguages).toEqual([
+                'es', 'en', 'fr', 'de', 'it', 'pt', 'nl', 'pl', 'ru', 'ja',
+                'zh', 'ar', 'sv', 'no', 'fi', 'ko', 'tr', 'cs', 'hu', 'el'
+            ]);
         });
 
         it('should not have duplicates', () => {
@@ -79,9 +92,9 @@ describe('Language utilities', () => {
             expect(languageNames.ja).toBe('日本語');
         });
 
-        it('should have exactly 10 language names', () => {
+        it('should have exactly 20 language names', () => {
             const names = Object.keys(languageNames);
-            expect(names).toHaveLength(10);
+            expect(names).toHaveLength(20);
         });
     });
 
@@ -97,7 +110,17 @@ describe('Language utilities', () => {
                 nl: 'Hallo',
                 pl: 'Cześć',
                 ru: 'Привет',
-                ja: 'こんにちは'
+                ja: 'こんにちは',
+                zh: '你好',
+                ar: 'مرحبا',
+                sv: 'Hej',
+                no: 'Hei',
+                fi: 'Hei',
+                ko: '안녕하세요',
+                tr: 'Merhaba',
+                cs: 'Ahoj',
+                hu: 'Szia',
+                el: 'Γειά'
             };
 
             expect(translate(translations, 'es')).toBe('Hola');
@@ -123,10 +146,19 @@ describe('Language utilities', () => {
                 nl: '',
                 pl: '',
                 ru: '',
-                ja: ''
+                ja: '',
+                zh: '',
+                ar: '',
+                sv: '',
+                no: '',
+                fi: '',
+                ko: '',
+                tr: '',
+                cs: '',
+                hu: '',
+                el: ''
             };
 
-            // @ts-expect-error - testing runtime behavior
             expect(translate(translations, 'es')).toBe('String not found');
         });
 
@@ -141,7 +173,17 @@ describe('Language utilities', () => {
                 nl: '',
                 pl: '',
                 ru: '',
-                ja: ''
+                ja: '',
+                zh: '',
+                ar: '',
+                sv: '',
+                no: '',
+                fi: '',
+                ko: '',
+                tr: '',
+                cs: '',
+                hu: '',
+                el: ''
             };
 
             expect(translate(translations, 'es')).toBe('Hola');
@@ -159,7 +201,17 @@ describe('Language utilities', () => {
                 nl: 'Test',
                 pl: 'Test',
                 ru: 'Test',
-                ja: 'Test'
+                ja: 'Test',
+                zh: 'Test',
+                ar: 'Test',
+                sv: 'Test',
+                no: 'Test',
+                fi: 'Test',
+                ko: 'Test',
+                tr: 'Test',
+                cs: 'Test',
+                hu: 'Test',
+                el: 'Test'
             };
 
             supportedLanguages.forEach(lang => {
@@ -178,7 +230,17 @@ describe('Language utilities', () => {
                 nl: 'Hallo',
                 pl: 'Cześć',
                 ru: 'Привет',
-                ja: 'こんにちは'
+                ja: 'こんにちは',
+                zh: '你好',
+                ar: 'مرحبا',
+                sv: 'Hej',
+                no: 'Hei',
+                fi: 'Hei',
+                ko: '안녕하세요',
+                tr: 'Merhaba',
+                cs: 'Ahoj',
+                hu: 'Szia',
+                el: 'Γειά'
             };
 
             expect(translate(translations, 'es')).not.toBe(translate(translations, 'en'));

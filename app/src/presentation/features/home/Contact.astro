@@ -1,0 +1,104 @@
+
+---
+import type { Language, PersonalInfo } from '@/domain';
+import { translate } from '@/domain';
+import Section from '@/presentation/features/common/Section.astro';
+import SocialLink from './components/SocialLink.astro';
+import GitHubIcon from '@/presentation/features/common/icons/GitHubIcon.astro';
+import LinkedinIcon from '@/presentation/features/common/icons/LinkedinIcon.astro';
+
+interface Props {
+	lang: Language;
+	personalInfo: PersonalInfo;
+}
+
+const { lang, personalInfo } = Astro.props as Props;
+
+import { InMemoryContactLabelsRepository } from '@/data';
+import { GetContactLabelsUseCase } from '@/domain';
+
+const contactLabels = await new GetContactLabelsUseCase(new InMemoryContactLabelsRepository()).execute();
+
+---
+
+<Section fill={false} id="contact" class="bg-bg-surface-alt-v" title={translate(contactLabels.title, lang)} subtitle={translate(contactLabels.subtitle, lang)}>
+	<div class="grid gap-12 items-center lg:grid-cols-2 res-px-md">
+		<div>
+			<p class="res-h2 text-secondary-v font-semibold mb-8 text-center lg:text-left">{translate(contactLabels.message, lang)}</p>
+
+			<div class="flex flex-col gap-6 mb-8">
+				<div class="flex gap-4 items-start">
+					<div class="size-12 md:size-16 rounded-lg bg-primary-v text-white flex items-center justify-center shrink-0">
+						<svg class="size-8 md:size-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+							<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+							<polyline points="22,6 12,13 2,6"/>
+						</svg>
+					</div>
+					<div class="flex-1">
+						<h3 class="res-h4 font-semibold text-bg-inverse-alt-v mb-1">{translate(contactLabels.email, lang)}</h3>
+						<a href={`mailto:${personalInfo.email}`} class="res-h4 font-medium text-accent-v hover:text-secondary-v">{personalInfo.email}</a>
+					</div>
+				</div>
+
+				<div class="flex gap-4 items-start">
+					<div class="size-12 md:size-16 rounded-lg bg-primary-v text-white flex items-center justify-center shrink-0">
+						<svg class="size-8 md:size-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+							<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+							<circle cx="12" cy="10" r="3"/>
+						</svg>
+					</div>
+					<div class="flex-1">
+						<h3 class="res-h4 font-semibold text-bg-inverse-alt-v mb-1">{translate(contactLabels.location, lang)}</h3>
+						<p class="res-h4 text-secondary-v">{translate(personalInfo.location, lang)}</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="pt-6 border-t border-primary-v text-center lg:text-left">
+				<h3 class="res-h3 font-semibold text-secondary-v mb-3">{translate(contactLabels.social, lang)}</h3>
+				<div class="flex gap-3 justify-center lg:justify-start">
+					{personalInfo.socialLinks.github && (
+						<SocialLink href={personalInfo.socialLinks.github} label="GitHub">
+							<GitHubIcon />
+						</SocialLink>
+					)}
+					{personalInfo.socialLinks.codewars && (
+						<SocialLink href={personalInfo.socialLinks.codewars} label="Codewars">
+							<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+								<path d="M12 2l9 4v8c0 5-3.8 9.7-9 11-5.2-1.3-9-6-9-11V6l9-4z"/>
+								<path d="M12 22V12"/>
+								<path d="M21 6l-9 6-9-6"/>
+							</svg>
+						</SocialLink>
+					)}
+					{personalInfo.socialLinks.linkedin && (
+						<SocialLink href={personalInfo.socialLinks.linkedin} label="LinkedIn">
+							<LinkedinIcon />
+						</SocialLink>
+					)}
+					<SocialLink href="/" label="Website">
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+							<circle cx="12" cy="12" r="10"/>
+							<line x1="2" y1="12" x2="22" y2="12"/>
+							<path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+						</svg>
+					</SocialLink>
+				</div>
+			</div>
+		</div>
+
+		<div class="hidden lg:block size-150 lg:size-175">
+			<svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<rect x="50" y="50" width="300" height="200" rx="10" fill="var(--color-bg-secondary)" stroke="var(--color-primary)" stroke-width="2"/>
+				<line x1="50" y1="80" x2="350" y2="80" stroke="var(--color-border)" stroke-width="2"/>
+				<circle cx="70" cy="65" r="5" fill="var(--color-error)"/>
+				<circle cx="90" cy="65" r="5" fill="var(--color-warning)"/>
+				<circle cx="110" cy="65" r="5" fill="var(--color-success)"/>
+				<rect x="80" y="110" width="240" height="10" rx="5" fill="var(--color-primary)" opacity="0.3"/>
+				<rect x="80" y="140" width="200" height="10" rx="5" fill="var(--color-primary)" opacity="0.3"/>
+				<rect x="80" y="170" width="180" height="10" rx="5" fill="var(--color-primary)" opacity="0.3"/>
+				<rect x="240" y="200" width="80" height="30" rx="5" fill="var(--color-primary)"/>
+			</svg>
+		</div>
+	</div>
+</Section>

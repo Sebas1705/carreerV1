@@ -1,0 +1,43 @@
+---
+import type { Language } from '@/domain';
+import { translate } from '@/domain';
+import Section from '@/presentation/features/common/Section.astro';
+import ViewMore from '@/presentation/features/common/ViewMore.astro';
+import SkillCard from './components/SkillCard.astro';
+
+interface Props {
+	lang: Language;
+	featured?: number;
+}
+
+const { lang, featured = 12 } = Astro.props as Props;
+
+import { InMemorySkillsLabelsRepository, InMemorySkillRepository } from '@/data';
+import { GetSkillsLabelsUseCase, GetSkillsUseCase } from '@/domain';
+
+const skillsLabels = await new GetSkillsLabelsUseCase(new InMemorySkillsLabelsRepository()).execute();
+const skills = await new GetSkillsUseCase(new InMemorySkillRepository()).execute();
+---
+
+<Section id="skills" topFade bottomFade background='circuit' title={translate(skillsLabels.title, lang)} subtitle={translate(skillsLabels.subtitle, lang)}>
+    
+	<div class="flex flex-col gap-10 mt-10 res-px-md">
+		<!-- Featured Skills Grid -->
+		<div class="mb-8">
+			<div class="grid gap-6 grid-cols-2 sm:grid-cols-3
+			md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-6 ">
+				{skills
+				.filter((skill) => !['architecture','methodologies'].includes(skill.category))
+				.sort((a, b) => b.level - a.level)
+				.slice(0, featured)
+				.map((skill) => {
+					return (
+						<SkillCard skillId={skill.id} skills={skills} />
+					);
+				})}
+			</div>
+		</div>
+
+		<ViewMore lang={lang} href={`/${lang}/skills`}/>
+	</div>
+</Section>

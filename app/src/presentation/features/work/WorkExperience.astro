@@ -1,0 +1,72 @@
+---
+import type { Language, WorkExperience, CommonLabels, Translations } from '@/domain';
+import { translate } from '@/domain';
+import { formatDateRange, linkify } from '@/core';
+import Section from '@/presentation/features/common/Section.astro';
+
+interface Props {
+	lang: Language;
+	commonLabels: CommonLabels;
+}
+
+const { lang, commonLabels } = Astro.props as Props;
+
+import { InMemoryWorkLabelsRepository, InMemoryWorkExperienceRepository } from '@/data';
+import { GetWorkLabelsUseCase, GetWorkExperiencesUseCase } from '@/domain';
+import ViewMoreSpec from '@/presentation/features/common/ViewMoreSpec.astro';
+
+const workLabels = await new GetWorkLabelsUseCase(new InMemoryWorkLabelsRepository()).execute();
+const experiences  = await new GetWorkExperiencesUseCase(new InMemoryWorkExperienceRepository()).execute();
+---
+
+<Section id="work" background="binary-code" topFade bottomFade title={translate(workLabels.title, lang)} subtitle={translate(workLabels.subtitle, lang)}>
+    
+	<div class="relative mt-5 res-px-md">
+		{experiences.map((experience: WorkExperience) => 
+			(
+				<div class="relative mb-15">
+					<div class="bg-bg-surface-alt-v rounded-lg p-6 shadow-md relative overflow-hidden border-l-4 border-primary-dark-v hover:border-primary-v transform transition-transform duration-200 hover:translate-x-2 hover:-translate-y-1">
+						<div class="flex flex-col gap-4 mb-6 md:flex-row md:justify-between md:items-start">
+							<div>
+								<h3 class="res-h2 mt-2
+                                font-semibold text-primary-v">{translate(experience.position, lang)}</h3>
+								<p class="text-secondary-v font-semibold mt-3
+								res-h2">
+									<a href={experience.companyUrl} target="_blank" rel="noopener noreferrer"
+									class="hover:text-accent-v transition-colors duration-200">
+										{experience.company}
+									</a>
+								</p>
+							</div>
+							<div class="flex flex-col gap-1 text-bg-inverse-alt-v res-h4 mt-2">
+								<span>
+									{formatDateRange(experience.startDate, experience.endDate, lang, translate(commonLabels.current, lang))}
+								</span>
+								<span class="text-bg-inverse-v">{translate(experience.location, lang)}</span>
+							</div>
+						</div>
+
+						<p class="res-h4
+                        text-bg-inverse-alt-v justified-tight">{translate(experience.description, lang)}</p>
+
+						{experience.achievements.length > 0 && (
+							<div class="mb-5">
+								<h4 class="res-h2
+                                font-semibold text-secondary-v my-5">{translate(workLabels.achievements, lang)}</h4>
+								<ul class="p-0 mt-2 list-none">
+									{experience.achievements.map((achievement: Translations) => (
+										<li set:html={linkify(translate(achievement, lang))} class="relative pl-5 before:content-['•'] before:absolute 
+										before:left-0 before:top-0 before:text-accent-v
+										before:text-xl text-bg-inverse-alt-v mb-2 
+                                        res-h4"></li>
+									))}
+								</ul>
+							</div>
+						)}
+						<ViewMoreSpec lang={lang} href={`/${lang}/work/${experience.id}`}/>
+					</div>
+				</div>
+			)
+		)}
+	</div>
+</Section>

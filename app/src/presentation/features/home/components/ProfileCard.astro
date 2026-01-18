@@ -1,0 +1,24 @@
+---
+import type { PersonalInfo, Language, AboutLabels } from '@/domain';
+import { translate } from '@/domain';
+
+interface Props {
+    personalInfo: PersonalInfo;
+    lang: Language;
+    aboutLabels: AboutLabels;
+}
+
+const { personalInfo, lang, aboutLabels } = Astro.props;
+---
+<div class="fade-in w-full max-w-full mx-auto overflow-hidden rounded-2xl shadow-xl flex items-end relative bg-center bg-cover" style={`background-image: url(${personalInfo.profileImage})`}>
+    <div class="absolute bottom-0 left-0 right-0 w-full bg-linear-to-t from-slate-900/95 via-slate-900/80 to-transparent p-6 flex flex-col gap-3 justify-end items-center text-center md:top-0 md:right-0 md:bottom-0 md:left-auto md:w-1/2 md:bg-gradient-to-l md:from-black/95 md:via-black/75 md:to-transparent md:p-10 md:justify-center md:text-right md:items-end">
+        <span class="inline-block rounded-md px-4 py-1 text-base font-semibold mb-3 badge-primary">{translate(aboutLabels.greeting, lang)}</span>
+        <h1 class="w-full flex flex-col items-center md:items-start justify-center text-white leading-tight mb-3 res-profile-title font-extrabold">
+            <span class="inline sm:hidden">Sebas</span>
+            <span class="hidden sm:inline md:hidden">Sebastián</span>
+            <span class="hidden md:inline lg:hidden">Sebastián Entrerrios García</span>
+            <span class="hidden lg:inline">Sebastián Ramiro Entrerrios García</span>
+        </h1>
+        <p class="font-semibold text-[1.1rem] text-primary">{translate(personalInfo.title, lang)}</p>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+---
+interface Props {
+  class?: string;
+  'data-index'?: number | string;
+}
+const { class: className = '', ...rest } = Astro.props as Props;
+---
+
+<article class={`card ${className}`} {...rest}>
+  <slot />
+</article>

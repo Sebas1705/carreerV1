@@ -92,7 +92,7 @@ html, body { overflow-x: hidden; font-family: "JetBrains Mono", ui-monospace, SF
 
 .nav-link {
     @apply text-bg-inverse-alt-v transition font-medium
-    text-lg whitespace-nowrap overflow-hidden text-ellipsis
+    whitespace-nowrap overflow-hidden text-ellipsis
     hover:text-primary-v hover:underline;
 }
 
@@ -118,3 +118,55 @@ html, body { overflow-x: hidden; font-family: "JetBrains Mono", ui-monospace, SF
 
 /* Utility variant: apply when using prose-like containers */
 .prose .justified-tight { word-break: normal; }
+
+/* Common UI components */
+.btn-primary { @apply inline-flex items-center gap-2 px-4 py-2 rounded-md font-semibold text-sm bg-primary-v text-white transition-transform duration-150 transform hover:bg-secondary-v hover:scale-105 }
+.btn-ghost { @apply inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-transparent text-primary-v border-2 border-primary-v font-semibold }
+.card { @apply bg-bg-surface-alt-v rounded-2xl overflow-hidden shadow-md border-2 border-primary-v transition-transform duration-200 hover:-translate-y-2 hover:shadow-xl flex flex-col }
+.card-media { @apply relative w-full overflow-hidden }
+.card-body { @apply p-6 flex-1 flex flex-col }
+.badge { @apply inline-flex items-center gap-2 px-2 py-1 rounded-full bg-primary-v/10 text-primary-v font-medium text-sm }
+
+/* Small helpers */
+.muted { @apply text-bg-inverse-alt-v/70 }
+
+
+/*
+    Text dimensions adaptative
+*/
+
+.res-title { @apply text-2xl md:text-4xl lg:text-6xl }
+.res-subtitle { @apply text-xl md:text-2xl lg:text-4xl }
+.res-h1 { @apply text-2xl md:text-3xl lg:text-4xl xl:text-5xl }
+.res-h2 { @apply text-xl md:text-2xl lg:text-3xl xl:text-4xl }
+.res-h3 { @apply text-lg md:text-xl lg:text-2xl xl:text-3xl }
+.res-h4 { @apply text-base md:text-lg lg:text-xl xl:text-2xl }
+.res-p { @apply text-sm md:text-base lg:text-lg xl:text-xl }
+.res-button { @apply text-sm md:text-base lg:text-lg xl:text-xl }
+
+/*
+    Paddings dimensions adaptative 
+*/
+
+.res-p-sm { @apply p-2 md:p-4 lg:p-6 xl:p-8 }
+.res-p-md { @apply p-4 md:p-6 lg:p-8 xl:p-10 }
+.res-p-lg { @apply p-6 md:p-8 lg:p-10 xl:p-12 }
+.res-p-xl { @apply p-8 md:p-10 lg:p-12 xl:p-16 }
+
+.res-px-sm { @apply px-2 md:px-4 lg:px-6 xl:px-8 }
+.res-px-md { @apply px-4 md:px-6 lg:px-8 xl:px-10 }
+.res-px-lg { @apply px-6 md:px-8 lg:px-10 xl:px-12 }
+.res-px-xl { @apply px-8 md:px-10 lg:px-12 xl:px-16 }
+
+.res-py-sm { @apply py-2 md:py-4 lg:py-6 xl:py-8 }
+.res-py-md { @apply py-4 md:py-6 lg:py-8 xl:py-10 }
+.res-py-lg { @apply py-6 md:py-8 lg:py-10 xl:py-12 }
+.res-py-xl { @apply py-8 md:py-10 lg:py-12 xl:py-16 }
+
+.res-pbutton { @apply px-3 py-1.5 md:px-4 md:py-2 lg:px-5 lg:py-2.5 xl:px-6 xl:py-3 }
+
+/* Responsive image sizes */
+.res-img-sm { @apply w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 xl:w-32 xl:h-32 }    
+.res-img-md { @apply w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 xl:w-48 xl:h-48 }
+.res-img-lg { @apply w-32 h-32 md:w-48 md:h-48 lg:w-64 lg:h-64 xl:w-80 xl:h-80 }
+.res-img-xl { @apply w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 xl:w-96 xl:h-96 }
