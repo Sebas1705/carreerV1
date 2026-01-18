@@ -9,7 +9,17 @@
         "nl": "Cursussen en Certificeringen",
         "pl": "Kursy i Certyfikaty",
         "ru": "Курсы и Сертификаты",
-        "ja": "コースと認定"
+        "ja": "コースと認定",
+        "zh": "课程和证书",
+        "ar": "الدورات والشهادات",
+        "sv": "Kurser och certifieringar",
+        "no": "Kurs og sertifisering",
+        "fi": "Kurssit ja sertifikaatit",
+        "ko": "과정 및 자격증",
+        "tr": "Kurslar ve Sertifikalar",
+        "cs": "Kurzy a certifikace",
+        "hu": "Tanfolyamok és bizonyítványok",
+        "el": "Μαθήματα και Πιστοποιήσεις"
     },
     "subtitle": {
         "es": "Formación continua y especialización",
@@ -21,7 +31,17 @@
         "nl": "Continue training en specialisatie",
         "pl": "Ciągłe szkolenie i specjalizacja",
         "ru": "Непрерывное обучение и специализация",
-        "ja": "継続的なトレーニングと専門化"
+        "ja": "継続的なトレーニングと専門化",
+        "zh": "持续培训与专业化",
+        "ar": "التدريب المستمر والتخصص",
+        "sv": "Kontinuerlig utbildning och specialisering",
+        "no": "Kontinuerlig opplæring og spesialisering",
+        "fi": "Jatkuva koulutus ja erikoistuminen",
+        "ko": "지속적인 교육 및 전문화",
+        "tr": "Sürekli eğitim ve uzmanlaşma",
+        "cs": "Průběžné školení a specializace",
+        "hu": "Folyamatos képzés és specializáció",
+        "el": "Συνεχής εκπαίδευση και εξειδίκευση"
     },
     "pageTitle": {
         "es": "Cursos",
@@ -33,7 +53,17 @@
         "nl": "Cursussen",
         "pl": "Kursy",
         "ru": "Курсы",
-        "ja": "コース"
+        "ja": "コース",
+        "zh": "课程",
+        "ar": "الدورات",
+        "sv": "Kurser",
+        "no": "Kurs",
+        "fi": "Kurssit",
+        "ko": "코스",
+        "tr": "Kurslar",
+        "cs": "Kurzy",
+        "hu": "Tanfolyamok",
+        "el": "Μαθήματα"
     },
     "viewCourse": {
         "es": "Ver Curso",
@@ -45,7 +75,17 @@
         "nl": "Cursus Bekijken",
         "pl": "Zobacz Kurs",
         "ru": "Посмотреть Курс",
-        "ja": "コースを見る"
+        "ja": "コースを見る",
+        "zh": "查看课程",
+        "ar": "عرض الدورة",
+        "sv": "Visa kurs",
+        "no": "Se kurs",
+        "fi": "Näytä kurssi",
+        "ko": "코스 보기",
+        "tr": "Kursa Bak",
+        "cs": "Zobrazit kurz",
+        "hu": "Kurzus megtekintése",
+        "el": "Δείτε το μάθημα"
     },
     "certificate": {
         "es": "Certificado",
@@ -57,7 +97,17 @@
         "nl": "Certificaat",
         "pl": "Certyfikat",
         "ru": "Сертификат",
-        "ja": "証明書"
+        "ja": "証明書",
+        "zh": "证书",
+        "ar": "شهادة",
+        "sv": "Intyg",
+        "no": "Sertifikat",
+        "fi": "Sertifikaatti",
+        "ko": "인증서",
+        "tr": "Sertifika",
+        "cs": "Certifikát",
+        "hu": "Tanúsítvány",
+        "el": "Πιστοποιητικό"
     },
     "skillsLabel": {
         "es": "Habilidades Adquiridas",
@@ -69,6 +119,16 @@
         "nl": "Verworven Vaardigheden",
         "pl": "Nabyte Umiejętności",
         "ru": "Приобретенные Навыки",
-        "ja": "習得したスキル"
+        "ja": "習得したスキル",
+        "zh": "获得的技能",
+        "ar": "المهارات المكتسبة",
+        "sv": "Förvärvade färdigheter",
+        "no": "Ervervede ferdigheter",
+        "fi": "Hankitut taidot",
+        "ko": "습득한 기술",
+        "tr": "Edinilen beceriler",
+        "cs": "Získané dovednosti",
+        "hu": "Szerzett készségek",
+        "el": "Αποκτηθείσες δεξιότητες"
     }
 }

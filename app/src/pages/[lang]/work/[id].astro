@@ -34,12 +34,12 @@ const workId = Astro.params.id as string;
 
 // Find the current work experience
 const workExperiences = await new GetWorkExperiencesUseCase(new InMemoryWorkExperienceRepository()).execute();
-const workExperience = workExperiences.find((w: any) => w.id === workId);
+const workExperience = workExperiences.find((w: { id: string }) => w.id === workId);
 if (!workExperience) return Astro.redirect(`/${lang}/`);
 
 // Get related projects
 const projects = await new GetProjectsByTypeUseCase(new InMemoryProjectRepository()).execute('work');
-const relatedProjects = projects.filter((project: any) =>
+const relatedProjects = projects.filter((project: { relatedTo?: string[] }) =>
     project.relatedTo?.includes(workExperience.id)
 );
 

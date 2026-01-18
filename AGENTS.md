@@ -1,543 +1,191 @@
-# AGENTS.MD - Normas y Arquitectura del Portfolio
+# AGENTS — Project Guidelines and Architecture
 
-## 📋 Visión General
+This document defines the coding, testing, design and documentation rules for this repository. All project contributors must follow these guidelines. The canonical language for code, tests and documentation is English.
 
-Este proyecto es un portafolio web personal construido con **Astro** siguiendo los principios de **Clean Architecture**. El objetivo es crear una aplicación web moderna, escalable, mantenible y completamente testeada.
+## 1. Purpose
 
-## 🏗️ Arquitectura del Proyecto
+Provide a single, actionable source of truth for:
+- project structure and import aliases
+- code architecture and responsibilities
+- testing strategy (unit, integration, E2E) and coverage rules
+- accepted tooling and commands (Astro, pnpm/npm, Vitest, Playwright, Tailwind)
+- documentation and comment policy
 
-### Clean Architecture
+## 2. Directory Structure (frontend workspace under `app/`)
 
-El proyecto está estructurado en capas concéntricas siguiendo los principios de Clean Architecture:
+Keep the `app/` folder as the self-contained Astro frontend workspace. Important folders:
 
-```
-src/
-├── core/                # Utilidades y constantes transversales (date, constants, helpers)
-├── domain/              # Capa de Dominio (Modelos, contratos y casos de uso)
-│   ├── i-repositories/  # Interfaces de repositorios (contratos)
-│   ├── models/          # Entidades y tipos del dominio
-│   └── use-cases/       # Casos de uso (GetAllProjectsUseCase, etc.)
-├── data/                # Implementaciones de infraestructura y datos
-│   ├── datasources/     # Archivos JSON y fuentes de datos
-│   └── repositories/    # Implementaciones concretas (InMemory...)
-└── presentation/        # Capa de Presentación (UI / Astro)
-    ├── components/   # Componentes .astro
-    ├── layouts/      # Layouts de página
-    ├── pages/        # Rutas y páginas (`src/pages/[lang]/*`)
-    └── styles/       # CSS global (Tailwind / variables)
-```
+- `app/src/core/` — cross-cutting utilities and helpers (date, linkify, constants)
+- `app/src/domain/` — domain models, interfaces and use-cases
+- `app/src/data/` — data sources and repository implementations (InMemory adapters)
+- `app/src/presentation/` — UI components, layouts, pages (.astro)
+- `app/tests/e2e/` — Playwright E2E tests
+- `app/package.json` — frontend scripts and dependencies
 
-### Principios de Dependencias
+Import aliases configured in `app/tsconfig.json` and `app/astro.config.mjs`: `@`, `@domain`, `@data`, `@core`, `@presentation`.
 
-1. **Las capas internas no conocen las externas**: El dominio no conoce la infraestructura ni la presentación
-2. **Las dependencias apuntan hacia adentro**: Application depende de Domain, Infrastructure depende de Domain y Application
-3. **Las abstracciones están en capas internas**: Las interfaces (contratos) están en el dominio
+## 3. Architecture
 
-### Flujo de Datos
+Follow Clean Architecture principles:
 
-```
-Usuario → Presentación → Casos de Uso → Repositorios → Datos
-                                ↓              ↓              ↓
-                        Astro      Application      Infrastructure
-```
+- Inner layers (domain) must not depend on outer layers (infrastructure or presentation).
+- Interfaces (repository contracts) live in the domain layer (`app/src/domain/i-repositories`).
+- Use cases coordinate application logic and depend only on domain interfaces.
+- Repositories and data adapters live in `app/src/data/` and implement domain interfaces.
 
-## 🎨 Tecnologías y Herramientas
+Code responsibilities:
 
-### Core
-- **Astro 4.16+**: Framework principal para generación de sitios estáticos
-- **TypeScript 5.6+**: Tipado estático para mayor seguridad
-- **Vitest 2.1+**: Framework de testing
+- Domain: pure TypeScript types, models, interfaces, and use-cases.
+- Application: location for orchestrating use-cases (in this project, use-cases live under domain/use-cases).
+- Infrastructure: concrete implementations, third-party integrations, JSON datasources.
+- Presentation: Astro components and pages that call use-cases to render UI.
 
-### Características
-- **Internacionalización (i18n)**: Soporte para Español e Inglés
-- **Temas**: Modo claro y oscuro con persistencia
-- **Responsive Design**: Diseño adaptativo móvil-primero
-- **Accesibilidad**: Cumplimiento de estándares WCAG
+## 4. Language, Formatting and Naming
 
-## 📂 Estructura de Carpetas Detallada
+- Language: English for code, identifiers, tests and documentation.
+- TypeScript: `strict` mode (see `app/tsconfig.json`).
+- File naming: `PascalCase.astro` for components, `camelCase` for utilities, `UPPER_SNAKE_CASE` for constants.
+- Exports: prefer named exports for types and functions; use default export only for the primary component of a file.
+- Import order: external deps → types → use-cases → repositories → components.
 
-### Domain Layer (`src/domain/`)
+Formatting and linting:
 
-**Propósito**: Define las entidades del negocio y las reglas fundamentales.
+- Use a shared formatter (Prettier / EditorConfig) in the team. Configure a consistent setup in future PRs.
 
-**Entidades**:
-- `Project`: Representa un proyecto (laboral, académico o personal)
-- `WorkExperience`: Experiencia laboral
-- `AcademicExperience`: Formación académica
-- `PersonalInfo`: Información personal del usuario
-- `Language`: Tipos de idioma soportados
-- `Theme`: Configuración de tema (claro/oscuro)
+## 5. Tailwind Usage
 
-**Repositorios (Interfaces)**:
-- `ProjectRepository`: Operaciones CRUD para proyectos
-- `WorkExperienceRepository`: Gestión de experiencias laborales
-- `AcademicExperienceRepository`: Gestión de formación académica
-- `PersonalInfoRepository`: Acceso a información personal
+- Tailwind is used for styling; configuration lives in `app/tailwind.config.cjs`.
+- Keep utility classes expressive but avoid overly long class strings; extract repeated patterns to components or `@apply` utilities.
+- Add dynamic class names to the `safelist` if they are generated at runtime (see `tailwind.config.cjs`).
+- Prefer semantic component composition over creating many one-off utility wrappers.
 
-**Reglas**:
-- ✅ Solo tipos, interfaces y entidades puras
-- ✅ Sin dependencias externas
-- ❌ No debe importar de otras capas
-- ❌ Sin lógica de infraestructura o presentación
+## 6. Testing Strategy
 
-### Application / Use Cases (`src/domain/use-cases/`)
+Test types and purpose:
 
-**Propósito**: Implementa los casos de uso de la aplicación. En este proyecto los use-cases viven bajo `src/domain/use-cases` (no hay una capa `src/application` separada).
+- Unit tests: fast, isolated tests for pure functions, use cases and small modules. Use Vitest and `happy-dom` environment.
+- Integration tests: tests that exercise multiple modules together (e.g., use-cases + in-memory repositories). Also run with Vitest but may target more realistic setups.
+- E2E tests: Playwright tests that exercise the running application via browser automation. Located in `app/tests/e2e/`.
 
-**Casos de Uso (ejemplos)**:
-- `GetAllProjectsUseCase`: Obtener todos los proyectos
-- `GetProjectsByTypeUseCase`: Filtrar proyectos por tipo
-- `GetWorkExperiencesUseCase`: Obtener experiencias laborales
-- `GetAcademicExperiencesUseCase`: Obtener formación académica
-- `GetPersonalInfoUseCase`: Obtener información personal
-- `GetRelatedProjectsUseCase`: Obtener proyectos relacionados
-
-**Reglas**:
-- ✅ Puede depender del Domain
-- ✅ Implementa lógica de negocio
-- ✅ Coordina el flujo de datos
-- ❌ No conoce detalles de implementación
-- ❌ No depende de frameworks
-
-### Infrastructure / Data Layer (`src/data/`)
-
-**Propósito**: Implementaciones concretas, datos de ejemplo y adaptadores.
-
-**Componentes**:
-- `datasources/`: Archivos JSON y fuentes de datos (ej. `projectsData.json`, `labels/`)
-- `repositories/`: Implementaciones concretas de repositorios (InMemory...)
-- `repositories/.../labels`: Repositorios de etiquetas y traducciones
-
-**Reglas**:
-- ✅ Implementa las interfaces del Domain (`src/domain/i-repositories`)
-- ✅ Maneja persistencia y servicios externos
-- ✅ Puede usar librerías de terceros
-- ❌ No debe tener lógica de negocio compleja
-
-### Presentation Layer (`src/presentation/`)
-
-**Propósito**: Interfaz de usuario y componentes visuales.
-
-**Componentes**:
-- `Header`: Navegación, tema, idioma
-- `Hero`: Sección de portada
-- `About`: Sobre mí
-- `WorkExperience`: Experiencia laboral con timeline
-- `Education`: Formación académica
-- `Projects`: Proyectos personales
-- `Contact`: Información de contacto
-- `Footer`: Pie de página
-
-**Reglas**:
-- ✅ Usa casos de uso para obtener datos
-- ✅ Solo lógica de presentación
-- ✅ Componentes reutilizables
-- ❌ No accede directamente a repositorios
-- ❌ No contiene lógica de negocio
-
-## 🎯 Normas de Desarrollo con Astro
-
-### 1. Componentes
-
-**Estructura de Componente Astro**:
-```astro
----
-// Script (TypeScript)
-import type { Props } from './types';
-
-```
-
-**Mejores Prácticas**:
-- ✅ Usar TypeScript para props
-- ✅ Estilos con scope local por defecto
-- ✅ Minimizar JavaScript del cliente
-- ✅ Usar componentes .astro para contenido estático
-- ✅ Extraer lógica compleja a funciones
-
-## 🧪 Testing
-
-### Estrategia de Testing
-
-**Cobertura mínima**: 80%
-
-El proyecto usa dos capas de tests principales:
-
-- **Unit / Integration tests**: escritos con **Vitest** y ubicados en `app/src/**` (archivos `*.test.ts`). Cubren casos de uso (`domain/use-cases`), utilidades (`core`) y repositorios `InMemory`.
-- **E2E tests**: escritos con **Playwright** y ubicados en `app/tests/e2e`. Cubren navegación, accesibilidad básica, interacciones (tema, idioma, menú) y validaciones de meta/SEO.
-
-**Tipos de Tests (ejemplos)**:
-
-1. Tests Unitarios (Use Cases y Repositorios)
-
-```typescript
-describe('GetProjectsUseCase', () => {
-    it('returns all projects', async () => {
-        const repository = new InMemoryProjectRepository();
-        const useCase = new GetAllProjectsUseCase(repository);
-
-        const projects = await useCase.execute();
-
-        expect(projects).toBeDefined();
-        expect(projects.length).toBeGreaterThan(0);
-    });
-});
-```
-
-2. Tests E2E (Playwright)
-
-```ts
-import { test, expect } from '@playwright/test';
-
-test('home shows header and hero', async ({ page }) => {
-    await page.goto('/en/');
-    await expect(page.locator('header')).toBeVisible();
-    await expect(page.locator('h1')).toContainText(/Sebasti/);
-});
-```
-
-### Ejecutar Tests
+How to run tests (from project root):
 
 ```bash
-# Ir al workspace del frontend
 cd app
-
-# Tests unitarios / integración (Vitest)
-pnpm test
-pnpm run test:coverage
-
-# Tests E2E (Playwright)
-pnpm run test:e2e
+pnpm install
+pnpm test                # unit + integration (vitest)
+pnpm run test:coverage   # run coverage
+pnpm run test:watch      # watch mode
+pnpm run test:e2e        # Playwright E2E tests
 ```
 
-### Cobertura y exclusiones
+Playwright notes:
 
-El reporte de cobertura se genera con `v8` (configurado en `vitest.config.ts`). Para obtener métricas útiles se excluyen intencionalmente archivos de solo datos y modelos tipo-only que distorsionan el porcentaje (por ejemplo `src/data/datasources/**` y `src/domain/models/**`). Si deseas incluirlos, elimina esas rutas de la propiedad `coverage.exclude` en `vitest.config.ts`.
+- Playwright config uses a `webServer` to start a dev server; ensure `webServer.command` matches your package manager (`pnpm run dev` vs `npm run dev`).
+- Base URL: `http://localhost:4321` by default.
 
-### Estado actual (resumen)
+Coverage policy:
 
-- Tests E2E adaptados a nuevas interfaces y ampliados para cubrir páginas principales (`app/tests/e2e/*`).
-- Nuevos unit tests añadidos para utilidades (`core/linkify`, `core/date`) y validación de datasources (`app/src/data/datasources/datasources.test.ts`).
-- Ejecuciones locales muestran: **~38 tests E2E** y **~36 archivos de test unitarios**, con cobertura global de Statements 100%, Functions 100%, Lines 100% y Branches ~91.66% (valor obtenido en ejecución local de ejemplo).
-### 2. Routing
+- For existing code the project currently configures thresholds at 80% in `app/vitest.config.ts`.
+- Policy for new code: any new feature, module or public API introduced must include tests that keep the *module-level* coverage >= 90% (lines, functions and statements). This means when adding new files, include tests to reach the 90% threshold for those files and the associated units.
+- For PRs that add or change logic, CI must run `pnpm run test:coverage` and enforce the repository or package thresholds. Maintainers may tighten global thresholds in CI.
 
-```
-src/pages/
-    index.astro          → /
-    about.astro          → /about
-    blog/
-        index.astro        → /blog
-        [slug].astro       → /blog/:slug
-## 🤝 Contribuir
+Test coverage exclusions (kept in config): data-only JSON files, auto-generated types and page components that don't contain logic are excluded from coverage to avoid skewing results.
 
-Las contribuciones son bienvenidas. Flujo recomendado:
+## 7. CI and Verification Commands
 
-1. Fork / crear rama (`git checkout -b feat/mi-cambio`)
-2. Implementar cambios y tests
-3. Ejecutar `pnpm test` y `pnpm run test:coverage`
-4. Crear PR a `develop`
-
-### Checklist antes de PR
-
-- [ ] Tests pasan (`pnpm test`)
-- [ ] Cobertura >= 80% (`pnpm run test:coverage`)
-- [ ] Build exitoso (`pnpm run build`)
-- [ ] Sin errores de TypeScript (`npm run astro check`)
-- [ ] Documentación actualizada si aplica
-@domain/        → src/domain/
-@data/          → src/data/
-@presentation/  → src/presentation/
-```
-
-**Orden de importaciones**:
-```typescript
-// 1. Dependencias externas
-import { defineConfig } from 'astro/config';
-
-// 2. Tipos
-import type { Language } from '@domain/entities/Language';
-
-// 3. Casos de uso
-import { GetProjectsUseCase } from '@domain/use-cases';
-
-// 4. Repositorios
-import { InMemoryProjectRepository } from '@data/repositories';
-
-// 5. Componentes
-import Header from '@presentation/components/Header.astro';
-```
-
-### 4. Estilos
-
-**Variables CSS**:
-```css
-:root {
-    /* Colores */
-    --color-primary: #3b82f6;
-    --color-bg-primary: #ffffff;
-    --color-text-primary: #0f172a;
-    
-    /* Espaciado */
-    --spacing-md: 1rem;
-    
-    /* Transiciones */
-    --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-[data-theme="dark"] {
-    --color-bg-primary: #0f172a;
-    --color-text-primary: #f1f5f9;
-}
-```
-
-**Responsive Design**:
-```css
-/* Mobile First */
-.container {
-    padding: 1rem;
-}
-
-@media (min-width: 768px) {
-    .container {
-        padding: 2rem;
-    }
-}
-```
-
-### 5. Performance
-
-**Optimizaciones**:
-- ✅ Lazy loading de imágenes: `loading="lazy"`
-- ✅ Minimizar JavaScript del cliente
-- ✅ Usar `Astro.glob()` para colecciones
-- ✅ Preload de fuentes críticas
-- ✅ Optimizar imágenes con formatos modernos
-
-### 6. Accesibilidad
-
-**Checklist**:
-- ✅ `alt` text en todas las imágenes
-- ✅ `aria-label` en botones icónicos
-- ✅ Contraste de color adecuado (WCAG AA)
-- ✅ Navegación por teclado
-- ✅ Landmarks semánticos (`<header>`, `<main>`, `<footer>`)
-- ✅ Focus visible en elementos interactivos
-
-## 🧪 Testing
-
-### Estrategia de Testing
-
-**Cobertura mínima**: 80%
-
-**Tipos de Tests**:
-
-1. **Tests Unitarios** (Use Cases y Repositorios)
-```typescript
-describe('GetProjectsUseCase', () => {
-    it('should return all projects', async () => {
-        const repository = new InMemoryProjectRepository();
-        const useCase = new GetProjectsUseCase(repository);
-        
-        const projects = await useCase.execute();
-        
-        expect(projects).toBeDefined();
-        expect(projects.length).toBeGreaterThan(0);
-    });
-});
-```
-
-2. **Tests de Integración** (i18n, Flujos completos)
-```typescript
-describe('i18n', () => {
-    it('should translate keys correctly', () => {
-        expect(translate('es', 'nav.home')).toBe('Inicio');
-    });
-});
-```
-
-### Ejecutar Tests
+Recommended local verification before opening a PR:
 
 ```bash
-# Tests con watch mode
-npm run test:watch
-
-# Tests con cobertura
-npm run test:coverage
-
-# Tests en CI
-npm test
+cd app
+pnpm install
+pnpm run build          # verify build and type checks (astro check included)
+pnpm test               # run unit/integration tests
+pnpm run test:coverage  # ensure coverage targets
+pnpm run test:e2e       # run E2E (start a local server if Playwright webServer is not used)
 ```
 
-## 🌍 Internacionalización (i18n)
+Suggested CI steps:
 
-### Estructura
+1. Install dependencies (`pnpm install`).
+2. Run type checking (`pnpm run build` or `pnpm run astro -- check`).
+3. Run `pnpm run test:coverage` and fail the job if coverage drops below configured thresholds.
+4. Run Playwright E2E tests against a deployed preview or spin up the dev server via Playwright `webServer`.
 
-```typescript
-src/infrastructure/i18n/
-    es.ts    # Traducciones en español
-    en.ts    # Traducciones en inglés
-    index.ts # Utilidades y funciones
-```
+## 8. Playwright / Vitest Best Practices
 
-### Uso
+- Avoid flaky tests: use `waitFor` assertions and avoid hard sleeps.
+- Keep E2E tests focused on user flows, not unit logic.
+- For Playwright, prefer `trace: 'on-first-retry'` to capture failures.
+- Vitest tests should avoid external network calls; mock HTTP and external services.
 
-```typescript
-import { translate } from '@infrastructure/i18n';
+## 9. Documentation Policy
 
-const greeting = translate('es', 'hero.greeting'); // "Hola, soy"
-```
+Goal: Prefer self-documenting code. When additional documentation is required:
 
-### Agregar nuevo idioma
+- Write clear, concise JSDoc/TSDoc for exported functions, classes and interfaces that have non-obvious behavior or a public contract.
+- Document complex algorithms, edge cases, or business rules in `docs/` and link to their location from `AGENTS.md`.
+- Keep README files minimal and actionable. The root `README.md` should contain quick-start, common scripts and deploy hints; more detailed guidelines belong to `AGENTS.md` or `docs/`.
+- All documentation and inline documentation must be written in English.
 
-1. Crear archivo `src/infrastructure/i18n/{lang}.ts`
-2. Añadir al array `supportedLanguages` en `index.ts`
-3. Actualizar el selector de idioma en `LanguageSelector.astro`
+Minimum documentation expectations:
 
-## 🎨 Temas
+- Public APIs: include TSDoc showing parameters, return values, thrown errors, and examples where appropriate.
+- Complex modules: add a `README.md` inside the module folder or a markdown file in `docs/` describing usage and rationale.
 
-### Sistema de Temas
+Comment guidelines:
 
-**Implementación**:
-- CSS Variables para tokens de diseño
-- `data-theme` attribute en `<html>`
-- LocalStorage para persistencia
-- Script inline para evitar flash
+- Prefer code clarity over comments. If a comment explains what the code does, refactor the code instead.
+- Use comments sparingly to explain the *why* (rationale), not the *what* (implementation).
 
-**Agregar nuevo tema**:
-```css
-[data-theme="nuevo-tema"] {
-    --color-primary: #...;
-    --color-bg-primary: #...;
-    /* ... más variables */
-}
-```
+## 10. Design and UX
 
-## 🚀 Comandos
+- Follow accessible patterns: semantic HTML, `alt` on images, `aria-*` where necessary and visible focus styles.
+- Keep animations subtle and optional for reduced-motion users.
+- Prefer server-rendered or static-rendered content where possible (Astro) and minimize client-side JS.
 
-```bash
-# Desarrollo
-npm run dev          # Inicia servidor de desarrollo
+## 11. Versioning and Releases
 
-# Build
-npm run build        # Genera build de producción
+- Use semantic versioning for published packages or metadata. For the portfolio site, use tags for checkpoints and release notes in PR descriptions.
 
-# Preview
-npm run preview      # Previsualiza build
+## 12. Enforcement and Reviews
 
-# Tests
-npm test            # Ejecuta tests
-npm run test:watch  # Tests en modo watch
-npm run test:coverage # Tests con cobertura
+- Pull requests must include: description of changes, tests added/updated, and any docs updated.
+- Review checklist for maintainers:
+  - Does the code follow the architecture boundaries?
+  - Are new public APIs documented with types and examples?
+  - Are tests added and passing, and does coverage meet the new-code threshold (>= 90%)?
+  - Are styles consistent and Tailwind used properly?
 
-# Linting
-npm run astro check # Verifica tipos y errores
-```
+## 13. Notable Repo Observations
 
-## 📝 Convenciones de Código
-
-### Naming
-
-- **Archivos**: PascalCase para componentes (`Header.astro`), camelCase para utilidades
-- **Variables**: camelCase (`personalInfo`)
-- **Constantes**: UPPER_SNAKE_CASE (`DEFAULT_LANGUAGE`)
-- **Tipos/Interfaces**: PascalCase (`PersonalInfo`)
-- **Funciones**: camelCase (`getProjects`)
-
-### Comentarios
-
-```typescript
-// ✅ Buenos comentarios
-// Calcula el promedio ponderado de las calificaciones
-const average = calculateWeightedAverage(grades);
-
-// ❌ Malos comentarios
-// Incrementa i
-i++;
-```
-
-### Commits
-
-**Formato**: `tipo(scope): descripción`
-
-**Tipos**:
-- `feat`: Nueva funcionalidad
-- `fix`: Corrección de bug
-- `docs`: Documentación
-- `style`: Formato, punto y coma, etc.
-- `refactor`: Refactorización
-- `test`: Tests
-- `chore`: Mantenimiento
-
-**Ejemplos**:
-```
-feat(hero): añadir animación de entrada
-fix(i18n): corregir traducción en español
-docs(readme): actualizar instrucciones de instalación
-```
-
-## 🔧 Troubleshooting
-
-### Errores Comunes
-
-**1. Error de alias de importación**
-```
-Error: Cannot find module '@domain/...'
-```
-**Solución**: Verificar `tsconfig.json` y `astro.config.mjs`
-
-**2. Tests fallan con imports**
-```
-Error: Unknown file extension ".ts"
-```
-**Solución**: Verificar `vitest.config.ts` tiene la configuración de alias
-
-**3. Tema no persiste**
-```
-El tema vuelve al default al recargar
-```
-**Solución**: Verificar que el script inline en `Layout.astro` se ejecuta
-
-## 📚 Referencias
-
-### Astro
-- [Documentación oficial](https://docs.astro.build)
-- [Guía de componentes](https://docs.astro.build/en/core-concepts/astro-components/)
-- [Routing](https://docs.astro.build/en/core-concepts/routing/)
-
-### Clean Architecture
-- [The Clean Architecture - Robert C. Martin](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
-- [Clean Architecture Principles](https://khalilstemmler.com/articles/software-design-architecture/organizing-app-logic/)
-
-### Testing
-- [Vitest Documentation](https://vitest.dev/)
-- [Testing Best Practices](https://github.com/goldbergyoni/javascript-testing-best-practices)
-
-## 🤝 Contribuir
-
-### Workflow
-
-1. Crear rama desde `develop`: `git checkout -b feat/nueva-funcionalidad`
-2. Desarrollar siguiendo las normas de este documento
-3. Escribir tests (mínimo 80% cobertura)
-4. Ejecutar `npm run build` para verificar
-5. Commit siguiendo convenciones
-6. Push y crear Pull Request a `develop`
-
-### Checklist antes de PR
-
-- [ ] Tests pasan (`npm test`)
-- [ ] Cobertura >= 80% (`npm run test:coverage`)
-- [ ] Build exitoso (`npm run build`)
-- [ ] Sin errores de TypeScript (`npm run astro check`)
-- [ ] Documentación actualizada si aplica
-- [ ] Accesibilidad verificada
-- [ ] Responsive en móvil, tablet y desktop
-
-## 📄 Licencia
-
-Este proyecto es de código abierto bajo licencia MIT.
+- `app/vitest.config.ts` currently sets coverage thresholds to 80%; the team policy for new code requires 90% module-level coverage. Consider increasing global thresholds in CI or enforcing module-level checks in PRs.
+- Playwright `webServer.command` uses `npm run dev` while `app/package.json` scripts assume `pnpm`. Align the command with the preferred package manager (recommend `pnpm run dev`).
 
 ---
 
-**Versión**: 1.0.0  
-**Última actualización**: Diciembre 2025  
-**Mantenedor**: Sebastián
+## 14. .gitignore — excluded folders and rationale
+
+This project intentionally excludes several generated folders and files from version control. Below is a list of commonly ignored entries and the reason each is excluded. When updating `.gitignore`, keep this documentation in sync.
+
+- `dist/` and `app/dist/` — Production build outputs. These are generated artifacts and should not be committed.
+- `.astro/` — Astro-generated intermediate files during development/build.
+- `node_modules/` — Installed dependencies. Reproducible via `pnpm install`.
+- `playwright-report/` and `app/playwright-report/` — Playwright E2E reports/traces. These are artifacts from test runs and can be large; store them in CI artifacts when needed.
+- `test-results/` and `app/test-results/` — Generic test runners or CI test result outputs. Kept out of the repo to avoid noise.
+- `coverage/` — Test coverage reports. Generated locally or in CI; publish via coverage artifacts if required.
+- `.cache/` and `app/.cache/` — Build or tooling caches (Vite, Astro, other). Do not commit caches.
+- `.vite/` — Vite cache directory.
+- `.pnpm-store/` (if present) — pnpm store files: not tracked.
+- `.env`, `.env*.local` — Environment variables with secrets or local overrides.
+- `*.tsbuildinfo` — TypeScript incremental build files.
+- `.vscode/`, `.idea/` — IDE-specific settings. Developers should keep personal editor configs local or add recommended settings to workspace settings instead of committing user-specific files.
+- `.DS_Store`, `Thumbs.db` — OS file metadata.
+
+If you need any of these files to be preserved for a specific CI step or release (for example, a reproducible artifact), store them in the CI artifacts (GitHub Actions, GitLab CI) or publish them to a release rather than committing them to the repository.
+
+If you want, I can now:
+1) create a branch and commit this `AGENTS.md`,
+2) update `app/vitest.config.ts` thresholds to raise global coverage, or
+3) update Playwright `webServer.command` to `pnpm run dev`.
+
+Which action should I take next?

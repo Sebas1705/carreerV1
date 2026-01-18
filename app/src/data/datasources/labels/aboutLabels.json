@@ -9,7 +9,17 @@
         "nl": "Over Mij",
         "pl": "O Mnie",
         "ru": "Обо Мне",
-        "ja": "自己紹介"
+        "ja": "自己紹介",
+        "zh": "关于我",
+        "ar": "عني",
+        "sv": "Om Mig",
+        "no": "Om Meg",
+        "fi": "Tietoa Minusta",
+        "ko": "소개",
+        "tr": "Hakkımda",
+        "cs": "O Mně",
+        "hu": "Rólam",
+        "el": "Σχετικά με Εμένα"
     },
     "subtitle": {
         "es": "¿Quién soy?",
@@ -21,7 +31,17 @@
         "nl": "Wie ben ik?",
         "pl": "Kim jestem?",
         "ru": "Кто я?",
-        "ja": "私は誰ですか？"
+        "ja": "私は誰ですか？",
+        "zh": "我是谁？",
+        "ar": "من أنا؟",
+        "sv": "Vem är jag?",
+        "no": "Hvem er jeg?",
+        "fi": "Kuka minä olen?",
+        "ko": "나는 누구인가?",
+        "tr": "Ben kimim?",
+        "cs": "Kdo jsem?",
+        "hu": "Ki vagyok én?",
+        "el": "Ποιος είμαι;"
     },
     "greeting": {
         "es": "Hola, soy",
@@ -33,6 +53,16 @@
         "nl": "Hoi, ik ben",
         "pl": "Cześć, jestem",
         "ru": "Привет, я",
-        "ja": "こんにちは、私は"
+        "ja": "こんにちは、私は",
+        "zh": "嗨，我是",
+        "ar": "مرحبًا، أنا",
+        "sv": "Hej, jag är",
+        "no": "Hei, jeg er",
+        "fi": "Hei, olen",
+        "ko": "안녕하세요, 저는",
+        "tr": "Merhaba, ben",
+        "cs": "Ahoj, jsem",
+        "hu": "Szia, én vagyok",
+        "el": "Γεια, είμαι"
     }
 }

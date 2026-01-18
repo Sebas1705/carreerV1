@@ -9,7 +9,17 @@
         "nl": "Onderwijs",
         "pl": "Edukacja",
         "ru": "Образование",
-        "ja": "学歴"
+        "ja": "学歴",
+        "zh": "教育",
+        "ar": "التعليم",
+        "sv": "Utbildning",
+        "no": "Utdanning",
+        "fi": "Koulutus",
+        "ko": "학력",
+        "tr": "Eğitim",
+        "cs": "Vzdělání",
+        "hu": "Oktatás",
+        "el": "Εκπαίδευση"
     },
     "subtitle": {
         "es": "Mi formación académica",
@@ -21,7 +31,17 @@
         "nl": "Mijn academische achtergrond",
         "pl": "Moje wykształcenie",
         "ru": "Моя академическая подготовка",
-        "ja": "学歴背景"
+        "ja": "学歴背景",
+        "zh": "我的学术背景",
+        "ar": "خلفيتي الأكاديمية",
+        "sv": "Min akademiska bakgrund",
+        "no": "Min akademiske bakgrunn",
+        "fi": "Akateminen taustani",
+        "ko": "나의 학력 배경",
+        "tr": "Akademik geçmişim",
+        "cs": "Moje akademické zázemí",
+        "hu": "Szakmai hátterem",
+        "el": "Το ακαδημαϊκό μου υπόβαθρο"
     },
     "projects": {
         "es": "Proyectos Académicos",
@@ -33,7 +53,17 @@
         "nl": "Academische Projecten",
         "pl": "Projekty Akademickie",
         "ru": "Академические Проекты",
-        "ja": "アカデミックプロジェクト"
+        "ja": "アカデミックプロジェクト",
+        "zh": "学术项目",
+        "ar": "مشاريع أكاديمية",
+        "sv": "Akademiska projekt",
+        "no": "Akademiske prosjekter",
+        "fi": "Akatemiset projektit",
+        "ko": "학술 프로젝트",
+        "tr": "Akademik projeler",
+        "cs": "Akademické projekty",
+        "hu": "Akadémiai projektek",
+        "el": "Ακαδημαϊκά έργα"
     },
     "achievements": {
         "es": "Logros Destacados",
@@ -45,6 +75,16 @@
         "nl": "Belangrijke Prestaties",
         "pl": "Kluczowe Osiągnięcia",
         "ru": "Ключевые Достижения",
-        "ja": "主な実績"
+        "ja": "主な実績",
+        "zh": "Principales logros",
+        "ar": "الإنجازات الرئيسية",
+        "sv": "Viktiga prestationer",
+        "no": "Nøkkelprestasjoner",
+        "fi": "Keskeiset saavutukset",
+        "ko": "주요 성과",
+        "tr": "Öne çıkan başarılar",
+        "cs": "Hlavní úspěchy",
+        "hu": "Kiemelkedő eredmények",
+        "el": "Κύρια επιτεύγματα"
     }
 }

@@ -9,7 +9,17 @@
         "nl": "Soft Skills",
         "pl": "Umiejętności Miękkie",
         "ru": "Мягкие Навыки",
-        "ja": "ソフトスキル"
+        "ja": "ソフトスキル",
+        "zh": "软技能",
+        "ar": "المهارات الناعمة",
+        "sv": "Mjukvaror?",
+        "no": "Myke ferdigheter",
+        "fi": "Pehmeät taidot",
+        "ko": "소프트 스킬",
+        "tr": "Yumuşak Beceriler",
+        "cs": "Měkké dovednosti",
+        "hu": "Személyes készségek",
+        "el": "Μαλακές δεξιότητες"
     },
     "subtitle": {
         "es": "Cualidades personales y profesionales",
@@ -21,6 +31,16 @@
         "nl": "Persoonlijke en professionele kwaliteiten",
         "pl": "Cechy osobiste i zawodowe",
         "ru": "Личные и профессиональные качества",
-        "ja": "個人的および専門的な資質"
+        "ja": "個人的および専門的な資質",
+        "zh": "个人和专业素质",
+        "ar": "الصفات الشخصية والمهنية",
+        "sv": "Personliga och professionella egenskaper",
+        "no": "Personlige og profesjonelle kvaliteter",
+        "fi": "Henkilökohtaiset ja ammatilliset ominaisuudet",
+        "ko": "개인적 및 전문적 자질",
+        "tr": "Kişisel ve profesyonel nitelikler",
+        "cs": "Osobní a profesní kvality",
+        "hu": "Személyes és szakmai tulajdonságok",
+        "el": "Προσωπικά και επαγγελματικά χαρακτηριστικά"
     }
 }

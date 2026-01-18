@@ -5,7 +5,7 @@
 
 
 :root, :root * { box-sizing: border-box; }
-html, body { overflow-x: hidden; }
+html, body { overflow-x: hidden; font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Segoe UI Mono", "Courier New", monospace; }
 
 :root {
     /* Color palette - Light mode */
@@ -59,6 +59,22 @@ html, body { overflow-x: hidden; }
     --breakpoint-xs: 480px;
 }
 
+@font-face {
+    font-family: "JetBrains Mono";
+    src: url("/fonts/JetBrainsMono[wght].woff2") format("woff2");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "JetBrains Mono Italic";
+    src: url("/fonts/JetBrainsMono-Italic[wght].woff2") format("woff2");
+    font-weight: 100 900;
+    font-style: italic;
+    font-display: swap;
+}
+
 
 .responsive-header-h { @apply h-6 xs:h-8 sm:h-10 md:h-12 }
 .sr-only { @apply absolute w-1 h-1 p-0 -m-px overflow-hidden whitespace-nowrap border-0 }
@@ -84,3 +100,21 @@ html, body { overflow-x: hidden; }
 
 .lang-code { @apply min-w-8 font-bold text-accent-v text-lg;}
 .lang-name { @apply flex-1 text-bg-inverse-alt-v text-lg;}
+
+/* Justified text with reduced large gaps */
+.justified-tight {
+    text-align: justify;
+    /* Prefer inter-word justification (browsers choose best strategy) */
+    text-justify: inter-word;
+    /* Allow hyphenation to avoid large word gaps */
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+    /* Slightly tighten word spacing to reduce visual gaps (tweak if needed) */
+    word-spacing: -0.02em;
+    /* For the last line control: keep it left-aligned to avoid stretching the last line */
+    text-align-last: left;
+}
+
+/* Utility variant: apply when using prose-like containers */
+.prose .justified-tight { word-break: normal; }

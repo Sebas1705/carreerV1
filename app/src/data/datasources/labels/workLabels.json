@@ -9,7 +9,17 @@
         "nl": "Werkervaring",
         "pl": "Doświadczenie Zawodowe",
         "ru": "Опыт Работы",
-        "ja": "職務経歴"
+        "ja": "職務経歴",
+        "zh": "工作经验",
+        "ar": "الخبرة العملية",
+        "sv": "Arbetslivserfarenhet",
+        "no": "Arbeidserfaring",
+        "fi": "Työkokemus",
+        "ko": "직무 경력",
+        "tr": "İş Deneyimi",
+        "cs": "Pracovní zkušenosti",
+        "hu": "Szakmai tapasztalat",
+        "el": "Επαγγελματική εμπειρία"
     },
     "subtitle": {
         "es": "Mi trayectoria profesional",
@@ -21,7 +31,17 @@
         "nl": "Mijn professionele reis",
         "pl": "Moja profesjonalna podróż",
         "ru": "Моя профессиональная карьера",
-        "ja": "プロフェッショナルなキャリア"
+        "ja": "プロフェッショナルなキャリア",
+        "zh": "我的职业生涯",
+        "ar": "مسيرتي المهنية",
+        "sv": "Min professionella resa",
+        "no": "Min profesjonelle reise",
+        "fi": "Ammatillinen matkani",
+        "ko": "나의 직업 여정",
+        "tr": "Profesyonel yolculuğum",
+        "cs": "Má profesní cesta",
+        "hu": "Szakmai pályafutásom",
+        "el": "Η επαγγελματική μου πορεία"
     },
     "projects": {
         "es": "Proyectos Relacionados",
@@ -33,7 +53,17 @@
         "nl": "Gerelateerde Projecten",
         "pl": "Powiązane Projekty",
         "ru": "Связанные Проекты",
-        "ja": "関連プロジェクト"
+        "ja": "関連プロジェクト",
+        "zh": "相关项目",
+        "ar": "مشاريع ذات صلة",
+        "sv": "Relaterade projekt",
+        "no": "Relaterte prosjekter",
+        "fi": "Aiheeseen liittyvät projektit",
+        "ko": "관련 프로젝트",
+        "tr": "İlgili projeler",
+        "cs": "Související projekty",
+        "hu": "Kapcsolódó projektek",
+        "el": "Σχετικά έργα"
     },
     "achievements": {
         "es": "Logros Destacados",
@@ -45,6 +75,16 @@
         "nl": "Belangrijke Prestaties",
         "pl": "Kluczowe Osiągnięcia",
         "ru": "Ключевые Достижения",
-        "ja": "主な実績"
+        "ja": "主な実績",
+        "zh": "主要成就",
+        "ar": "الإنجازات الرئيسية",
+        "sv": "Viktiga prestationer",
+        "no": "Nøkkelprestasjoner",
+        "fi": "Keskeiset saavutukset",
+        "ko": "주요 성과",
+        "tr": "Öne çıkan başarılar",
+        "cs": "Hlavní úspěchy",
+        "hu": "Kiemelkedő eredmények",
+        "el": "Κύρια επιτεύγματα"
     }
 }

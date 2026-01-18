@@ -17,32 +17,17 @@ const softSkills = await new GetSoftSkillsUseCase(new InMemorySoftSkillRepositor
 ---
 
 <Section id="soft-skills" background='notebook' title={translate(softSkillsLabels.title, lang)} subtitle={translate(softSkillsLabels.subtitle, lang)}>
-    <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 px-5 md:px-10 lg:px-15
-            md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-10 ">
+    <div class="grid gap-6 px-5 md:px-10 lg:px-15 mt-10
+    grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4">
         {softSkills.map((skill) => (
-            <div class={`soft-skill-card fade-in bg-bg-surface-alt-v border-3 border-primary-v rounded-2xl p-6 text-center transition-transform duration-200 hover:-translate-y-1 hover:shadow-lg flex flex-col gap-4`} title={translate(skill.name, lang)}>
-                <div class="text-5xl text-accent-v">~{skill.icon}~</div>
-                <h3 class="text-3xl font-bold text-secondary-v">{translate(skill.name, lang)}</h3>
-                <p class="text-lg text-bg-inverse-v leading-relaxed">{translate(skill.description, lang)}</p>
+            <div class="fade-in bg-bg-surface-alt-v border-3 border-primary-v rounded-2xl p-4 text-center transition-transform duration-200 hover:-translate-y-1 hover:shadow-lg flex flex-col gap-4" title={translate(skill.name, lang)}>
+                <div class="text-lg sm:text-xl md:text-3xl lg:text-5xl pt-4
+                text-accent-v">~{skill.icon}~</div>
+                <h3 class="text-lg sm:text-xl md:text-2xl lg:text-3xl
+                font-bold text-secondary-v pt-4">{translate(skill.name, lang)}</h3>
+                <p class="text-md sm:text-lg md:text-xl lg:text-2xl
+                text-bg-inverse-v p-2 pt-4">{translate(skill.description, lang)}</p>
             </div>
         ))}
     </div>
 </Section>
-
-<style>
-    /* Minimal CSS: animation for staggered entrance */
-    @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-    .fade-in { animation: fadeInUp 0.5s ease forwards; opacity: 0; }
-    .soft-skill-card:nth-child(1) { animation-delay: 0.08s; }
-    .soft-skill-card:nth-child(2) { animation-delay: 0.12s; }
-    .soft-skill-card:nth-child(3) { animation-delay: 0.16s; }
-    .soft-skill-card:nth-child(4) { animation-delay: 0.20s; }
-    .soft-skill-card:nth-child(5) { animation-delay: 0.24s; }
-    .soft-skill-card:nth-child(6) { animation-delay: 0.28s; }
-    .soft-skill-card:nth-child(7) { animation-delay: 0.32s; }
-    .soft-skill-card:nth-child(8) { animation-delay: 0.36s; }
-    .soft-skill-card:nth-child(9) { animation-delay: 0.40s; }
-    .soft-skill-card:nth-child(10) { animation-delay: 0.44s; }
-    .soft-skill-card:nth-child(11) { animation-delay: 0.48s; }
-    .soft-skill-card:nth-child(12) { animation-delay: 0.52s; }
-</style>

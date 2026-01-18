@@ -1,5 +1,12 @@
-export type Language = 'es' | 'en' | 'fr' | 'de' | 'it' | 'pt' | 'nl' | 'pl' | 'ru' | 'ja';
-export const supportedLanguages: Language[] = ['es', 'en', 'fr', 'de', 'it', 'pt', 'nl', 'pl', 'ru', 'ja'];
+export type Language =
+    | 'es' | 'en' | 'fr' | 'de' | 'it' | 'pt' | 'nl' | 'pl' | 'ru' | 'ja'
+    | 'zh' | 'ar' | 'sv' | 'no' | 'fi' | 'ko' | 'tr' | 'cs' | 'hu' | 'el';
+
+export const supportedLanguages: Language[] = [
+    'es', 'en', 'fr', 'de', 'it', 'pt', 'nl', 'pl', 'ru', 'ja',
+    'zh', 'ar', 'sv', 'no', 'fi', 'ko', 'tr', 'cs', 'hu', 'el',
+];
+
 export const languageNames: { [key in Language]: string } = {
     es: 'Español',
     en: 'English',
@@ -11,6 +18,16 @@ export const languageNames: { [key in Language]: string } = {
     pl: 'Polski',
     ru: 'Русский',
     ja: '日本語',
+    zh: '中文',
+    ar: 'العربية',
+    sv: 'Svenska',
+    no: 'Norsk',
+    fi: 'Suomi',
+    ko: '한국어',
+    tr: 'Türkçe',
+    cs: 'Čeština',
+    hu: 'Magyar',
+    el: 'Ελληνικά',
 };
 
 // Translation object with language codes as keys and translated strings as values
@@ -20,5 +37,7 @@ export type Translations = {
 
 export function translate(translations: Translations, lang: Language): string {
     if (translations[lang]) return translations[lang];
-    return 'String not found';
+    if (translations['en']) return translations['en'];
+    const first = Object.values(translations).find(Boolean);
+    return first ?? 'String not found';
 };

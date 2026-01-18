@@ -1,204 +1,120 @@
-# 🌟 Portfolio Personal
+# 🌟 Personal Portfolio
 
-Portfolio web profesional construido con **Astro** y **Clean Architecture**, diseñado para mostrar experiencia laboral, formación académica y proyectos de manera moderna y responsiva.
+Professional web portfolio built with **Astro** and **Clean Architecture**, designed to showcase work experience, academic background and projects in a modern, responsive way.
 
-## ✨ Características
+## ✨ Features
 
-- 🏗️ **Clean Architecture**: Código organizado en capas (Domain, Application, Infrastructure, Presentation)
-- 🎨 **Diseño Moderno**: Interfaz responsiva y atractiva con animaciones suaves
-- 🌓 **Tema Claro/Oscuro**: Cambio de tema con persistencia en localStorage
-- 🌍 **Multiidioma**: Soporte para Español e Inglés
-- ⚡ **Alto Rendimiento**: Optimizado para carga rápida con Astro
-- ♿ **Accesible**: Cumple con estándares WCAG
-- 🧪 **Bien Testeado**: >80% de cobertura de tests
+- 🏗️ **Clean Architecture**: Code organized in layers (Domain, Application, Infrastructure, Presentation)
+- 🎨 **Modern Design**: Responsive and attractive UI with smooth animations
 
-## 🚀 Inicio Rápido
+# 🌟 Personal Portfolio
 
-### Prerrequisitos
+Professional web portfolio built with **Astro** and **Clean Architecture**. This repository contains the frontend Astro workspace in the `app/` folder and additional documentation.
 
-- Node.js 18+ (recomendado 18–22)
-- pnpm (recomendado) o npm
+## ✨ Key Features
 
-### Instalación y arranque
+- Clean Architecture (Domain, Use Cases, Infrastructure, Presentation)
+- Responsive modern UI with light/dark theme
+- Multilingual (Spanish & English)
+- Optimized for performance with Astro
+- Accessibility-minded (WCAG)
+- Automated tests (Vitest + Playwright)
+
+## 🚀 Quick Start
+
+Prerequisites:
+
+- Node.js 18+
+- pnpm (recommended) or npm
+
+Install and run (frontend workspace):
 
 ```bash
-# Clonar el repositorio
 git clone https://github.com/Sebas1705/my-portfolio.git
-
-# Ir al workspace del frontend (carpeta app)
 cd my-portfolio/app
-
-# Instalar dependencias (pnpm recomendado)
 pnpm install
-
-# Iniciar servidor de desarrollo
 pnpm run dev
 ```
 
-El sitio estará disponible en `http://localhost:4321` (o el puerto que indique Astro).
+The development server typically runs at `http://localhost:4321`.
 
-## 📜 Scripts Disponibles
+## 📜 Relevant Scripts (from `app/package.json`)
+
+Use the commands from the `app` folder. Examples:
 
 ```bash
-pnpm run dev             # Inicia servidor de desarrollo
-pnpm run build           # Genera build de producción
-pnpm run preview         # Previsualiza el build
-pnpm test                # Ejecuta tests unitarios (Vitest)
-pnpm run test:watch      # Tests en modo watch (Vitest)
-pnpm run test:coverage   # Genera reporte de cobertura (Vitest v8)
-pnpm run test:e2e        # Ejecuta tests E2E (Playwright)
+pnpm run dev           # starts dev server (astro dev)
+pnpm run build         # runs astro check && astro build
+pnpm run preview       # preview the production build
+pnpm test              # run unit tests (vitest)
+pnpm run test:watch    # vitest in watch mode
+pnpm run test:coverage # runs vitest with coverage
+pnpm run test:e2e      # runs Playwright E2E tests
 ```
 
-## 🏗️ Estructura del Proyecto
+## 📁 Project Layout
 
 ```
 my-portfolio/
-├── app/                    # Código del sitio (Astro workspace)
-│   ├── src/
-│   │   ├── core/           # Utilidades y helpers (date, linkify, constants)
-│   │   ├── data/           # Datasources y repositorios (InMemory)
-│   │   ├── domain/         # Modelos y casos de uso
-│   │   └── presentation/   # Componentes, layouts y páginas (.astro)
-│   ├── tests/              # Tests E2E (Playwright)
-│   └── package.json        # Scripts y dependencias del frontend
-├── public/                 # Assets estáticos (imágenes, etc.)
-├── docs/                   # Documentación adicional
-├── AGENTS.md               # Normas y arquitectura (detallado)
-└── README.md               # Este archivo
+├── app/         # Astro frontend workspace (source code, tests, package.json)
+├── public/      # Static assets
+├── docs/        # Additional docs
+├── AGENTS.md    # Architecture and development guidelines
+└── README.md    # This file (updated)
 ```
 
-## 📚 Documentación
+## 🛠️ Customize
 
-- **[AGENTS.md](./AGENTS.md)**: Guía completa de arquitectura y normas de desarrollo
-- **[docs/](./docs/)**: Documentación técnica detallada
-
-## 🎨 Personalización
-
-### Datos Personales
-
-Edita los archivos en `src/infrastructure/data/`:
-
-- `personalInfoData.ts`: Información personal
-- `workExperiencesData.ts`: Experiencia laboral
-- `academicExperiencesData.ts`: Formación académica
-- `projectsData.ts`: Proyectos
-
-### Traducciones
-
-Edita los archivos en `src/infrastructure/i18n/`:
-
-- `es.ts`: Traducciones en español
-- `en.ts`: Traducciones en inglés
-
-### Temas y Estilos
-
-Modifica las variables CSS en `src/presentation/styles/global.css`
+- Edit personal data in `app/src/infrastructure/data/`
+- Update translations in `app/src/infrastructure/i18n/`
+- Modify theme tokens in `app/src/presentation/styles/global.css`
 
 ## 🧪 Testing
 
-El proyecto incluye tests unitarios con Vitest:
+Run tests from the `app` folder:
 
 ```bash
-# Ejecutar todos los tests
-npm test
-
-# Tests con cobertura
-npm run test:coverage
-
-# Tests en modo watch
-npm run test:watch
+pnpm test
+pnpm run test:coverage
+pnpm run test:watch
 ```
 
-### Cobertura actual (ejecución local)
+Coverage exclusions (configured in `vitest.config.ts`) avoid counting pure data or model-only files that skew results.
 
-- ✅ Statements: 100%
-- ✅ Functions: 100%
-- ✅ Lines: 100%
-- ⚖️ Branches: 91.66%
+## 🚢 Deployment
 
-Nota: Para evitar que archivos de solo datos (JSON/datasources) y tipos puro aparezcan con 0% y contaminen el reporte, `vitest.config.ts` incluye exclusiones para `src/data/datasources/**` y `src/domain/models/**`. Ajusta estas exclusiones en `vitest.config.ts` si quieres incluirlos explícitamente en la cobertura.
-
-## 🚢 Deploy
-
-### Build de Producción
+Build:
 
 ```bash
-npm run build
+pnpm run build
 ```
 
-Los archivos generados estarán en la carpeta `dist/`
+The output is in `app/dist/` (or `dist/` depending on Astro config). Deploy to GitHub Pages, Vercel or Netlify by connecting the repo and following each provider's instructions.
 
-### Deploy en GitHub Pages
+## 🧾 Technologies
 
-1. Configura el repositorio en GitHub
-2. Actualiza `site` en `astro.config.mjs`
-3. Ejecuta el build
-4. Sube la carpeta `dist/` a GitHub Pages
+- Astro
+- TypeScript
+- Vitest
+- Playwright
+- Tailwind CSS (styles)
 
-### Deploy en Vercel/Netlify
+## 🤝 Contributing
 
-Conecta el repositorio y estos servicios detectarán automáticamente la configuración de Astro.
+1. Fork and create a branch
+2. Implement changes and tests
+3. Run `pnpm test` and ensure coverage
+4. Open a pull request
 
-## 🛠️ Tecnologías
+## 📄 License
 
-- **[Astro](https://astro.build)**: Framework principal
-- **[TypeScript](https://www.typescriptlang.org/)**: Tipado estático
-- **[Vitest](https://vitest.dev/)**: Testing
-- **CSS Variables**: Theming system
-- **Clean Architecture**: Patrón arquitectónico
+MIT
 
-## 📝 Convenciones de Código
+## 👤 Author
 
-### Commits
-
-Seguimos [Conventional Commits](https://www.conventionalcommits.org/):
-
-```
-feat(scope): descripción corta
-fix(scope): descripción del fix
-docs: actualización de documentación
-```
-
-### Naming
-
-- Componentes: `PascalCase.astro`
-- Funciones: `camelCase`
-- Constantes: `UPPER_SNAKE_CASE`
-- Archivos de test: `*.test.ts`
-
-## 🤝 Contribuir
-
-Las contribuciones son bienvenidas. Por favor:
-
-1. Fork el proyecto
-2. Crea tu rama (`git checkout -b feat/amazing-feature`)
-3. Commit tus cambios siguiendo las convenciones
-4. Push a la rama (`git push origin feat/amazing-feature`)
-5. Abre un Pull Request
-
-Asegúrate de que:
-- ✅ Los tests pasan
-- ✅ La cobertura se mantiene >80%
-- ✅ El código sigue las normas de `AGENTS.md`
-
-## 📄 Licencia
-
-Este proyecto está bajo la Licencia MIT. Ver el archivo [LICENSE](./LICENSE) para más detalles.
-
-
-## 👤 Autor
-
-**Sebastián Ramiro Entrerrios García**
-
-- GitHub: [@Sebas1705](https://github.com/Sebas1705)
-- Email: sebssgarcia502580@gmail.com
-
-## 🙏 Agradecimientos
-
-- Astro team por el excelente framework
-- Comunidad open source por las inspiraciones
-- Clean Architecture principles por Uncle Bob
+Sebastián Ramiro Entrerrios García — https://github.com/Sebas1705
 
 ---
 
-⭐ Si este proyecto te resultó útil, considera darle una estrella en GitHub!
+If you want, I can also create a git branch and commit this change. Which do you prefer?
+Note: To avoid data-only files (JSON/datasources) and pure type files showing 0% and skewing the report, `vitest.config.ts` includes exclusions for `src/data/datasources/**` and `src/domain/models/**`. Adjust these exclusions in `vitest.config.ts` if you want to include them explicitly in coverage.

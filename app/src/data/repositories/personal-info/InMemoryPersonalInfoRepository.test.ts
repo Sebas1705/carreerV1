@@ -46,7 +46,7 @@ describe('InMemoryPersonalInfoRepository', () => {
             const result1 = await repository.get();
             const originalEmail = result1.email;
 
-            (result1 as any).email = 'modified@test.com';
+            ((result1 as unknown) as { email: string }).email = 'modified@test.com';
 
             const result2 = await repository.get();
 

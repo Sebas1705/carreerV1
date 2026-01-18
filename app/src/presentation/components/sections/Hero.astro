@@ -17,11 +17,11 @@ import BlueprintGridBackground from '@/presentation/backgrounds/BlueprintGridBac
 const aboutLabels = await new GetAboutLabelsUseCase(new InMemoryAboutLabelsRepository()).execute();
 ---
 
-<Section id="home" class="mt-2 min-h-screen flex" background='isometric'>
+<Section id="home" class="mt-2 max-h-screen flex" background='isometric'>
 
     <div class="w-full flex items-center justify-center px-5 md:px-10 lg:px-15 sm:px-6">
         <!-- Card: split image + content so image stacks above text on small screens -->
-        <div class="relative z-10 w-full max-w-full md:max-w-5xl rounded-2xl 
+        <div class="relative z-10 w-full rounded-2xl 
         overflow-hidden shadow-2xl border-4 border-primary-v grid grid-cols-1 md:grid-cols-2">
             <!-- Image pane: on small screens it's on top; on md+ it's left -->
             <div class="order-1 relative min-h-50 md:h-auto">
@@ -34,31 +34,35 @@ const aboutLabels = await new GetAboutLabelsUseCase(new InMemoryAboutLabelsRepos
             <div class="order-2 p-6 md:p-12 flex items-center">
                     <div class="w-full text-center md:text-right">
                     <BlueprintGridBackground/>
-                    <span class="inline-block rounded-full px-3 py-1 bg-linear-to-bl from-secondary-v to-primary-v
-                    text-lg text-white font-semibold">{translate(aboutLabels.greeting, lang)}</span>
+                    <span class="inline-block rounded-full text-white font-semibold 
+                    px-3 md:px-4 lg:px-6 xl:px-8
+                    py-1 md:py-2 lg:py-3 xl:py-4 
+                    text-lg md:text-xl lg:text-2xl xl:text-4xl 
+                    bg-linear-to-bl from-secondary-v to-primary-v">{translate(aboutLabels.greeting, lang)}</span>
 
                     <h2 class="mt-4 font-medium text-primary-v leading-tight">
-                        <span class="block text-2xl xs:text-3xl sm:hidden">{personalInfo.name_short}</span>
-                        <span class="hidden sm:block lg:hidden text-4xl">{personalInfo.name_medium}</span>
-                        <span class="hidden lg:block text-5xl">{personalInfo.name_long}</span>
+                        <span class="block xs:hidden text-4xl">{personalInfo.name_short}</span>
+                        <span class="xs:block hidden md:hidden text-4xl">{personalInfo.name_medium}</span>
+                        <span class="md:block hidden text-5xl">{personalInfo.name_long}</span>
                     </h2>
                     
-                    <p class="my-4 text-xl text-accent-v font-medium">{translate(personalInfo.title, lang)}</p>
+                    <p class="my-4 md:my-6 text-2xl sm:text-3xl lg:text-4xl 
+                    text-accent-v font-medium">{translate(personalInfo.title, lang)}</p>
 
-                    <p class="mt-4 text-bg-inverse-alt-v text-justify font-medium max-w-lg mx-auto md:ml-auto md:text-right">{translate(personalInfo.bio, lang)}</p>
+                    <p class="mt-4 md:mt-8 text-bg-inverse-alt-v text-xl sm:text-2xl lg:text-3xl
+                    font-medium max-w-lg ml-5 md:ml-auto mr-5 md:mr-0 text-justify md:text-right">{translate(personalInfo.bio, lang)}</p>
 
                     <div class="mt-6 flex justify-end gap-3">
                         <div class="mt-6 flex justify-center md:justify-end gap-3">
-                            <a href="#about" class="inline-flex items-center gap-2 bg-primary-v text-white px-4 py-2 rounded-md font-medium shadow">{translate(aboutLabels.title, lang)}</a>
+                            <a href="#about" class="inline-flex items-center gap-2 bg-primary-v 
+                            text-lg sm:text-xl lg:text-3xl text-white 
+                            px-4 sm:px-6 lg:px-8 
+                            py-2 sm:py-3 lg:py-4 
+                            rounded-md font-medium shadow">{translate(aboutLabels.title, lang)}</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
 </Section>
-
-<style>
-    
-</style>

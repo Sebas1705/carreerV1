@@ -9,7 +9,17 @@
         "nl": "Terug",
         "pl": "Wstecz",
         "ru": "Назад",
-        "ja": "戻る"
+        "ja": "戻る",
+        "zh": "返回",
+        "ar": "رجوع",
+        "sv": "Tillbaka",
+        "no": "Tilbake",
+        "fi": "Takaisin",
+        "ko": "뒤로",
+        "tr": "Geri",
+        "cs": "Zpět",
+        "hu": "Vissza",
+        "el": "Πίσω"
     },
     "noData": {
         "es": "Sin datos disponibles",
@@ -21,7 +31,17 @@
         "nl": "Geen gegevens beschikbaar",
         "pl": "Brak dostępnych danych",
         "ru": "Нет доступных данных",
-        "ja": "利用可能なデータがありません"
+        "ja": "利用可能なデータがありません",
+        "zh": "没有可用数据",
+        "ar": "لا توجد بيانات متاحة",
+        "sv": "Ingen data tillgänglig",
+        "no": "Ingen data tilgjengelig",
+        "fi": "Ei saatavilla olevia tietoja",
+        "ko": "사용 가능한 데이터가 없습니다",
+        "tr": "Kullanılabilir veri yok",
+        "cs": "Žádná dostupná data",
+        "hu": "Nincsenek elérhető adatok",
+        "el": "Δεν υπάρχουν διαθέσιμα δεδομένα"
     },
     "viewMore": {
         "es": "Ver Más",
@@ -33,7 +53,17 @@
         "nl": "Meer Weergeven",
         "pl": "Pokaż Więcej",
         "ru": "Посмотреть Больше",
-        "ja": "さらに表示"
+        "ja": "さらに表示",
+        "zh": "查看更多",
+        "ar": "عرض المزيد",
+        "sv": "Visa mer",
+        "no": "Vis mer",
+        "fi": "Näytä lisää",
+        "ko": "더보기",
+        "tr": "Daha fazla",
+        "cs": "Zobrazit více",
+        "hu": "Tovább",
+        "el": "Δείτε περισσότερα"
     },
     "current": {
         "es": "Actualidad",
@@ -45,7 +75,17 @@
         "nl": "Heden",
         "pl": "Obecnie",
         "ru": "Настоящее Время",
-        "ja": "現在"
+        "ja": "現在",
+        "zh": "当前",
+        "ar": "الحاضر",
+        "sv": "Nuvarande",
+        "no": "Nåværende",
+        "fi": "Nykyinen",
+        "ko": "현재",
+        "tr": "Şu An",
+        "cs": "Aktuální",
+        "hu": "Jelen",
+        "el": "Παρόν"
     },
     "code": {
         "es": "Código",
@@ -57,7 +97,17 @@
         "nl": "Code",
         "pl": "Kod",
         "ru": "Код",
-        "ja": "コード"
+        "ja": "コード",
+        "zh": "代码",
+        "ar": "رمز",
+        "sv": "Kod",
+        "no": "Kode",
+        "fi": "Koodi",
+        "ko": "코드",
+        "tr": "Kod",
+        "cs": "Kód",
+        "hu": "Kód",
+        "el": "Κώδικας"
     },
     "demo": {
         "es": "Demo",
@@ -69,6 +119,16 @@
         "nl": "Demo",
         "pl": "Demo",
         "ru": "Демо",
-        "ja": "デモ"
+        "ja": "デモ",
+        "zh": "演示",
+        "ar": "عرض تجريبي",
+        "sv": "Demo",
+        "no": "Demo",
+        "fi": "Demo",
+        "ko": "데모",
+        "tr": "Demo",
+        "cs": "Demo",
+        "hu": "Demó",
+        "el": "Επίδειξη"
     }
 }

@@ -9,7 +9,17 @@
         "nl": "Projecten",
         "pl": "Projekty",
         "ru": "Проекты",
-        "ja": "プロジェクト"
+        "ja": "プロジェクト",
+        "zh": "项目",
+        "ar": "المشاريع",
+        "sv": "Projekt",
+        "no": "Prosjekter",
+        "fi": "Projektit",
+        "ko": "프로젝트",
+        "tr": "Projeler",
+        "cs": "Projekty",
+        "hu": "Projektek",
+        "el": "Έργα"
     },
     "subtitle": {
         "es": "Trabajos destacados",
@@ -21,7 +31,17 @@
         "nl": "Uitgelicht werk",
         "pl": "Wyróżnione prace",
         "ru": "Избранные работы",
-        "ja": "注目の作品"
+        "ja": "注目の作品",
+        "zh": "精选作品",
+        "ar": "أعمال مميزة",
+        "sv": "Utvalda arbeten",
+        "no": "Fremhevet arbeid",
+        "fi": "Esillä olevat työt",
+        "ko": "주요 작업",
+        "tr": "Öne çıkan işler",
+        "cs": "Vybrané práce",
+        "hu": "Kiemelt munkák",
+        "el": "Επιλεγμένα έργα"
     },
     "viewDemo": {
         "es": "Ver Demo",
@@ -33,7 +53,17 @@
         "nl": "Demo Bekijken",
         "pl": "Zobacz Demo",
         "ru": "Посмотреть Демо",
-        "ja": "デモを見る"
+        "ja": "デモを見る",
+        "zh": "查看演示",
+        "ar": "عرض العرض التجريبي",
+        "sv": "Visa demo",
+        "no": "Se demo",
+        "fi": "Näytä demoesitys",
+        "ko": "데모 보기",
+        "tr": "Demoyu Gör",
+        "cs": "Zobrazit ukázku",
+        "hu": "Demó megtekintése",
+        "el": "Δείτε επίδειξη"
     },
     "viewCode": {
         "es": "Ver Código",
@@ -45,7 +75,17 @@
         "nl": "Code Bekijken",
         "pl": "Zobacz Kod",
         "ru": "Посмотреть Код",
-        "ja": "コードを見る"
+        "ja": "コードを見る",
+        "zh": "查看代码",
+        "ar": "عرض الشفرة",
+        "sv": "Visa kod",
+        "no": "Se kode",
+        "fi": "Näytä koodi",
+        "ko": "코드 보기",
+        "tr": "Kodu Gör",
+        "cs": "Zobrazit kód",
+        "hu": "Kód megtekintése",
+        "el": "Δείτε κώδικα"
     },
     "technologies": {
         "es": "Tecnologías Utilizadas",
@@ -57,7 +97,17 @@
         "nl": "Gebruikte Technologieën",
         "pl": "Użyte Technologie",
         "ru": "Используемые Технологии",
-        "ja": "使用技術"
+        "ja": "使用技術",
+        "zh": "使用的技术",
+        "ar": "التقنيات المستخدمة",
+        "sv": "Använda tekniker",
+        "no": "Brukte teknologier",
+        "fi": "Käytetyt teknologiat",
+        "ko": "사용된 기술",
+        "tr": "Kullanılan teknolojiler",
+        "cs": "Použité technologie",
+        "hu": "Használt technológiák",
+        "el": "Χρησιμοποιούμενες τεχνολογίες"
     },
     "personalProjects": {
         "es": "Proyectos Personales",
@@ -69,7 +119,17 @@
         "nl": "Persoonlijke Projecten",
         "pl": "Projekty Osobiste",
         "ru": "Личные Проекты",
-        "ja": "個人プロジェクト"
+        "ja": "個人プロジェクト",
+        "zh": "个人项目",
+        "ar": "مشاريع شخصية",
+        "sv": "Personliga projekt",
+        "no": "Personlige prosjekter",
+        "fi": "Henkilökohtaiset projektit",
+        "ko": "개인 프로젝트",
+        "tr": "Kişisel projeler",
+        "cs": "Soukromé projekty",
+        "hu": "Személyes projektek",
+        "el": "Προσωπικά έργα"
     },
     "workProjects": {
         "es": "Proyectos de Trabajo",
@@ -81,7 +141,17 @@
         "nl": "Werkprojecten",
         "pl": "Projekty Zawodowe",
         "ru": "Рабочие Проекты",
-        "ja": "仕事のプロジェクト"
+        "ja": "仕事のプロジェクト",
+        "zh": "工作项目",
+        "ar": "مشاريع العمل",
+        "sv": "Arbetsprojekt",
+        "no": "Arbeidsprosjekter",
+        "fi": "Työprojektit",
+        "ko": "업무 프로젝트",
+        "tr": "İş projeleri",
+        "cs": "Pracovní projekty",
+        "hu": "Munka projektek",
+        "el": "Εργασιακά έργα"
     },
     "academicProjects": {
         "es": "Proyectos Académicos",
@@ -93,7 +163,17 @@
         "nl": "Academische Projecten",
         "pl": "Projekty Akademickie",
         "ru": "Академические Проекты",
-        "ja": "学術プロジェクト"
+        "ja": "学術プロジェクト",
+        "zh": "学术项目",
+        "ar": "مشاريع أكاديمية",
+        "sv": "Akademiska projekt",
+        "no": "Akademiske prosjekter",
+        "fi": "Akatemiset projektit",
+        "ko": "학술 프로젝트",
+        "tr": "Akademik projeler",
+        "cs": "Akademické projekty",
+        "hu": "Akadémiai projektek",
+        "el": "Ακαδημαϊκά έργα"
     },
     "noImage": {
         "es": "Imagen no disponible",
@@ -105,6 +185,16 @@
         "nl": "Afbeelding niet beschikbaar",
         "pl": "Obraz niedostępny",
         "ru": "Изображение недоступно",
-        "ja": "画像は利用できません"
+        "ja": "画像は利用できません",
+        "zh": "图片不可用",
+        "ar": "الصورة غير متاحة",
+        "sv": "Bild inte tillgänglig",
+        "no": "Bilde ikke tilgjengelig",
+        "fi": "Kuva ei saatavilla",
+        "ko": "이미지를 사용할 수 없습니다",
+        "tr": "Görüntü mevcut değil",
+        "cs": "Obrázek není dostupný",
+        "hu": "Kép nem elérhető",
+        "el": "Η εικόνα δεν είναι διαθέσιμη"
     }
 }

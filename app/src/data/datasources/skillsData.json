@@ -331,7 +331,7 @@
     {
         "id": "github",
         "name": "GitHub",
-        "iconUrl": "https://img.icons8.com/?size=100&id=RHLuYrY4GjUv&format=png&color=000000",
+        "iconUrl": "https://img.icons8.com/?size=100&id=AZOZNnY73haj&format=png&color=000000",
         "level": 3,
         "category": "tools"
     },
@@ -562,7 +562,7 @@
     {
         "id": "copilot",
         "name": "GitHub Copilot",
-        "iconUrl": "https://img.icons8.com/?size=100&id=RHLuYrY4GjUv&format=png&color=000000",
+        "iconUrl": "https://img.icons8.com/?size=100&id=AZOZNnY73haj&format=png&color=000000",
         "level": 4,
         "category": "ai"
     },

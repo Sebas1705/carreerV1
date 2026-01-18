@@ -1,16 +1,16 @@
 ---
-import type { Language, CommonLabels } from '@domain/models';
+import type { Language } from '@domain/models';
 import { translate } from '@/domain';
 import Section from '../common/Section.astro';
+import ViewMore from '../ui/ViewMore.astro';
 // Button import removed (unused)
 
 interface Props {
     lang: Language;
-    featured?: number; // Show top N skills
-    commonLabels: CommonLabels;
+    featured?: number;
 }
 
-const { lang, featured = 12, commonLabels } = Astro.props;
+const { lang, featured = 12 } = Astro.props;
 
 import { InMemorySkillsLabelsRepository, InMemorySkillRepository } from '@/data';
 import { GetSkillsLabelsUseCase, GetSkillsUseCase } from '@/domain';
@@ -24,7 +24,7 @@ const skills = await new GetSkillsUseCase(new InMemorySkillRepository()).execute
     <div class="flex flex-col gap-10 mt-10 px-5 md:px-10 lg:px-15">
         <!-- Featured Skills Grid -->
         <div class="mb-8">
-            <div class="grid gap-6 grid-cols-1 xs:grid-cols-2 sm:grid-cols-3
+            <div class="grid gap-6 grid-cols-2 sm:grid-cols-3
             md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-6 ">
                 {skills
                 .filter((skill) => !['architecture','methodologies'].includes(skill.category))
@@ -35,7 +35,7 @@ const skills = await new GetSkillsUseCase(new InMemorySkillRepository()).execute
                         <div title={skill.name} class="min-w-40 flex flex-col items-center gap-5 py-5 px-3 
                         rounded-md transition-transform duration-200 hover:-translate-y-2 
                         cursor-help bg-bg-surface-alt-v border-primary-dark-v border-3 shadow-secondary-v shadow-md ">
-                            <div class="w-14 h-14 flex">
+                            <div class="size-14 sm:size-16 md:size-18 lg:size-20 flex">
                                 <img 
                                     src={skill.iconUrl} 
                                     alt={skill.name}
@@ -43,9 +43,11 @@ const skills = await new GetSkillsUseCase(new InMemorySkillRepository()).execute
                                     class="size-50 w-full h-full object-contain"
                                 />
                             </div>
-                            <h3 class="text-md font-semibold text-bg-inverse-alt-v text-center">{skill.name}</h3>
+                            <h3 class="text-md sm:text-lg md:text-xl lg:text-3xl
+                            font-semibold text-bg-inverse-alt-v text-center">{skill.name}</h3>
                             <div class="w-full flex justify-center">
-                                <span class="text-accent-v text-sm" aria-label={`${skill.level} de 5 estrellas`}>{'★'.repeat(skill.level)}</span>
+                                <span class="text-md sm:text-lg md:text-xl lg:text-3xl
+                                text-accent-v" aria-label={`${skill.level} de 5 estrellas`}>{'★'.repeat(skill.level)}</span>
                             </div>
                         </div>
                     );
@@ -53,13 +55,7 @@ const skills = await new GetSkillsUseCase(new InMemorySkillRepository()).execute
             </div>
         </div>
 
-        <!-- Link to Full Skills Page -->
-        <div class="text-center">
-            <a href={`/${lang}/skills`} class="hover:bg-secondary-v
-            font-bold bg-primary-v rounded-md px-4 py-2 text-white" >
-                {translate(commonLabels.viewMore, lang)}<span class="ml-2 transition-transform">→</span>
-            </a>
-        </div>
+        <ViewMore lang={lang} href={`/${lang}/skills`}/>
     </div>
 </Section>
 

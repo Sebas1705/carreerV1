@@ -1,0 +1,26 @@
+---
+import { translate, type Language } from '@/domain';
+
+interface Props {
+    href: string;
+    className?: string;
+    lang: Language;
+}
+
+const { href, className = '', lang } = Astro.props;
+
+import { InMemoryCommonLabelsRepository } from '@/data';
+import { GetCommonLabelsUseCase } from '@/domain';
+
+const commonLabels = await new GetCommonLabelsUseCase(new InMemoryCommonLabelsRepository()).execute();
+---
+
+<div class="text-center py-10">
+    <a href={href} class="hover:bg-secondary-v
+    font-bold bg-primary-v rounded-md text-white
+    px-4 md:px-6 lg:px-8 
+    py-2 md:py-3 lg:py-4
+    text-lg md:text-xl lg:text-2xl xl:text-3xl" >
+        {translate(commonLabels.viewMore, lang)}<span class="ml-2 transition-transform">→</span>
+    </a>
+</div>

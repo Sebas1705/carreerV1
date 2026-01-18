@@ -54,7 +54,7 @@ const typeLabels: Record<string, Translations> = {
                     <section class="mb-16 w-full">
                         <h2 class="text-2xl font-semibold text-secondary-v mb-8 pb-4 border-b-2 border-secondary-v">{translate(typeLabels[type], lang)}</h2>
                         <div class="w-full grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-                            {projects.map((project: any) => (
+                            {projects.map((project: { id: string; title: Translations; description: Translations; imageUrl?: string; demoUrl?: string; repoUrl?: string; technologies?: string[] }) => (
                                 <article class="group bg-bg-surface-alt-v rounded-2xl overflow-hidden shadow-md border-2 border-primary-v transition-transform duration-200 hover:-translate-y-2 hover:shadow-xl flex flex-col">
                                     {project.imageUrl ? (
                                         <div class="relative h-48 m-5 rounded-2xl flex items-center justify-center overflow-hidden">

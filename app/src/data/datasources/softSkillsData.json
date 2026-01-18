@@ -11,7 +11,17 @@
             "nl": "Teamwerk",
             "pl": "Praca Zespołowa",
             "ru": "Командная работа",
-            "ja": "チームワーク"
+            "ja": "チームワーク",
+            "zh": "团队合作",
+            "ar": "العمل الجماعي",
+            "sv": "Teamarbete",
+            "no": "Teamarbeid",
+            "fi": "Tiimityö",
+            "ko": "팀워크",
+            "tr": "Takım Çalışması",
+            "cs": "Týmová práce",
+            "hu": "Csapatmunka",
+            "el": "Ομαδική εργασία"
         },
         "description": {
             "es": "Colaboración efectiva con equipos multidisciplinarios, compartiendo conocimientos y apoyando a compañeros.",
@@ -23,7 +33,17 @@
             "nl": "Effectieve samenwerking met multidisciplinaire teams, het delen van kennis en ondersteuning van collega's.",
             "pl": "Efektywna współpraca z zespołami multidyscyplinarnymi, dzielenie się wiedzą i wspieranie kolegów.",
             "ru": "Эффективное сотрудничество с многопрофильными командами, обмен знаниями и поддержка коллег.",
-            "ja": "多分野のチームとの効果的なコラボレーション、知識の共有、同僚へのサポート。"
+            "ja": "多分野のチームとの効果的なコラボレーション、知識の共有、同僚へのサポート。",
+            "zh": "与跨学科团队的有效协作、知识共享与支持同事。",
+            "ar": "التعاون الفعال مع فرق متعددة التخصصات، وتبادل المعرفة ودعم الزملاء.",
+            "sv": "Effektivt samarbete med tvärvetenskapliga team, kunskapsdelning och stöd till kollegor.",
+            "no": "Effektiv samarbeid med tverrfaglige team, deling av kunnskap og støtte til kolleger.",
+            "fi": "Tehokas yhteistyö monitieteellisten tiimien kanssa, tiedon jakaminen ja kollegoiden tukeminen.",
+            "ko": "다학제 팀과의 효과적인 협업, 지식 공유 및 동료 지원.",
+            "tr": "Çok disiplinli takımlarla etkili işbirliği, bilgi paylaşımı ve meslektaş desteği.",
+            "cs": "Efektivní spolupráce s multidisciplinárními týmy, sdílení znalostí a podpora kolegů.",
+            "hu": "Hatékony együttműködés multidiszciplináris csapatokkal, tudásmegosztás és kollégák támogatása.",
+            "el": "Αποτελεσματική συνεργασία με διεπιστημονικές ομάδες, ανταλλαγή γνώσεων και υποστήριξη συναδέλφων."
         },
         "icon": "🤝",
         "level": 5
@@ -40,7 +60,17 @@
             "nl": "Communicatie",
             "pl": "Komunikacja",
             "ru": "Коммуникация",
-            "ja": "コミュニケーション"
+            "ja": "コミュニケーション",
+            "zh": "沟通",
+            "ar": "التواصل",
+            "sv": "Kommunikation",
+            "no": "Kommunikasjon",
+            "fi": "Viestintä",
+            "ko": "커뮤니케이션",
+            "tr": "İletişim",
+            "cs": "Komunikace",
+            "hu": "Kommunikáció",
+            "el": "Επικοινωνία"
         },
         "description": {
             "es": "Comunicación clara y efectiva tanto técnica como no técnica, con clientes y equipos.",
@@ -52,7 +82,17 @@
             "nl": "Duidelijke en effectieve communicatie, zowel technisch als niet-technisch, met klanten en teams.",
             "pl": "Jasna i skuteczna komunikacja, zarówno techniczna, jak i nietechniczna, z klientami i zespołami.",
             "ru": "Четкая и эффективная коммуникация, как техническая, так и нетехническая, с клиентами и командами.",
-            "ja": "クライアントやチームとの明確で効果的なコミュニケーション（技術的および非技術的）。"
+            "ja": "クライアントやチームとの明確で効果的なコミュニケーション（技術的および非技術的）。",
+            "zh": "与客户和团队进行清晰且有效的技术性与非技术性沟通。",
+            "ar": "تواصل واضح وفعال، سواء تقنيًا أو غير تقني، مع العملاء والفرق.",
+            "sv": "Klar och effektiv kommunikation, både teknisk och icke-teknisk, med kunder och team.",
+            "no": "Klar og effektiv kommunikasjon, både teknisk og ikke-teknisk, med kunder og team.",
+            "fi": "Selkeä ja tehokas viestintä, sekä tekninen että ei-tekninen, asiakkaiden ja tiimien kanssa.",
+            "ko": "클라이언트 및 팀과의 명확하고 효과적인 기술적/비기술적 커뮤니케이션.",
+            "tr": "Müşteriler ve ekiplerle hem teknik hem de teknik olmayan konularda açık ve etkili iletişim.",
+            "cs": "Jasná a efektivní komunikace, jak technická, tak netechnická, s klienty a týmy.",
+            "hu": "Világos és hatékony kommunikáció, technikai és nem technikai szinten egyaránt, ügyfelekkel és csapatokkal.",
+            "el": "Σαφής και αποτελεσματική επικοινωνία, τεχνική και μη τεχνική, με πελάτες και ομάδες."
         },
         "icon": "💬",
         "level": 5
@@ -69,7 +109,17 @@
             "nl": "Probleemoplossing",
             "pl": "Rozwiązywanie Problemów",
             "ru": "Решение проблем",
-            "ja": "問題解決"
+            "ja": "問題解決",
+            "zh": "问题解决",
+            "ar": "حل المشكلات",
+            "sv": "Problemlösning",
+            "no": "Problemløsning",
+            "fi": "Ongelmanratkaisu",
+            "ko": "문제 해결",
+            "tr": "Problem Çözme",
+            "cs": "Řešení problémů",
+            "hu": "Problémamegoldás",
+            "el": "Επίλυση προβλημάτων"
         },
         "description": {
             "es": "Análisis y resolución práctica de problemas técnicos, depuración y refactorización para mantener y mejorar aplicaciones.",
@@ -81,7 +131,17 @@
             "nl": "Praktische analyse en oplossing van technische problemen, debuggen en refactoren om applicaties te onderhouden en te verbeteren.",
             "pl": "Praktyczna analiza i rozwiązywanie problemów technicznych, debugowanie i refaktoryzacja w celu utrzymania i poprawy aplikacji.",
             "ru": "Практический анализ и решение технических проблем, отладка и рефакторинг для поддержания и улучшения приложений.",
-            "ja": "技術的課題の実践的な分析と解決、デバッグおよびリファクタリングによるアプリの保守と改善。"
+            "ja": "技術的課題の実践的な分析と解決、デバッグおよびリファクタリングによるアプリの保守と改善。",
+            "zh": "对技术问题进行实用分析与解决，调试与重构以维护和改进应用。",
+            "ar": "التحليل العملي وحل المشكلات التقنية، وتصحيح الأخطاء وإعادة الهيكلة للحفاظ على التطبيقات وتحسينها.",
+            "sv": "Praktisk analys och lösning av tekniska problem, felsökning och refaktorisering för att underhålla och förbättra applikationer.",
+            "no": "Praktisk analyse og løsning av tekniske problemer, debugging og refaktorering for å vedlikeholde og forbedre applikasjoner.",
+            "fi": "Käytännönläheinen teknisten ongelmien analysointi ja ratkaisu, virheenkorjaus ja refaktorointi sovellusten ylläpitämiseksi ja parantamiseksi.",
+            "ko": "기술적 이슈의 실용적 분석 및 해결, 디버깅 및 리팩터링을 통한 애플리케이션 유지 및 개선.",
+            "tr": "Teknik sorunların pratik analizi ve çözümü, hata ayıklama ve yeniden yapılandırma ile uygulamaları koruma ve iyileştirme.",
+            "cs": "Praktická analýza a řešení technických problémů, ladění a refaktoring pro údržbu a vylepšení aplikací.",
+            "hu": "Gyakorlati elemzés és technikai problémák megoldása, hibakeresés és refaktorálás az alkalmazások karbantartása és fejlesztése érdekében.",
+            "el": "Πρακτική ανάλυση και επίλυση τεχνικών ζητημάτων, εντοπισμός σφαλμάτων και refactoring για τη διατήρηση και βελτίωση εφαρμογών."
         },
         "icon": "🧩",
         "level": 5
@@ -98,7 +158,17 @@
             "nl": "Aanpassingsvermogen",
             "pl": "Adaptacyjność",
             "ru": "Адаптивность",
-            "ja": "適応性"
+            "ja": "適応性",
+            "zh": "适应能力",
+            "ar": "القدرة على التكيف",
+            "sv": "Anpassningsförmåga",
+            "no": "Tilpasningsevne",
+            "fi": "Sopeutumiskyky",
+            "ko": "적응력",
+            "tr": "Uyum Sağlama",
+            "cs": "Přizpůsobivost",
+            "hu": "Alkalmazkodóképesség",
+            "el": "Ευελιξία"
         },
         "description": {
             "es": "Adaptación rápida a nuevas tecnologías y migraciones, como portar proyectos desde versiones legacy a móvil.",
@@ -110,7 +180,17 @@
             "nl": "Snelle aanpassing aan nieuwe technologieën en migraties, zoals het porten van legacy-projecten naar mobiel.",
             "pl": "Szybka adaptacja do nowych technologii i migracji, takich jak przenoszenie projektów legacy na mobile.",
             "ru": "Быстрая адаптация к новым технологиям и миграциям, например, перенос legacy-проектов на мобильные платформы.",
-            "ja": "レガシーからモバイルへの移行など、新しい技術やマイグレーションへの迅速な適応。"
+            "ja": "レガシーからモバイルへの移行など、新しい技術やマイグレーションへの迅速な適応。",
+            "zh": "快速适应新技术和迁移，例如将遗留项目移植到移动端。",
+            "ar": "التكيف السريع مع التقنيات الجديدة وعمليات الهجرة، مثل نقل المشاريع القديمة إلى النمط المحمول.",
+            "sv": "Snabb anpassning till ny teknik och migreringar, som att porta legacy-projekt till mobil.",
+            "no": "Rask tilpasning til ny teknologi og migrasjoner, som å porte legacy-prosjekter til mobil.",
+            "fi": "Nopea sopeutuminen uusiin teknologioihin ja migraatioihin, kuten legacy-projektien siirtäminen mobiiliin.",
+            "ko": "레거시 프로젝트를 모바일로 포팅하는 등 새로운 기술 및 마이그레이션에 대한 빠른 적응력.",
+            "tr": "Legacy projeleri mobile taşımak gibi yeni teknolojilere ve göçlere hızlı uyum.",
+            "cs": "Rychlé přizpůsobení novým technologiím a migracím, například převod legacy projektů na mobilní platformu.",
+            "hu": "Gyors alkalmazkodás új technológiákhoz és migrációkhoz, például legacy projektek mobilra portolása.",
+            "el": "Γρήγορη προσαρμογή σε νέες τεχνολογίες και μεταφορές, όπως η μεταφορά legacy έργων σε mobile."
         },
         "icon": "🔄",
         "level": 5
@@ -128,7 +208,17 @@
             "nl": "Proactiviteit",
             "pl": "Proaktywność",
             "ru": "Проактивность",
-            "ja": "積極性"
+            "ja": "積極性",
+            "zh": "积极主动",
+            "ar": "المبادرة",
+            "sv": "Proaktivitet",
+            "no": "Proaktivitet",
+            "fi": "Aloitteellisuus",
+            "ko": "주도성",
+            "tr": "Proaktivite",
+            "cs": "Proaktivita",
+            "hu": "Proaktivitás",
+            "el": "Πρωτοβουλία"
         },
         "description": {
             "es": "Iniciativa para proponer mejoras, asumir tareas y anticiparse a problemas sin supervisión constante.",
@@ -140,7 +230,17 @@
             "nl": "Initiatief om verbeteringen voor te stellen, taken op zich te nemen en problemen te anticiperen zonder constante supervisie.",
             "pl": "Inicjatywa w proponowaniu usprawnień, podejmowaniu zadań i przewidywaniu problemów bez stałego nadzoru.",
             "ru": "Инициатива по предложению улучшений, взятию на себя задач и прогнозированию проблем без постоянного надзора.",
-            "ja": "継続的な監督なしに改善を提案し、タスクを引き受け、問題を予測する主体性。"
+            "ja": "継続的な監督なしに改善を提案し、タスクを引き受け、問題を予測する主体性。",
+            "zh": "主动提出改进、承担任务并在无持续监督下预见问题的能力。",
+            "ar": "المبادرة لاقتراح التحسينات وتولي المهام وتوقع المشكلات دون إشراف مستمر.",
+            "sv": "Initiativ att föreslå förbättringar, ta på sig uppgifter och förutse problem utan ständig övervakning.",
+            "no": "Initiativ til å foreslå forbedringer, ta på seg oppgaver og forutse problemer uten konstant tilsyn.",
+            "fi": "Aloitekyky ehdottaa parannuksia, ottaa tehtäviä vastaan ja ennakoida ongelmia ilman jatkuvaa valvontaa.",
+            "ko": "지속적인 감독 없이 개선을 제안하고, 업무를 맡고, 문제를 예측하는 주도성.",
+            "tr": "Sürekli denetim olmadan iyileştirmeler önermek, görev üstlenmek ve sorunları öngörmek için girişim.",
+            "cs": "Iniciativa navrhovat vylepšení, přijímat úkoly a předvídat problémy bez stálého dohledu.",
+            "hu": "Kezdeményezőkészség a fejlesztések javaslatára, feladatok vállalására és problémák előrejelzésére állandó felügyelet nélkül.",
+            "el": "Πρωτοβουλία για πρόταση βελτιώσεων, ανάληψη καθηκόντων και πρόβλεψη προβλημάτων χωρίς συνεχή επίβλεψη."
         },
         "icon": "🚀",
         "level": 4
@@ -157,7 +257,17 @@
             "nl": "Tijdmanagement",
             "pl": "Zarządzanie Czasem",
             "ru": "Управление временем",
-            "ja": "時間管理"
+            "ja": "時間管理",
+            "zh": "时间管理",
+            "ar": "إدارة الوقت",
+            "sv": "Tidsplanering",
+            "no": "Tidsstyring",
+            "fi": "Ajan hallinta",
+            "ko": "시간 관리",
+            "tr": "Zaman Yönetimi",
+            "cs": "Řízení času",
+            "hu": "Időgazdálkodás",
+            "el": "Διαχείριση χρόνου"
         },
         "description": {
             "es": "Organización efectiva de tareas, priorización y cumplimiento de deadlines en proyectos múltiples.",
@@ -169,7 +279,17 @@
             "nl": "Effectieve taakorganisatie, prioritering en het halen van deadlines voor meerdere projecten.",
             "pl": "Skuteczna organizacja zadań, priorytetyzacja i dotrzymywanie terminów w wielu projektach.",
             "ru": "Эффективная организация задач, приоритизация и соблюдение сроков в нескольких проектах.",
-            "ja": "複数のプロジェクトにおける効果的なタスク整理、優先順位付け、締切の遵守。"
+            "ja": "複数のプロジェクトにおける効果的なタスク整理、優先順位付け、締切の遵守。",
+            "zh": "在多个项目中有效组织任务、优先排序并满足截止日期。",
+            "ar": "تنظيم مهام فعال، تحديد الأولويات والالتزام بالمواعيد النهائية عبر مشاريع متعددة.",
+            "sv": "Effektiv uppgiftshantering, prioritering och att möta deadlines över flera projekt.",
+            "no": "Effektiv oppgaveorganisering, prioritering og å møte tidsfrister på tvers av flere prosjekter.",
+            "fi": "Tehokas tehtävien organisointi, priorisointi ja määräaikojen noudattaminen useissa projekteissa.",
+            "ko": "여러 프로젝트에서의 효과적인 작업 구성, 우선순위 지정 및 마감일 준수.",
+            "tr": "Birden fazla projede etkili görev organizasyonu, önceliklendirme ve teslim tarihlerine uyma.",
+            "cs": "Efektivní organizace úkolů, prioritizace a plnění termínů napříč více projekty.",
+            "hu": "Hatékony feladatszervezés, prioritások kezelése és határidők betartása több projekt esetén.",
+            "el": "Αποτελεσματική οργάνωση εργασιών, ιεράρχηση και τήρηση προθεσμιών σε πολλαπλά έργα."
         },
         "icon": "⏰",
         "level": 4
@@ -186,7 +306,17 @@
             "nl": "Kritisch Denken",
             "pl": "Myślenie Krytyczne",
             "ru": "Критическое мышление",
-            "ja": "批判的思考"
+            "ja": "批判的思考",
+            "zh": "批判性思维",
+            "ar": "التفكير النقدي",
+            "sv": "Kritiskt tänkande",
+            "no": "Kritisk tenkning",
+            "fi": "Kriittinen ajattelu",
+            "ko": "비판적 사고",
+            "tr": "Eleştirel Düşünme",
+            "cs": "Kritické myšlení",
+            "hu": "Kritikai gondolkodás",
+            "el": "Κριτική σκέψη"
         },
         "description": {
             "es": "Análisis profundo de requisitos y evaluación de diferentes enfoques técnicos.",
@@ -198,7 +328,17 @@
             "nl": "Diepgaande analyse van vereisten en evaluatie van verschillende technische benaderingen.",
             "pl": "Głęboka analiza wymagań i ocena różnych podejść technicznych.",
             "ru": "Глубокий анализ требований и оценка различных технических подходов.",
-            "ja": "要件の深い分析と異なる技術的アプローチの評価。"
+            "ja": "要件の深い分析と異なる技術的アプローチの評価。",
+            "zh": "对需求的深入分析以及不同技术方案的评估。",
+            "ar": "تحليل عميق للمتطلبات وتقييم نهج تقنية مختلفة.",
+            "sv": "Djup analys av krav och utvärdering av olika tekniska tillvägagångssätt.",
+            "no": "Dyp analyse av krav og evaluering av ulike tekniske tilnærminger.",
+            "fi": "Vaativa vaatimusanalyysi ja eri teknisten lähestymistapojen arviointi.",
+            "ko": "요구사항의 심층 분석 및 다양한 기술적 접근법 평가.",
+            "tr": "Gereksinimlerin derinlemesine analizi ve farklı teknik yaklaşımların değerlendirilmesi.",
+            "cs": "Hluboká analýza požadavků a hodnocení různých technických přístupů.",
+            "hu": "A követelmények mélyreható elemzése és különböző technikai megközelítések értékelése.",
+            "el": "Βαθιά ανάλυση των απαιτήσεων και αξιολόγηση διαφορετικών τεχνικών προσεγγίσεων."
         },
         "icon": "🤔",
         "level": 5
@@ -215,7 +355,17 @@
             "nl": "Continu Leren",
             "pl": "Ciągłe Uczenie Się",
             "ru": "Непрерывное обучение",
-            "ja": "継続的学習"
+            "ja": "継続的学習",
+            "zh": "持续学习",
+            "ar": "التعلم المستمر",
+            "sv": "Kontinuerligt lärande",
+            "no": "Kontinuerlig læring",
+            "fi": "Jatkuva oppiminen",
+            "ko": "지속적인 학습",
+            "tr": "Sürekli Öğrenme",
+            "cs": "Kontinuální učení",
+            "hu": "Folyamatos tanulás",
+            "el": "Συνεχής μάθηση"
         },
         "description": {
             "es": "Constante actualización en tecnologías emergentes y mejores prácticas del desarrollo.",
@@ -227,7 +377,17 @@
             "nl": "Constante bijscholing over opkomende technologieën en ontwikkelingsbestpraktijken.",
             "pl": "Ciągła aktualizacja w zakresie nowych technologii i najlepszych praktyk deweloperskich.",
             "ru": "Постоянное обновление знаний о новых технологиях и лучших практиках разработки.",
-            "ja": "新しいテクノロジーと開発のベストプラクティスに関する継続的な更新。"
+            "ja": "新しいテクノロジーと開発のベストプラクティスに関する継続的な更新。",
+            "zh": "持续关注新兴技术和开发最佳实践的更新。",
+            "ar": "تحديث مستمر حول التقنيات الناشئة وأفضل ممارسات التطوير.",
+            "sv": "Kontinuerlig uppdatering om nya tekniker och utvecklingsbästa metoder.",
+            "no": "Kontinuerlig oppdatering om nye teknologier og utviklingens beste praksiser.",
+            "fi": "Jatkuva päivittäminen uusista teknologioista ja kehityksen parhaista käytännöistä.",
+            "ko": "신흥 기술 및 개발 모범 사례에 대한 지속적인 업데이트.",
+            "tr": "Yeni teknolojiler ve geliştirme en iyi uygulamaları hakkında sürekli güncelleme.",
+            "cs": "Průběžná aktualizace o nových technologiích a nejlepších praktikách vývoje.",
+            "hu": "Folyamatos frissítés a feltörekvő technológiákról és a fejlesztési legjobb gyakorlatokról.",
+            "el": "Συνεχής ενημέρωση για νέες τεχνολογίες και βέλτιστες πρακτικές ανάπτυξης."
         },
         "icon": "📚",
         "level": 5
@@ -244,7 +404,17 @@
             "nl": "Aandacht voor Details",
             "pl": "Dbałość o Szczegóły",
             "ru": "Внимание к деталям",
-            "ja": "細部への注意"
+            "ja": "細部への注意",
+            "zh": "注重细节",
+            "ar": "الاهتمام بالتفاصيل",
+            "sv": "Uppmärksamhet på detaljer",
+            "no": "Oppmerksomhet på detaljer",
+            "fi": "Huomio yksityiskohtiin",
+            "ko": "세부 사항에 대한 주의",
+            "tr": "Detaya Dikkat",
+            "cs": "Pozornost k detailu",
+            "hu": "Figyelem a részletekre",
+            "el": "Προσοχή στη λεπτομέρεια"
         },
         "description": {
             "es": "Cuidado meticuloso en la calidad del código, testing y documentación.",
@@ -256,7 +426,17 @@
             "nl": "Nauwgezette zorg voor codekwaliteit, testen en documentatie.",
             "pl": "Skrupulatna dbałość o jakość kodu, testowanie i dokumentację.",
             "ru": "Тщательная забота о качестве кода, тестировании и документации.",
-            "ja": "コード品質、テスト、ドキュメントにおける細心の注意。"
+            "ja": "コード品質、テスト、ドキュメントにおける細心の注意。",
+            "zh": "在代码质量、测试和文档中保持细致关注。",
+            "ar": "العناية الدقيقة بجودة الشفرة والاختبار والتوثيق.",
+            "sv": "Noggrann omsorg om kodkvalitet, testning och dokumentation.",
+            "no": "Nøye omsorg for kodekvalitet, testing og dokumentasjon.",
+            "fi": "Tarkka huolellisuus koodin laadussa, testauksessa ja dokumentaatiossa.",
+            "ko": "코드 품질, 테스트 및 문서화에 대한 세심한 주의.",
+            "tr": "Kod kalitesi, test ve dokümantasyonda titiz özen.",
+            "cs": "Důkladná péče o kvalitu kódu, testování a dokumentaci.",
+            "hu": "Aprólékos gondosság a kódminőség, tesztelés és dokumentáció terén.",
+            "el": "Επιμελής φροντίδα στην ποιότητα του κώδικα, τον έλεγχο και την τεκμηρίωση."
         },
         "icon": "🔍",
         "level": 5
@@ -273,7 +453,17 @@
             "nl": "Creativiteit",
             "pl": "Kreatywność",
             "ru": "Креативность",
-            "ja": "創造性"
+            "ja": "創造性",
+            "zh": "创造力",
+            "ar": "إبداع",
+            "sv": "Kreativitet",
+            "no": "Kreativitet",
+            "fi": "Luovuus",
+            "ko": "창의성",
+            "tr": "Yaratıcılık",
+            "cs": "Kreativita",
+            "hu": "Kreativitás",
+            "el": "Δημιουργικότητα"
         },
         "description": {
             "es": "Innovación en soluciones técnicas y diseño de experiencias de usuario.",
@@ -285,7 +475,17 @@
             "nl": "Innovatie in technische oplossingen en gebruikerservaringsontwerp.",
             "pl": "Innowacyjność w rozwiązaniach technicznych i projektowaniu doświadczeń użytkownika.",
             "ru": "Инновации в технических решениях и проектировании пользовательского опыта.",
-            "ja": "技術ソリューションとユーザーエクスペリエンスデザインにおける革新。"
+            "ja": "技術ソリューションとユーザーエクスペリエンスデザインにおける革新。",
+            "zh": "在技术解决方案和用户体验设计方面的创新。",
+            "ar": "الابتكار في الحلول التقنية وتصميم تجربة المستخدم.",
+            "sv": "Innovation inom tekniska lösningar och användarupplevelsedesign.",
+            "no": "Innovasjon i tekniske løsninger og brukeropplevelsesdesign.",
+            "fi": "Innovaatio teknisissä ratkaisuissa ja käyttäjäkokemuksen suunnittelussa.",
+            "ko": "기술 솔루션 및 사용자 경험 디자인의 혁신.",
+            "tr": "Teknik çözümler ve kullanıcı deneyimi tasarımında yenilik.",
+            "cs": "Inovace v technických řešeních a návrhu uživatelského prostředí.",
+            "hu": "Innováció a technikai megoldásokban és a felhasználói élmény tervezésében.",
+            "el": "Καινοτομία σε τεχνικές λύσεις και σχεδιασμό εμπειρίας χρήστη."
         },
         "icon": "💡",
         "level": 4
@@ -302,7 +502,17 @@
             "nl": "Empathie",
             "pl": "Empatia",
             "ru": "Эмпатия",
-            "ja": "共感"
+            "ja": "共感",
+            "zh": "同理心",
+            "ar": "التعاطف",
+            "sv": "Empati",
+            "no": "Empati",
+            "fi": "Empatia",
+            "ko": "공감",
+            "tr": "Empati",
+            "cs": "Empatie",
+            "hu": "Empátia",
+            "el": "Ενσυναίσθηση"
         },
         "description": {
             "es": "Comprensión de las necesidades del usuario y perspectiva del equipo.",
@@ -314,7 +524,17 @@
             "nl": "Begrip van gebruikersbehoeften en teamperspectief.",
             "pl": "Rozumienie potrzeb użytkowników i perspektywy zespołu.",
             "ru": "Понимание потребностей пользователей и точки зрения команды.",
-            "ja": "ユーザーのニーズとチームの視点の理解。"
+            "ja": "ユーザーのニーズとチームの視点の理解。",
+            "zh": "理解用户需求与团队视角。",
+            "ar": "فهم احتياجات المستخدم ومنظور الفريق.",
+            "sv": "Förstå användarbehov och teamets perspektiv.",
+            "no": "Forstå brukernes behov og teamets perspektiv.",
+            "fi": "Käyttäjien tarpeiden ja tiimin näkökulman ymmärtäminen.",
+            "ko": "사용자 요구와 팀 관점을 이해합니다.",
+            "tr": "Kullanıcı ihtiyaçlarını ve ekip perspektifini anlama.",
+            "cs": "Pochopení potřeb uživatelů a perspektivy týmu.",
+            "hu": "A felhasználói igények és a csapat szemszögének megértése.",
+            "el": "Κατανόηση των αναγκών των χρηστών και της οπτικής της ομάδας."
         },
         "icon": "❤️",
         "level": 5
@@ -331,7 +551,17 @@
             "nl": "Veerkracht",
             "pl": "Odporność",
             "ru": "Стойкость",
-            "ja": "レジリエンス"
+            "ja": "レジリエンス",
+            "zh": "韧性",
+            "ar": "المرونة",
+            "sv": "Resiliens",
+            "no": "Resiliens",
+            "fi": "Resilienssi",
+            "ko": "회복력",
+            "tr": "Dayanıklılık",
+            "cs": "Odolnost",
+            "hu": "Ellenállóképesség",
+            "el": "Ανθεκτικότητα"
         },
         "description": {
             "es": "Manejo efectivo de la presión y recuperación ante desafíos técnicos.",
@@ -343,7 +573,17 @@
             "nl": "Effectieve omgang met druk en herstel van technische uitdagingen.",
             "pl": "Skuteczne radzenie sobie z presją i odzyskiwanie sił po wyzwaniach technicznych.",
             "ru": "Эффективное управление давлением и восстановление после технических проблем.",
-            "ja": "プレッシャーの効果的な処理と技術的課題からの回復。"
+            "ja": "プレッシャーの効果的な処理と技術的課題からの回復。",
+            "zh": "有效应对压力并从技术挑战中恢复。",
+            "ar": "التعامل الفعال مع الضغوط والتعافي من التحديات التقنية.",
+            "sv": "Effektiv hantering av press och återhämtning från tekniska utmaningar.",
+            "no": "Effektiv håndtering av press og gjenoppretting fra tekniske utfordringer.",
+            "fi": "Tehokas paineen käsittely ja toipuminen teknisistä haasteista.",
+            "ko": "압박에 대한 효과적인 대처 및 기술적 도전에서의 회복.",
+            "tr": "Baskıyla etkili başa çıkma ve teknik zorluklardan toparlanma.",
+            "cs": "Efektivní zvládání tlaku a zotavení z technických výzev.",
+            "hu": "Hatékony nyomáskezelés és felépülés technikai kihívások után.",
+            "el": "Αποτελεσματική διαχείριση της πίεσης και ανάκτηση από τεχνικές προκλήσεις."
         },
         "icon": "💪",
         "level": 4

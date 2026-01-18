@@ -9,7 +9,17 @@
         "nl": "Home",
         "pl": "Strona Główna",
         "ru": "Главная",
-        "ja": "ホーム"
+        "ja": "ホーム",
+        "zh": "首页",
+        "ar": "الرئيسية",
+        "sv": "Hem",
+        "no": "Hjem",
+        "fi": "Koti",
+        "ko": "홈",
+        "tr": "Ana Sayfa",
+        "cs": "Domů",
+        "hu": "Kezdőlap",
+        "el": "Αρχική"
     },
     "about": {
         "es": "Sobre Mí",
@@ -21,7 +31,17 @@
         "nl": "Over",
         "pl": "O Mnie",
         "ru": "Обо Мне",
-        "ja": "自己紹介"
+        "ja": "自己紹介",
+        "zh": "Sobre Mí",
+        "ar": "عني",
+        "sv": "Om",
+        "no": "Om",
+        "fi": "Tietoa",
+        "ko": "소개",
+        "tr": "Hakkımda",
+        "cs": "O mně",
+        "hu": "Rólam",
+        "el": "Σχετικά"
     },
     "work": {
         "es": "Experiencia",
@@ -33,7 +53,17 @@
         "nl": "Werk",
         "pl": "Doświadczenie",
         "ru": "Опыт",
-        "ja": "職務経歴"
+        "ja": "職務経歴",
+        "zh": "工作",
+        "ar": "العمل",
+        "sv": "Arbete",
+        "no": "Arbeid",
+        "fi": "Työ",
+        "ko": "경력",
+        "tr": "İş",
+        "cs": "Práce",
+        "hu": "Munka",
+        "el": "Εργασία"
     },
     "education": {
         "es": "Educación",
@@ -45,7 +75,17 @@
         "nl": "Onderwijs",
         "pl": "Edukacja",
         "ru": "Образование",
-        "ja": "学歴"
+        "ja": "学歴",
+        "zh": "教育",
+        "ar": "التعليم",
+        "sv": "Utbildning",
+        "no": "Utdanning",
+        "fi": "Koulutus",
+        "ko": "학력",
+        "tr": "Eğitim",
+        "cs": "Vzdělání",
+        "hu": "Oktatás",
+        "el": "Εκπαίδευση"
     },
     "projects": {
         "es": "Proyectos",
@@ -57,7 +97,17 @@
         "nl": "Projecten",
         "pl": "Projekty",
         "ru": "Проекты",
-        "ja": "プロジェクト"
+        "ja": "プロジェクト",
+        "zh": "项目",
+        "ar": "المشاريع",
+        "sv": "Projekt",
+        "no": "Prosjekter",
+        "fi": "Projektit",
+        "ko": "프로젝트",
+        "tr": "Projeler",
+        "cs": "Projekty",
+        "hu": "Projektek",
+        "el": "Έργα"
     },
     "contact": {
         "es": "Contacto",
@@ -69,6 +119,16 @@
         "nl": "Contact",
         "pl": "Kontakt",
         "ru": "Контакты",
-        "ja": "お問い合わせ"
+        "ja": "お問い合わせ",
+        "zh": "Contacto",
+        "ar": "اتصال",
+        "sv": "Kontakt",
+        "no": "Kontakt",
+        "fi": "Yhteystiedot",
+        "ko": "연락처",
+        "tr": "İletişim",
+        "cs": "Kontakt",
+        "hu": "Kapcsolat",
+        "el": "Επικοινωνία"
     }
 }

@@ -24,7 +24,7 @@ interface Props {
 const { id, title, subtitle, class: className, topFade = false, bottomFade = false, background = 'none' } = Astro.props;
 ---
 
-<section id={id} class={`relative w-full py-16 md:py-24 ${className ?? ''}`}>
+<section id={id} class={`relative w-full py-16 md:py-24 min-h-screen ${className ?? ''}`}>
     {background === 'isometric' && <IsometricBackground />}
     {background === 'circuit' && <CircuitPatternBackground />}
     {background === 'dotted' && <DottedPatternBackground />}
@@ -41,8 +41,13 @@ const { id, title, subtitle, class: className, topFade = false, bottomFade = fal
 
     {(title || subtitle) && (
         <header class="mb-8 relative z-20">
-            {title && <h2 class="text-center mb-8 text-3xl md:text-4xl lg:text-5xl font-bold text-primary-v px-5 md:px-10 lg:px-15">{title}</h2>}
-            {subtitle && <p class="text-center text-lg md:text-xl lg:text-2xl font-extrabold text-secondary-v mt-4 px-5 md:px-10 lg:px-15">{subtitle}</p>}
+
+            {title && <h2 class="text-center mb-8 text-2xl md:text-4xl lg:text-6xl 
+            font-bold text-primary-v px-5 md:px-10 lg:px-15">{title}</h2>}
+
+            {subtitle && <p class="text-center text-xl md:text-2xl lg:text-4xl 
+            font-extrabold text-secondary-v mt-4 px-5 md:px-10 lg:px-15">{subtitle}</p>}
+
         </header>
     )}
 

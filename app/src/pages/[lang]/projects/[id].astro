@@ -31,7 +31,7 @@ import SkillsGrid from '@/presentation/components/skills/SkillsGrid.astro';
 
 const personalInfo = await new GetPersonalInfoUseCase(new InMemoryPersonalInfoRepository()).execute();
 const projects = await new GetAllProjectsUseCase(new InMemoryProjectRepository()).execute();
-const project = projects.find((p: any) => p.id === id);
+const project = projects.find((p: { id: string }) => p.id === id);
 if (!project) return Astro.redirect(`/${lang}/`);
 
 const commonLabels = await new GetCommonLabelsUseCase(new InMemoryCommonLabelsRepository()).execute();

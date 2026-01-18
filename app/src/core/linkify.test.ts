@@ -26,6 +26,6 @@ test('linkify escapes html to prevent injection', () => {
 
 test('linkify returns empty for falsy input', () => {
     expect(linkify('')).toBe('');
-    // @ts-ignore
+    // @ts-expect-error allow null input for runtime test
     expect(linkify(null)).toBe('');
 });

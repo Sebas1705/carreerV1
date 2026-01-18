@@ -9,7 +9,17 @@
         "nl": "Technologieën",
         "pl": "Technologie",
         "ru": "Технологии",
-        "ja": "テクノロジー"
+        "ja": "テクノロジー",
+        "zh": "技术",
+        "ar": "تقنيات",
+        "sv": "Tekniker",
+        "no": "Teknologier",
+        "fi": "Teknologiat",
+        "ko": "기술",
+        "tr": "Teknolojiler",
+        "cs": "Technologie",
+        "hu": "Technológiák",
+        "el": "Τεχνολογίες"
     },
     "subtitle": {
         "es": "Herramientas y tecnologías que domino",
@@ -21,7 +31,17 @@
         "nl": "Tools en technologieën die ik beheers",
         "pl": "Narzędzia i technologie, które opanowałem",
         "ru": "Инструменты и технологии, которыми я владею",
-        "ja": "マスターしているツールとテクノロジー"
+        "ja": "マスターしているツールとテクノロジー",
+        "zh": "我掌握的工具和技术",
+        "ar": "الأدوات والتقنيات التي أتقنها",
+        "sv": "Verktyg och tekniker jag behärskar",
+        "no": "Verktøy og teknologier jeg mestrer",
+        "fi": "Työkalut ja teknologiat, joita hallitsen",
+        "ko": "내가 익힌 도구 및 기술",
+        "tr": "Hakim olduğum araçlar ve teknolojiler",
+        "cs": "Nástroje a technologie, které ovládám",
+        "hu": "Eszközök és technológiák, amelyeket elsajátítottam",
+        "el": "Εργαλεία και τεχνολογίες που κατέχω"
     },
 
 
@@ -35,7 +55,17 @@
         "nl": "Talen",
         "pl": "Języki",
         "ru": "Языки",
-        "ja": "言語"
+        "ja": "言語",
+        "zh": "语言",
+        "ar": "اللغات",
+        "sv": "Språk",
+        "no": "Språk",
+        "fi": "Kielet",
+        "ko": "언어",
+        "tr": "Diller",
+        "cs": "Jazyky",
+        "hu": "Nyelvek",
+        "el": "Γλώσσες"
     },
     "categoryFrameworks": {
         "es": "Frameworks",
@@ -47,7 +77,17 @@
         "nl": "Frameworks",
         "pl": "Frameworki",
         "ru": "Фреймворки",
-        "ja": "フレームワーク"
+        "ja": "フレームワーク",
+        "zh": "框架",
+        "ar": "أُطر العمل",
+        "sv": "Ramar",
+        "no": "Rammeverk",
+        "fi": "Kehykset",
+        "ko": "프레임워크",
+        "tr": "Çerçeveler",
+        "cs": "Frameworky",
+        "hu": "Keretrendszerek",
+        "el": "Πλαίσια"
     },
     "categoryTools": {
         "es": "Herramientas",
@@ -59,7 +99,17 @@
         "nl": "Gereedschappen",
         "pl": "Narzędzia",
         "ru": "Инструменты",
-        "ja": "ツール"
+        "ja": "ツール",
+        "zh": "工具",
+        "ar": "أدوات",
+        "sv": "Verktyg",
+        "no": "Verktøy",
+        "fi": "Työkalut",
+        "ko": "도구",
+        "tr": "Araçlar",
+        "cs": "Nástroje",
+        "hu": "Eszközök",
+        "el": "Εργαλεία"
     },
     "categoryDatabases": {
         "es": "Bases de Datos",
@@ -71,7 +121,17 @@
         "nl": "Databases",
         "pl": "Bazy Danych",
         "ru": "Базы Данных",
-        "ja": "データベース"
+        "ja": "データベース",
+        "zh": "数据库",
+        "ar": "قواعد البيانات",
+        "sv": "Databaser",
+        "no": "Databaser",
+        "fi": "Tietokannat",
+        "ko": "데이터베이스",
+        "tr": "Veritabanları",
+        "cs": "Databáze",
+        "hu": "Adatbázisok",
+        "el": "Βάσεις δεδομένων"
     },
     "categoryCloud": {
         "es": "Cloud",
@@ -83,7 +143,17 @@
         "nl": "Cloud",
         "pl": "Chmura",
         "ru": "Облако",
-        "ja": "クラウド"
+        "ja": "クラウド",
+        "zh": "云",
+        "ar": "السحابة",
+        "sv": "Moln",
+        "no": "Sky",
+        "fi": "Pilvi",
+        "ko": "클라우드",
+        "tr": "Bulut",
+        "cs": "Cloud",
+        "hu": "Felhő",
+        "el": "Cloud"
     },
     "categoryMethodologies": {
         "es": "Metodologías",
@@ -95,7 +165,17 @@
         "nl": "Methodologieën",
         "pl": "Metodologie",
         "ru": "Методологии",
-        "ja": "方法論"
+        "ja": "方法論",
+        "zh": "方法论",
+        "ar": "المنهجيات",
+        "sv": "Metodologier",
+        "no": "Metodologier",
+        "fi": "Metodologiat",
+        "ko": "방법론",
+        "tr": "Metodolojiler",
+        "cs": "Metodiky",
+        "hu": "Módszertanok",
+        "el": "Μεθοδολογίες"
     },
     "categoryAI": {
         "es": "Inteligencia Artificial",
@@ -107,7 +187,17 @@
         "nl": "Kunstmatige Intelligentie",
         "pl": "Sztuczna Inteligencja",
         "ru": "Искусственный Интеллект",
-        "ja": "人工知能"
+        "ja": "人工知能",
+        "zh": "人工智能",
+        "ar": "الذكاء الاصطناعي",
+        "sv": "Artificiell intelligens",
+        "no": "Kunstig intelligens",
+        "fi": "Tekoäly",
+        "ko": "인공지능",
+        "tr": "Yapay Zeka",
+        "cs": "Umělá inteligence",
+        "hu": "Mesterséges intelligencia",
+        "el": "Τεχνητή νοημοσύνη"
     },
     "categoryArchitecture": {
         "es": "Arquitectura",
@@ -119,7 +209,17 @@
         "nl": "Architectuur",
         "pl": "Architektura",
         "ru": "Архитектура",
-        "ja": "アーキテクチャ"
+        "ja": "アーキテクチャ",
+        "zh": "架构",
+        "ar": "هندسة",
+        "sv": "Arkitektur",
+        "no": "Arkitektur",
+        "fi": "Arkkitehtuuri",
+        "ko": "아키텍처",
+        "tr": "Mimari",
+        "cs": "Architektura",
+        "hu": "Architektúra",
+        "el": "Αρχιτεκτονική"
     },
     "categoryOS": {
         "es": "Sistemas Operativos",
@@ -131,7 +231,17 @@
         "nl": "Besturingssystemen",
         "pl": "Systemy Operacyjne",
         "ru": "Операционные Системы",
-        "ja": "オペレーティングシステム"
+        "ja": "オペレーティングシステム",
+        "zh": "操作系统",
+        "ar": "أنظمة التشغيل",
+        "sv": "Operativsystem",
+        "no": "Operativsystem",
+        "fi": "Käyttöjärjestelmät",
+        "ko": "운영 체제",
+        "tr": "İşletim Sistemleri",
+        "cs": "Operační systémy",
+        "hu": "Operációs rendszerek",
+        "el": "Λειτουργικά Συστήματα"
     },
     "categoryIDES": {
         "es": "Entorno de desarrollo integrado",
@@ -143,7 +253,17 @@
         "nl": "Geïntegreerde Ontwikkelomgeving",
         "pl": "Zintegrowane Środowisko Programistyczne",
         "ru": "Интегрированная Среда Разработки",
-        "ja": "統合開発環境"
+        "ja": "統合開発環境",
+        "zh": "集成开发环境",
+        "ar": "بيئة تطوير متكاملة",
+        "sv": "Integrerad utvecklingsmiljö",
+        "no": "Integrert utviklingsmiljø",
+        "fi": "Integroitu kehitysympäristö",
+        "ko": "통합 개발 환경",
+        "tr": "Entegre Geliştirme Ortamı",
+        "cs": "Integrované vývojové prostředí",
+        "hu": "Integrált fejlesztőkörnyezet",
+        "el": "Ενοποιημένο περιβάλλον ανάπτυξης"
     },
 
     "tierBasic": {
@@ -156,7 +276,17 @@
         "nl": "Basis",
         "pl": "Podstawowy",
         "ru": "Базовый",
-        "ja": "基本"
+        "ja": "基本",
+        "zh": "基础",
+        "ar": "أساسي",
+        "sv": "Grundläggande",
+        "no": "Grunnleggende",
+        "fi": "Perus",
+        "ko": "기본",
+        "tr": "Temel",
+        "cs": "Základní",
+        "hu": "Alap",
+        "el": "Βασικό"
     },
     "tierBeginner": {
         "es": "Principiante",
@@ -168,7 +298,17 @@
         "nl": "Beginner",
         "pl": "Początkujący",
         "ru": "Начинающий",
-        "ja": "初心者"
+        "ja": "初心者",
+        "zh": "初学者",
+        "ar": "مبتدئ",
+        "sv": "Nybörjare",
+        "no": "Nybegynner",
+        "fi": "Aloittelija",
+        "ko": "초급",
+        "tr": "Başlangıç",
+        "cs": "Začátečník",
+        "hu": "Kezdő",
+        "el": "Αρχάριος"
     },
     "tierIntermediate": {
         "es": "Intermedio",
@@ -180,7 +320,17 @@
         "nl": "Gemiddeld",
         "pl": "Średniozaawansowany",
         "ru": "Средний",
-        "ja": "中級"
+        "ja": "中級",
+        "zh": "中级",
+        "ar": "متوسط",
+        "sv": "Mellan",
+        "no": "Mellomnivå",
+        "fi": "Keskitaso",
+        "ko": "중급",
+        "tr": "Orta seviye",
+        "cs": "Středně pokročilý",
+        "hu": "Középhaladó",
+        "el": "Μεσαίο επίπεδο"
     },
     "tierAdvanced": {
         "es": "Avanzado",
@@ -192,7 +342,17 @@
         "nl": "Gevorderd",
         "pl": "Zaawansowany",
         "ru": "Продвинутый",
-        "ja": "上級"
+        "ja": "上級",
+        "zh": "高级",
+        "ar": "متقدم",
+        "sv": "Avancerad",
+        "no": "Avansert",
+        "fi": "Edistynyt",
+        "ko": "고급",
+        "tr": "İleri",
+        "cs": "Pokročilý",
+        "hu": "Haladó",
+        "el": "Προχωρημένο"
     },
     "tierExpert": {
         "es": "Experto",
@@ -204,6 +364,16 @@
         "nl": "Expert",
         "pl": "Ekspert",
         "ru": "Эксперт",
-        "ja": "エキスパート"
+        "ja": "エキスパート",
+        "zh": "专家",
+        "ar": "خبير",
+        "sv": "Expert",
+        "no": "Ekspert",
+        "fi": "Asiantuntija",
+        "ko": "전문가",
+        "tr": "Uzman",
+        "cs": "Expert",
+        "hu": "Szakértő",
+        "el": "Ειδικός"
     }
 }

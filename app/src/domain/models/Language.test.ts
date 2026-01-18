@@ -126,7 +126,7 @@ describe('Language utilities', () => {
                 ja: ''
             };
 
-            // @ts-ignore - testing runtime behavior
+            // @ts-expect-error - testing runtime behavior
             expect(translate(translations, 'es')).toBe('String not found');
         });
 

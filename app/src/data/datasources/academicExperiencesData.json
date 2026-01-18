@@ -11,7 +11,17 @@
             "nl": "IES Maestro Matías Bravo",
             "pl": "IES Maestro Matías Bravo",
             "ru": "IES Maestro Matías Bravo",
-            "ja": "IES Maestro Matías Bravo"
+            "ja": "IES Maestro Matías Bravo",
+            "zh": "IES Maestro Matías Bravo",
+            "ar": "IES Maestro Matías Bravo",
+            "sv": "IES Maestro Matías Bravo",
+            "no": "IES Maestro Matías Bravo",
+            "fi": "IES Maestro Matías Bravo",
+            "ko": "IES Maestro Matías Bravo",
+            "tr": "IES Maestro Matías Bravo",
+            "cs": "IES Maestro Matías Bravo",
+            "hu": "IES Maestro Matías Bravo",
+            "el": "IES Maestro Matías Bravo"
         },
         "degree": {
             "es": "Bachillerato",
@@ -23,7 +33,17 @@
             "nl": "Baccalaureaat",
             "pl": "Matura",
             "ru": "Бакалавриат",
-            "ja": "バカロレア"
+            "ja": "バカロレア",
+            "zh": "高中毕业文凭",
+            "ar": "البكالوريا",
+            "sv": "Gymnasieexamen",
+            "no": "Vitnemål fra videregående skole",
+            "fi": "Lukion päättötodistus",
+            "ko": "고등학교 졸업장",
+            "tr": "Lise diploması",
+            "cs": "Maturita",
+            "hu": "Érettségi",
+            "el": "Απολυτήριο Λυκείου"
         },
         "field": {
             "es": "Tecnológico",
@@ -35,7 +55,17 @@
             "nl": "Technologie",
             "pl": "Technologia",
             "ru": "Технология",
-            "ja": "テクノロジー"
+            "ja": "テクノロジー",
+            "zh": "技术",
+            "ar": "تكنولوجيا",
+            "sv": "Teknik",
+            "no": "Teknologi",
+            "fi": "Teknologia",
+            "ko": "기술",
+            "tr": "Teknoloji",
+            "cs": "Technologie",
+            "hu": "Technológia",
+            "el": "Τεχνολογία"
         },
         "description": {
             "es": "Formación de educación secundaria superior de carácter preuniversitario, fundamentada en la preparación y realización del examen de acceso a la universidad española (Selectividad/EvAU). Este programa educativo proporciona una base sólida de conocimientos generales con una orientación específica hacia las disciplinas de ingeniería, ciencias aplicadas y tecnologías de la información. Durante este periodo se adquieren las competencias académicas necesarias para afrontar con éxito estudios superiores en áreas técnicas y científicas, desarrollando habilidades analíticas, de razonamiento lógico-matemático y comprensión de principios tecnológicos fundamentales.",
@@ -47,7 +77,17 @@
             "nl": "Vooruniversitaire hogere middelbare schoolopleiding, gebaseerd op voorbereiding voor en voltooiing van het Spaanse universiteitstoelatingexamen (Selectividad/EvAU). Dit onderwijsprogramma biedt een solide basis van algemene kennis met een specifieke oriëntatie op technische disciplines, toegepaste wetenschappen en informatietechnologieën. Tijdens deze periode worden de noodzakelijke academische competenties verworven om met succes hogere studies in technische en wetenschappelijke gebieden te ondernemen, waarbij analytische vaardigheden, logisch-wiskundig redeneren en begrip van fundamentele technologische principes worden ontwikkeld.",
             "pl": "Przeduniwersyteckie wyższe wykształcenie średnie, oparte na przygotowaniu i ukończeniu hiszpańskiego egzaminu wstępnego na uniwersytet (Selectividad/EvAU). Ten program edukacyjny zapewnia solidną podstawę wiedzy ogólnej ze szczególnym ukierunkowaniem na dyscypliny inżynierskie, nauki stosowane i technologie informacyjne. W tym okresie nabywane są niezbędne kompetencje akademickie do pomyślnego podjęcia studiów wyższych w dziedzinach technicznych i naukowych, rozwijając umiejętności analityczne, rozumowanie logiczno-matematyczne i zrozumienie podstawowych zasad technologicznych.",
             "ru": "Доуниверситетское среднее образование высшего уровня, основанное на подготовке и сдаче вступительного экзамена в испанский университет (Selectividad/EvAU). Эта образовательная программа обеспечивает прочную основу общих знаний с конкретной ориентацией на инженерные дисциплины, прикладные науки и информационные технологии. В течение этого периода приобретаются необходимые академические компетенции для успешного проведения высших исследований в технических и научных областях, развивая аналитические навыки, логико-математическое мышление и понимание фундаментальных технологических принципов.",
-            "ja": "スペインの大学入学試験（Selectividad/EvAU）の準備と完了に基づく大学準備の高等中等教育訓練。この教育プログラムは、エンジニアリング分野、応用科学、情報技術に特化した一般知識の確固たる基盤を提供します。この期間中、技術的および科学的分野での高等研究を成功裏に行うために必要な学術的能力を獲得し、分析スキル、論理数学的推論、基本的な技術原理の理解を発展させます。"
+            "ja": "スペインの大学入学試験（Selectividad/EvAU）の準備と完了に基づく大学準備の高等中等教育訓練。この教育プログラムは、エンジニアリング分野、応用科学、情報技術に特化した一般知識の確固たる基盤を提供します。この期間中、技術的および科学的分野での高等研究を成功裏に行うために必要な学術的能力を獲得し、分析スキル、論理数学的推論、基本的な技術原理の理解を発展させます.",
+            "zh": "高中预科教育，基于对西班牙大学入学考试（Selectividad/EvAU）的准备与应考。该教育项目为考生提供扎实的一般性知识基础，并特别面向工程学科、应用科学与信息技术领域。在此阶段，学生获得开展技术与科学领域高等学习所需的学术能力，培养分析能力、逻辑-数学推理能力以及对基本技术原理的理解。",
+            "ar": "تدريب في مرحلة الثانوية العليا ما قبل الجامعة، قائم على التحضير والنجاح في امتحان الالتحاق بالجامعة الإسبانية (Selectividad/EvAU). يوفر هذا البرنامج التعليمي أساساً متيناً من المعارف العامة مع توجيه خاص نحو تخصصات الهندسة والعلوم التطبيقية وتقنيات المعلومات. خلال هذه الفترة، يُكتسب الطلاب الكفاءات الأكاديمية اللازمة لمتابعة دراسات عليا ناجحة في المجالات التقنية والعلمية، مع تطوير المهارات التحليلية والتفكير المنطقي-الرياضي وفهم مبادئ التكنولوجيا الأساسية.",
+            "sv": "Förberedande gymnasial utbildning inför universitetet, baserad på förberedelse för och genomförande av den spanska universitetsantagningsprovet (Selectividad/EvAU). Programmet ger en stabil allmän kunskapsbas med särskild inriktning mot ingenjörsdiscipliner, tillämpade vetenskaper och informationsteknik. Under denna period förvärvas de akademiska kompetenser som behövs för att framgångsrikt påbörja högre studier inom tekniska och vetenskapliga områden, samt utveckla analytiska färdigheter, logisk-matematiskt resonemang och förståelse för grundläggande tekniska principer.",
+            "no": "Forberedende videregående opplæring før universitetet, basert på forberedelse til og gjennomføring av den spanske universitetstilgangseksamen (Selectividad/EvAU). Dette programmet gir et solid grunnlag av generell kunnskap med spesiell orientering mot ingeniørfag, anvendte vitenskaper og informasjonsteknologi. I løpet av denne perioden tilegner studentene seg de akademiske ferdighetene som kreves for å gjennomføre høyere studier innen tekniske og vitenskapelige fag, samt utvikler analytiske ferdigheter, logisk-matematisk resonnement og forståelse for grunnleggende teknologiprinsipper.",
+            "fi": "Lukion ylioppilastutkintoon tähtäävä esiyliopistollinen koulutus, joka perustuu valmiuksiin ja läpäisyyn Espanjan yliopiston sisäänpääsykokeessa (Selectividad/EvAU). Tämä koulutusohjelma tarjoaa vankan yleissivistyksen pohjan, erityisesti suuntautuen tekniikan aloihin, soveltaviin tieteisiin ja tietotekniikkaan. Tänä aikana hankitaan akateemisia valmiuksia, jotka ovat tarpeen menestyksekkääseen korkeakouluopiskeluun teknisillä ja tieteellisillä aloilla, kehittäen analyyttisiä taitoja, loogis-matemaattista päättelykykyä ja ymmärrystä teknologian perusperiaatteista.",
+            "ko": "스페인 대학 입학시험(Selectividad/EvAU) 준비 및 응시를 기반으로 한 대학 진학 전 고등 교육 과정입니다. 이 교육 과정은 공학 분야, 응용 과학 및 정보 기술을 중심으로 한 탄탄한 일반 지식 기반을 제공합니다. 이 기간 동안 학생들은 기술적·과학적 분야의 고등 학업을 성공적으로 수행하기 위한 학문적 역량을 습득하며, 분석 능력, 논리-수학적 추론 및 기본 기술 원리에 대한 이해를 발전시킵니다.",
+            "tr": "İspanya üniversite giriş sınavı (Selectividad/EvAU) için hazırlık ve sınavın tamamlanmasına dayanan üniversite öncesi lise eğitimi. Bu eğitim programı, mühendislik disiplinlerine, uygulamalı bilimlere ve bilgi teknolojilerine özel bir yönelimle sağlam genel bir bilgi temeli sağlar. Bu dönemde, teknik ve bilimsel alanlarda başarılı yükseköğretim çalışmalarını yürütmek için gerekli akademik yeterlikler kazanılır; analitik beceriler, mantıksal-matematiksel muhakeme ve temel teknolojik prensiplerin anlaşılması geliştirilir.",
+            "cs": "Předvysokoškolské středoškolské vzdělávání, založené na přípravě a absolvování španělské přijímací zkoušky na univerzitu (Selectividad/EvAU). Tento vzdělávací program poskytuje pevný základ obecných znalostí se specifickým zaměřením na inženýrské obory, aplikované vědy a informační technologie. Během této doby si studenti osvojují akademické kompetence potřebné k úspěšnému pokračování ve vysokoškolském studiu v technických a vědeckých oblastech, rozvíjejí analytické dovednosti, logicko-matematické uvažování a porozumění základním technologickým principům.",
+            "hu": "Egyetemi felkészítést nyújtó középfokú oktatás, amely a spanyol egyetemi felvételi vizsga (Selectividad/EvAU) előkészítésén és letételén alapul. Ez az oktatási program szilárd általános tudásalapot biztosít, különös tekintettel a műszaki tudományokra, alkalmazott tudományokra és az információs technológiára. Ebben az időszakban a tanulók megszerzik azokat az akadémiai kompetenciákat, amelyek szükségesek a műszaki és tudományos területeken történő felsőfokú tanulmányok sikeres megkezdéséhez, fejlesztve az analitikus képességeket, a logikai-matematikai gondolkodást és az alapvető technológiai elvek megértését.",
+            "el": "Προ-πανεπιστημιακή ανώτερη δευτεροβάθμια εκπαίδευση, βασισμένη στην προετοιμασία και τη συμμετοχή στις εξετάσεις εισαγωγής στο ισπανικό πανεπιστήμιο (Selectividad/EvAU). Το πρόγραμμα αυτό παρέχει στιβαρή βάση γενικών γνώσεων με ειδική κατεύθυνση προς τις μηχανικές επιστήμες, τις εφαρμοσμένες επιστήμες και τις τεχνολογίες πληροφοριών. Κατά την περίοδο αυτή αποκτώνται οι απαραίτητες ακαδημαϊκές δεξιότητες για την επιτυχή συνέχεια στην τριτοβάθμια εκπαίδευση σε τεχνικούς και επιστημονικούς τομείς, αναπτύσσοντας αναλυτικές ικανότητες, λογικο-μαθηματική σκέψη και κατανόηση θεμελιωδών τεχνολογικών αρχών."
         },
         "startDate": "2018-09-01",
         "endDate": "2020-06-30",
@@ -61,7 +101,17 @@
             "nl": "Valdemoro, Madrid, Spanje",
             "pl": "Valdemoro, Madryt, Hiszpania",
             "ru": "Вальдеморо, Мадрид, Испания",
-            "ja": "バルデモロ、マドリッド、スペイン"
+            "ja": "バルデモロ、マドリッド、スペイン",
+            "zh": "瓦尔德莫罗，马德里，西班牙",
+            "ar": "فالدمورو، مدريد، إسبانيا",
+            "sv": "Valdemoro, Madrid, Spanien",
+            "no": "Valdemoro, Madrid, Spania",
+            "fi": "Valdemoro, Madrid, Espanja",
+            "ko": "발데모로, 마드리드, 스페인",
+            "tr": "Valdemoro, Madrid, İspanya",
+            "cs": "Valdemoro, Madrid, Španělsko",
+            "hu": "Valdemoro, Madrid, Spanyolország",
+            "el": "Valdemoro, Μαδρίτη, Ισπανία"
         },
         "achievements": [
             {
@@ -74,7 +124,17 @@
                 "nl": "Leren van digitale systemen",
                 "pl": "Nauka systemów cyfrowych",
                 "ru": "Изучение цифровых систем",
-                "ja": "デジタルシステムの学習"
+                "ja": "デジタルシステムの学習",
+                "zh": "数字系统学习",
+                "ar": "تعلم الأنظمة الرقمية",
+                "sv": "Inlärning av digitala system",
+                "no": "Læring av digitale systemer",
+                "fi": "Digitaalisten järjestelmien oppiminen",
+                "ko": "디지털 시스템 학습",
+                "tr": "Dijital sistemlerin öğrenilmesi",
+                "cs": "Učení digitálních systémů",
+                "hu": "Digitális rendszerek elsajátítása",
+                "el": "Μάθηση ψηφιακών συστημάτων"
             },
             {
                 "es": "Establecimiento de lógicas de programación con Processing",
@@ -86,7 +146,17 @@
                 "nl": "Vestiging van programmeerlogica met Processing",
                 "pl": "Ustalanie logiki programowania z Przetwarzaniem",
                 "ru": "Установление логики программирования с Processing",
-                "ja": "Processingを使用したプログラミングロジックの確立"
+                "ja": "Processingを使用したプログラミングロジックの確立",
+                "zh": "使用 Processing 建立编程逻辑",
+                "ar": "إرساء منطق البرمجة باستخدام Processing",
+                "sv": "Etablering av programmeringslogik med Processing",
+                "no": "Etablering av programmeringslogikk med Processing",
+                "fi": "Ohjelmointilogiikan luominen Processingilla",
+                "ko": "Processing을 사용한 프로그래밍 로직 정립",
+                "tr": "Processing ile programlama mantığının oluşturulması",
+                "cs": "Zavedení programovací logiky s Processing",
+                "hu": "Programozási logika kialakítása Processing használatával",
+                "el": "Καθιέρωση λογικής προγραμματισμού με Processing"
             },
             {
                 "es": "Matemáticas académicas dirigidas a ingenierías",
@@ -98,7 +168,17 @@
                 "nl": "Academische wiskunde gericht op engineering",
                 "pl": "Matematyka akademicka ukierunkowana na inżynierię",
                 "ru": "Академическая математика, ориентированная на инженерию",
-                "ja": "エンジニアリングに焦点を当てた学問的数学"
+                "ja": "エンジニアリングに焦点を当てた学問的数学",
+                "zh": "以工程为导向的学术数学",
+                "ar": "الرياضيات الأكاديمية الموجهة نحو الهندسة",
+                "sv": "Akademisk matematik med fokus på teknik",
+                "no": "Akademisk matematikk med fokus på ingeniørfag",
+                "fi": "Akateminen matematiikka, joka keskittyy tekniikkaan",
+                "ko": "공학에 초점을 맞춘 학술 수학",
+                "tr": "Mühendisliğe odaklanan akademik matematik",
+                "cs": "Akademická matematika zaměřená na inženýrství",
+                "hu": "Mérnöki fókuszú tudományos matematika",
+                "el": "Ακαδημαϊκά μαθηματικά με έμφαση στη μηχανική"
             },
             {
                 "es": "Física avanzada",
@@ -110,7 +190,17 @@
                 "nl": "Geavanceerde fysica",
                 "pl": "Fizyka zaawansowana",
                 "ru": "Продвинутая физика",
-                "ja": "高度な物理学"
+                "ja": "高度な物理学",
+                "zh": "高级物理",
+                "ar": "الفيزياء المتقدمة",
+                "sv": "Avancerad fysik",
+                "no": "Avansert fysikk",
+                "fi": "Edistynyt fysiikka",
+                "ko": "고급 물리학",
+                "tr": "İleri düzey fizik",
+                "cs": "Pokročilá fyzika",
+                "hu": "Fejlett fizika",
+                "el": "Προχωρημένη φυσική"
             }
         ]
     },
@@ -126,7 +216,17 @@
             "nl": "Universiteit Rey Juan Carlos",
             "pl": "Uniwersytet Rey Juan Carlos",
             "ru": "Университет Рея Хуана Карлоса",
-            "ja": "レイ・フアン・カルロス大学"
+            "ja": "レイ・フアン・カルロス大学",
+            "zh": "Rey Juan Carlos University",
+            "ar": "Rey Juan Carlos University",
+            "sv": "Rey Juan Carlos University",
+            "no": "Rey Juan Carlos University",
+            "fi": "Rey Juan Carlos University",
+            "ko": "Rey Juan Carlos University",
+            "tr": "Rey Juan Carlos University",
+            "cs": "Rey Juan Carlos University",
+            "hu": "Rey Juan Carlos University",
+            "el": "Rey Juan Carlos University"
         },
         "degree": {
             "es": "Grado",
@@ -138,7 +238,17 @@
             "nl": "Bachelor",
             "pl": "Licencjat",
             "ru": "Степень бакалавра",
-            "ja": "学士号"
+            "ja": "学士号",
+            "zh": "学士学位",
+            "ar": "درجة البكالوريوس",
+            "sv": "Kandidatexamen",
+            "no": "Bachelorgrad",
+            "fi": "Kandidaatin tutkinto",
+            "ko": "학사 학위",
+            "tr": "Lisans derecesi",
+            "cs": "Bakalářský titul",
+            "hu": "Alapszak (BSc)",
+            "el": "Πτυχίο"
         },
         "field": {
             "es": "Ingeniería Informática",
@@ -150,7 +260,17 @@
             "nl": "Computertechniek",
             "pl": "Inżynieria Komputerowa",
             "ru": "Компьютерная инженерия",
-            "ja": "コンピュータ工学"
+            "ja": "コンピュータ工学",
+            "zh": "计算机工程",
+            "ar": "هندسة الحاسوب",
+            "sv": "Datorteknik",
+            "no": "Dataingeniør",
+            "fi": "Tietotekniikka",
+            "ko": "컴퓨터 공학",
+            "tr": "Bilgisayar Mühendisliği",
+            "cs": "Počítačové inženýrství",
+            "hu": "Számítógép-mérnökség",
+            "el": "Μηχανική Υπολογιστών"
         },
         "description": {
             "es": "Programa académico integral de grado universitario en ingeniería informática que abarca una formación exhaustiva y multidisciplinar en todas las áreas fundamentales de la computación y el desarrollo tecnológico. El plan de estudios incluye una especialización avanzada en desarrollo de software moderno, arquitectura de sistemas, programación en múltiples paradigmas, diseño de algoritmos eficientes, estructuras de datos complejas, ingeniería de requisitos, metodologías ágiles y ciclo de vida completo del software. Además, se profundiza en áreas complementarias como bases de datos relacionales y no relacionales, sistemas operativos, redes de computadoras, seguridad informática, computación distribuida y paralela, inteligencia artificial, visión por computador, robótica aplicada y desarrollo de aplicaciones web y móviles multiplataforma.",
@@ -162,7 +282,17 @@
             "nl": "Uitgebreid academisch undergraduate-programma in computertechniek dat een uitputtende en multidisciplinaire opleiding dekt in alle fundamentele gebieden van computing en technologische ontwikkeling. Het curriculum omvat geavanceerde specialisatie in moderne softwareontwikkeling, systeemarchitectuur, multi-paradigma programmering, efficiënt algoritme-ontwerp, complexe gegevensstructuren, requirements engineering, agile methodologieën en volledige softwarelevenscyclus. Bovendien worden complementaire gebieden zoals relationele en niet-relationele databases, besturingssystemen, computernetwerken, informatiebeveiliging, gedistribueerde en parallelle computing, kunstmatige intelligentie, computer vision, toegepaste robotica en platformonafhankelijke web- en mobiele applicatieontwikkeling diepgaand bestudeerd.",
             "pl": "Kompleksowy akademicki program studiów licencjackich z inżynierii komputerowej obejmujący wyczerpujące i multidyscyplinarne szkolenie we wszystkich podstawowych obszarach informatyki i rozwoju technologicznego. Program studiów obejmuje zaawansowaną specjalizację w nowoczesnym tworzeniu oprogramowania, architekturze systemów, programowaniu wieloparadygmatowym, projektowaniu wydajnych algorytmów, złożonych strukturach danych, inżynierii wymagań, metodologiach zwinnych i pełnym cyklu życia oprogramowania. Ponadto zgłębiane są obszary uzupełniające, takie jak relacyjne i nierelacyjne bazy danych, systemy operacyjne, sieci komputerowe, bezpieczeństwo informacji, obliczenia rozproszone i równoległe, sztuczna inteligencja, widzenie komputerowe, robotyka stosowana i tworzenie aplikacji internetowych i mobilnych wieloplatformowych.",
             "ru": "Комплексная академическая программа бакалавриата по компьютерной инженерии, охватывающая исчерпывающее и многодисциплинарное обучение во всех фундаментальных областях вычислительной техники и технологического развития. Учебный план включает продвинутую специализацию в современной разработке программного обеспечения, архитектуре систем, мультипарадигменном программировании, эффективном проектировании алгоритмов, сложных структурах данных, инженерии требований, гибких методологиях и полном жизненном цикле программного обеспечения. Кроме того, углубленно изучаются дополнительные области, такие как реляционные и нереляционные базы данных, операционные системы, компьютерные сети, информационная безопасность, распределенные и параллельные вычисления, искусственный интеллект, компьютерное зрение, прикладная робототехника и разработка кросс-платформенных веб- и мобильных приложений.",
-            "ja": "コンピューティングと技術開発のすべての基本領域における包括的かつ学際的なトレーニングをカバーする、コンピュータ工学の包括的な学部学術プログラム。カリキュラムには、モダンなソフトウェア開発、システムアーキテクチャ、マルチパラダイムプログラミング、効率的なアルゴリズム設計、複雑なデータ構造、要件工学、アジャイル方法論、完全なソフトウェアライフサイクルにおける高度な専門化が含まれています。さらに、リレーショナルおよび非リレーショナルデータベース、オペレーティングシステム、コンピュータネットワーク、情報セキュリティ、分散および並列コンピューティング、人工知能、コンピュータビジョン、応用ロボティクス、クロスプラットフォームのWebおよびモバイルアプリケーション開発などの補完的な領域を深く研究します。"
+            "ja": "コンピューティングと技術開発のすべての基本領域における包括的かつ学際的なトレーニングをカバーする、コンピュータ工学の包括的な学部学術プログラム。カリキュラムには、モダンなソフトウェア開発、システムアーキテクチャ、マルチパラダイムプログラミング、効率的なアルゴリズム設計、複雑なデータ構造、要件工学、アジャイル方法論、完全なソフトウェアライフサイクルにおける高度な専門化が含まれています。さらに、リレーショナルおよび非リレーショナルデータベース、オペレーティングシステム、コンピュータネットワーク、情報セキュリティ、分散および並列コンピューティング、人工知能、コンピュータビジョン、応用ロボティクス、クロスプラットフォームのWebおよびモバイルアプリケーション開発などの補完的な領域を深く研究します.",
+            "zh": "该本科项目为计算机工程提供全面且跨学科的培训，涵盖计算与技术发展所有基础领域。课程包含现代软件开发、系统架构、多范式编程、高效算法设计、复杂数据结构、需求工程、敏捷方法论以及完整的软件生命周期等高级专题。此外还深入学习关系型与非关系型数据库、操作系统、计算机网络、信息安全、分布式与并行计算、人工智能、计算机视觉、应用机器人学以及跨平台的 Web 与移动应用开发。",
+            "ar": "برنامج بكالوريوس شامل في هندسة الحاسوب يغطي تدريبًا مستفيضًا ومتعدد التخصصات في جميع المجالات الأساسية للحوسبة وتطوير التكنولوجيا. يتضمن المنهج تخصصات متقدمة في تطوير البرمجيات الحديثة، هندسة الأنظمة، البرمجة متعددة النماذج، تصميم الخوارزميات الفعالة، هياكل البيانات المعقدة، هندسة المتطلبات، منهجيات أجايل ودورة حياة كاملة للبرمجيات. بالإضافة إلى ذلك، يتم دراسة مجالات مكملة مثل قواعد البيانات العلائقية وغير العلائقية، أنظمة التشغيل، شبكات الحاسوب، أمن المعلومات، الحوسبة الموزعة والمتوازية، الذكاء الاصطناعي، رؤية الحاسوب، الروبوتات التطبيقية وتطوير تطبيقات الويب والموبايل عبر المنصات بعمق.",
+            "sv": "Omfattande kandidatprogram i datorteknik som täcker en utbredd och tvärvetenskaplig utbildning inom alla grundläggande områden för datavetenskap och teknikutveckling. Kursplanen inkluderar avancerad specialisering inom modern mjukvaruutveckling, systemarkitektur, multiparadigmsprogrammering, effektiv algoritmdesign, komplexa datastrukturer, kravhantering, agila metoder och fullständig mjukvarulivscykel. Dessutom studeras kompletterande områden som relations- och icke-relationsdatabaser, operativsystem, datornätverk, informationssäkerhet, distribuerad och parallell databehandling, artificiell intelligens, datorseende, tillämpad robotik samt plattformsoberoende webb- och mobilapplikationsutveckling på djupet.",
+            "no": "Omfattende bachelorprogram i dataingeniørfag som dekker grundig og tverrfaglig opplæring i alle grunnleggende områder av databehandling og teknologisk utvikling. Pensumet inkluderer avansert spesialisering i moderne programvareutvikling, systemarkitektur, flerparadigmeprogrammering, effektiv algoritmedesign, komplekse datastrukturer, kravspesifikasjon, smidige metoder og komplett programvarelivssyklus. I tillegg studeres komplementære områder som relasjons- og ikke-relasjonsdatabaser, operativsystemer, datanettverk, informasjonssikkerhet, distribuert og parallell databehandling, kunstig intelligens, datamaskinsyn, anvendt robotikk og kryssplattform web- og mobilapplikasjonsutvikling i dybden.",
+            "fi": "Laaja kandidaattiohjelma tietokonetekniikassa, joka kattaa perusteellisen ja monitieteisen koulutuksen kaikilla laskennan ja teknologisen kehityksen keskeisillä alueilla. Opintosuunnitelma sisältää edistyneitä erikoistumisalueita modernissa ohjelmistokehityksessä, järjestelmäarkkitehtuurissa, moniparadigma-ohjelmoinnissa, tehokkaassa algoritmisuunnittelussa, monimutkaisissa tietorakenteissa, vaatimusmäärittelyssä, ketterissä menetelmissä ja täydellisessä ohjelmiston elinkaaressa. Lisäksi syvennytään täydentäviin alueisiin, kuten relaatiotietokannat ja ei-relaatiotietokannat, käyttöjärjestelmät, tietokoneverkot, tietoturva, hajautettu ja rinnakkainen laskenta, tekoäly, konenäkö, sovellettu robotiikka sekä alustojen välinen web- ja mobiilisovelluskehitys.",
+            "ko": "포괄적인 학부 컴퓨터 공학 프로그램으로, 컴퓨팅과 기술 발전의 모든 기본 분야에 걸친 종합적이고 학제간 교육을 제공합니다. 교육과정은 현대 소프트웨어 개발, 시스템 아키텍처, 다중 패러다임 프로그래밍, 효율적인 알고리즘 설계, 복잡한 데이터 구조, 요구사항 공학, 애자일 방법론 및 전체 소프트웨어 수명주기 등의 고급 전문화를 포함합니다. 또한 관계형 및 비관계형 데이터베이스, 운영체제, 컴퓨터 네트워크, 정보 보안, 분산 및 병렬 컴퓨팅, 인공지능, 컴퓨터 비전, 응용 로보틱스 및 크로스플랫폼 웹·모바일 애플리케이션 개발과 같은 보완 분야도 심도 있게 학습합니다.",
+            "tr": "Bilgisayar mühendisliğinde kapsamlı bir lisans programı olup, hesaplama ve teknolojik gelişmenin tüm temel alanlarında kapsamlı ve disiplinlerarası eğitim sağlar. Müfredat, modern yazılım geliştirme, sistem mimarisi, çok paradigmli programlama, verimli algoritma tasarımı, karmaşık veri yapıları, gereksinim mühendisliği, çevik metodolojiler ve tam yazılım yaşam döngüsü gibi ileri düzey uzmanlıkları içerir. Ayrıca ilişkisel ve ilişkisel olmayan veritabanları, işletim sistemleri, bilgisayar ağları, bilgi güvenliği, dağıtık ve paralel hesaplama, yapay zeka, bilgisayarla görme, uygulamalı robotik ve platformlar arası web ve mobil uygulama geliştirme gibi tamamlayıcı alanlar derinlemesine incelenir.",
+            "cs": "Komplexní bakalářský program v oboru počítačového inženýrství, který pokrývá rozsáhlé a multidisciplinární vzdělávání ve všech základních oblastech výpočetní techniky a technologického vývoje. Studijní plán zahrnuje pokročilou specializaci v moderním vývoji softwaru, architektuře systémů, programování více paradigmatu, efektivním návrhu algoritmů, komplexních datových strukturách, inženýrství požadavků, agilních metodologiích a kompletním životním cyklu softwaru. Dále jsou podrobně studovány doplňkové oblasti, jako relační a nerelační databáze, operační systémy, počítačové sítě, informační bezpečnost, distribuované a paralelní výpočty, umělá inteligence, počítačové vidění, aplikovaná robotika a vývoj multiplatformních webových a mobilních aplikací.",
+            "hu": "Átfogó alapképzés számítógép-mérnökség területén, amely kimerítő és multidiszciplináris képzést nyújt a számítástechnika és a technológiai fejlődés minden alapvető területén. A tanterv magában foglalja a modern szoftverfejlesztésben, rendszerarchitektúrában, többparadigmás programozásban, hatékony algoritmustervezésben, összetett adatszerkezetekben, követelménymérnökségben, agilis módszertanokban és a teljes szoftver-életciklusban való haladó szakosodást. Emellett mélyrehatóan tanulmányozza a kapcsolati és nem kapcsolati adatbázisokat, operációs rendszereket, számítógép-hálózatokat, információbiztonságot, elosztott és párhuzamos számítást, mesterséges intelligenciát, számítógépes látást, alkalmazott robotikát és a platformok közötti web- és mobilalkalmazás-fejlesztést.",
+            "el": "Πανεπιστημιακό πρόγραμμα προπτυχιακών σπουδών στην επιστήμη των υπολογιστών/μηχανική υπολογιστών με εκτενή και διεπιστημονική εκπαίδευση σε όλους τους θεμελιώδεις τομείς της πληροφορικής και της τεχνολογικής ανάπτυξης. Το πρόγραμμα περιλαμβάνει προχωρημένη εξειδίκευση στη σύγχρονη ανάπτυξη λογισμικού, αρχιτεκτονική συστημάτων, πολυπαραδειγματικό προγραμματισμό, αποδοτικό σχεδιασμό αλγορίθμων, πολύπλοκες δομές δεδομένων, μηχανική απαιτήσεων, ευέλικτες μεθοδολογίες και τον πλήρη κύκλο ζωής του λογισμικού. Επιπλέον, μελετώνται σε βάθος συμπληρωματικοί τομείς όπως σχεσιακές και μη σχεσιακές βάσεις δεδομένων, λειτουργικά συστήματα, δίκτυα υπολογιστών, ασφάλεια πληροφοριών, κατανεμημένη και παράλληλη υπολογιστική, τεχνητή νοημοσύνη, όραση υπολογιστή, εφαρμοσμένη ρομποτική και ανάπτυξη διαλειτουργικών web και mobile εφαρμογών."
         },
         "startDate": "2020-09-01",
         "endDate": "2025-06-30",
@@ -176,7 +306,17 @@
             "nl": "Móstoles, Madrid, Spanje",
             "pl": "Móstoles, Madryt, Hiszpania",
             "ru": "Мостолес, Мадрид, Испания",
-            "ja": "モストレス、マドリッド、スペイン"
+            "ja": "モストレス、マドリッド、スペイン",
+            "zh": "莫斯托莱斯，马德里，西班牙",
+            "ar": "موستوليس، مدريد، إسبانيا",
+            "sv": "Móstoles, Madrid, Spanien",
+            "no": "Móstoles, Madrid, Spania",
+            "fi": "Móstoles, Madrid, Espanja",
+            "ko": "모스토레스, 마드리드, 스페인",
+            "tr": "Móstoles, Madrid, İspanya",
+            "cs": "Móstoles, Madrid, Španělsko",
+            "hu": "Móstoles, Madrid, Spanyolország",
+            "el": "Móstoles, Μαδρίτη, Ισπανία"
         },
         "achievements": [
             {
@@ -189,7 +329,17 @@
                 "nl": "Web- en mobiele applicatieontwikkeling, inclusief moderne backends en frontends.",
                 "pl": "Tworzenie aplikacji internetowych i mobilnych, w tym nowoczesne backendy i frontendy.",
                 "ru": "Разработка веб-приложений и мобильных приложений, включая современные бэкенды и фронтенды.",
-                "ja": "モダンなバックエンドとフロントエンドを含む、WebおよびモバイルアプリケーションDevelopment。"
+                "ja": "モダンなバックエンドとフロントエンドを含む、WebおよびモバイルアプリケーションDevelopment。",
+                "zh": "Web 与移动应用开发，包括现代后端与前端。",
+                "ar": "تطوير تطبيقات الويب والموبايل، بما في ذلك الواجهات الخلفية والواجهات الأمامية الحديثة.",
+                "sv": "Utveckling av webb- och mobilapplikationer, inklusive moderna backend- och frontendlösningar.",
+                "no": "Utvikling av web- og mobilapplikasjoner, inkludert moderne backends og frontends.",
+                "fi": "Web- ja mobiilisovellusten kehitys, mukaan lukien nykyaikaiset backendit ja frontit.",
+                "ko": "웹 및 모바일 애플리케ーション 개발(현대적 백엔드 및 프론트엔드 포함).",
+                "tr": "Web ve mobil uygulama geliştirme, modern backend ve frontend dahil.",
+                "cs": "Vývoj webových a mobilních aplikací, včetně moderních backendů a frontendů.",
+                "hu": "Web- és mobilalkalmazás-fejlesztés, beleértve a modern backendeket és frontendeket.",
+                "el": "Ανάπτυξη εφαρμογών web και mobile, συμπεριλαμβανομένων σύγχρονων backends και frontends."
             },
             {
                 "es": "Especialización en arquitectura de software y proyectos con tecnologías actuales.",
@@ -201,7 +351,17 @@
                 "nl": "Specialisatie in software-architectuur en projecten met huidige technologieën.",
                 "pl": "Specjalizacja w architekturze oprogramowania i projektach z bieżącymi technologiami.",
                 "ru": "Специализация на архитектуре программного обеспечения и проектах с современными технологиями.",
-                "ja": "ソフトウェアアーキテクチャおよび現在のテクノロジーを使用したプロジェクトの専門化。"
+                "ja": "ソフトウェアアーキテクチャおよび現在のテクノロジーを使用したプロジェクトの専門化。",
+                "zh": "专攻软件架构与基于现代技术的项目开发。",
+                "ar": "تخصص في هندسة البرمجيات ومشاريع باستخدام التقنيات الحديثة.",
+                "sv": "Specialisering i mjukvaruarkitektur och projekt med moderna teknologier.",
+                "no": "Spesialisering i programvarearkitektur og prosjekter med moderne teknologier.",
+                "fi": "Erikoistuminen ohjelmistoarkkitehtuuriin ja projekteihin nykyaikaisilla teknologioilla.",
+                "ko": "소프트웨어 아키텍처 및 최신 기술을 활용한 프로젝트 전문화.",
+                "tr": "Yazılım mimarisi ve güncel teknolojilerle projelerde uzmanlaşma.",
+                "cs": "Specializace v softwarové architektuře a projektech s aktuálními technologiemi.",
+                "hu": "Szoftverarchitektúra és aktuális technológiákkal végzett projektek specializációja.",
+                "el": "Εξειδίκευση στην αρχιτεκτονική λογισμικού και έργα με σύγχρονες τεχνολογίες."
             },
             {
                 "es": "Programación concurrente, distribuida y sistemas operativos avanzados.",
@@ -213,7 +373,17 @@
                 "nl": "Gelijktijdige en gedistribueerde programmering met geavanceerde besturingssystemen.",
                 "pl": "Programowanie równoczesne i rozproszone z zaawansowanymi systemami operacyjnymi.",
                 "ru": "Параллельное и распределенное программирование с продвинутыми операционными системами.",
-                "ja": "高度なオペレーティングシステムを使用した並行および分散プログラミング。"
+                "ja": "高度なオペレーティングシステムを使用した並行および分散プログラミング。",
+                "zh": "并发与分布式编程以及高级操作系统。",
+                "ar": "البرمجة المتزامنة والموزعة مع أنظمة تشغيل متقدمة.",
+                "sv": "Parallell- och distribuerad programmering med avancerade operativsystem.",
+                "no": "Parallell og distribuert programmering med avanserte operativsystemer.",
+                "fi": "Samanaikainen ja hajautettu ohjelmointi sekä kehittyneet käyttöjärjestelmät.",
+                "ko": "병렬 및 분산 프로그래밍과 고급 운영체제.",
+                "tr": "Eşzamanlı ve dağıtık programlama ile gelişmiş işletim sistemleri.",
+                "cs": "Současné a distribuované programování s pokročilými operačními systémy.",
+                "hu": "Párhuzamos és elosztott programozás fejlett operációs rendszerekkel.",
+                "el": "Ταυτόχρονος και κατανεμημένος προγραμματισμός με προηγμένα λειτουργικά συστήματα."
             },
             {
                 "es": "Sistemas inteligentes, visión artificial y robótica/domótica aplicada.",
@@ -225,7 +395,17 @@
                 "nl": "Intelligente systemen, kunstmatig zien en toegepaste robotica/huisautomatie.",
                 "pl": "Systemy inteligentne, widzenie sztuczne i zastosowana robotyka/domotyka.",
                 "ru": "Интеллектуальные системы, искусственное зрение и прикладная робототехника/домашняя автоматизация.",
-                "ja": "インテリジェントシステム、人工ビジョン、および応用ロボットシステム/ホームオートメーション。"
+                "ja": "インテリジェントシステム、人工ビジョン、および応用ロボットシステム/ホームオートメーション。",
+                "zh": "智能系统、计算机视觉与应用机器人学/智能家居自动化。",
+                "ar": "الأنظمة الذكية، الرؤية الحاسوبية والروبوتات التطبيقية/أتمتة المنازل.",
+                "sv": "Intelligenta system, datorseende och tillämpad robotik/hemautomation.",
+                "no": "Intelligente system, maskinsyn og anvendt robotikk/hjemmeautomatisering.",
+                "fi": "Älykkäät järjestelmät, konenäkö ja sovellettu robotiikka/kodin automaatio.",
+                "ko": "지능형 시스템, 컴퓨터 비전 및 응용 로보틱스/홈 자동화.",
+                "tr": "Akıllı sistemler, yapay görme ve uygulamalı robotik/ev otomasyonu.",
+                "cs": "Inteligentní systémy, počítačové vidění a aplikovaná robotika/domácí automatizace.",
+                "hu": "Intelligens rendszerek, számítógépes látás és alkalmazott robotika/okosotthon-automatizálás.",
+                "el": "Έξυπνα συστήματα, τεχνητή όραση και εφαρμοσμένη ρομποτική/αυτοματοποίηση σπιτιού."
             },
             {
                 "es": "Diseño y optimización de bases de datos, redes y computación de altas prestaciones.",
@@ -237,7 +417,17 @@
                 "nl": "Ontwerp en optimalisering van databases, netwerken en high-performance computing.",
                 "pl": "Projektowanie i optymalizacja baz danych, sieci i obliczeniówwysokiej wydajności.",
                 "ru": "Проектирование и оптимизация баз данных, сетей и высокопроизводительных вычислений.",
-                "ja": "データベース、ネットワーク、および高性能コンピューティングの設計と最適化。"
+                "ja": "データベース、ネットワーク、および高性能コンピューティングの設計と最適化。",
+                "zh": "数据库、网络与高性能计算的设计与优化。",
+                "ar": "تصميم وتحسين قواعد البيانات والشبكات والحوسبة عالية الأداء.",
+                "sv": "Design och optimering av databaser, nätverk och högpresterande beräkningar.",
+                "no": "Design og optimalisering av databaser, nettverk og høyytelsesberegning.",
+                "fi": "Tietokantojen, verkkojen ja korkean suorituskyvyn laskennan suunnittelu ja optimointi.",
+                "ko": "데이터베이스, 네트워크 및 고성능 컴퓨팅의 설계 및 최적화.",
+                "tr": "Veritabanları, ağlar ve yüksek performanslı bilgi işlem tasarımı ve optimizasyonu.",
+                "cs": "Návrh a optimalizace databází, sítí a výpočtů s vysokým výkonem.",
+                "hu": "Adatbázisok, hálózatok és nagy teljesítményű számítástechnika tervezése és optimalizálása.",
+                "el": "Σχεδιασμός και βελτιστοποίηση βάσεων δεδομένων, δικτύων και υπολογισμών υψηλής απόδοσης."
             }
         ]
     },
@@ -253,7 +443,17 @@
             "nl": "BigSchool & Universiteit Isabel I",
             "pl": "BigSchool & Uniwersytet Isabel I",
             "ru": "BigSchool и Университет Изабель I",
-            "ja": "BigSchoolとイサベルI大学"
+            "ja": "BigSchoolとイサベルI大学",
+            "zh": "BigSchool 与 Isabel I 大学",
+            "ar": "BigSchool وجامعة Isabel I",
+            "sv": "BigSchool & Isabel I universitetet",
+            "no": "BigSchool & Isabel I universitetet",
+            "fi": "BigSchool & Isabel I -yliopisto",
+            "ko": "BigSchool 및 Isabel I 대학교",
+            "tr": "BigSchool & Isabel I Üniversitesi",
+            "cs": "BigSchool & Univerzita Isabel I",
+            "hu": "BigSchool & Isabel I Egyetem",
+            "el": "BigSchool & Πανεπιστήμιο Isabel I"
         },
         "degree": {
             "es": "Máster",
@@ -265,7 +465,17 @@
             "nl": "Masterdiploma",
             "pl": "Magister",
             "ru": "Степень магистра",
-            "ja": "修士号"
+            "ja": "修士号",
+            "zh": "硕士学位",
+            "ar": "درجة الماجستير",
+            "sv": "Masterexamen",
+            "no": "Mastergrad",
+            "fi": "Maisterin tutkinto",
+            "ko": "석사 학위",
+            "tr": "Yüksek lisans derecesi",
+            "cs": "Magisterský titul",
+            "hu": "Mesterfokozat",
+            "el": "Μεταπτυχιακό δίπλωμα"
         },
         "field": {
             "es": "Desarrollo con Inteligencia Artificial",
@@ -277,7 +487,17 @@
             "nl": "Ontwikkeling met Kunstmatige Intelligentie",
             "pl": "Rozwój ze Sztuczną Inteligencją",
             "ru": "Разработка с искусственным интеллектом",
-            "ja": "人工知能による開発"
+            "ja": "人工知能による開発",
+            "zh": "人工智能开发",
+            "ar": "التطوير باستخدام الذكاء الاصطناعي",
+            "sv": "Utveckling med artificiell intelligens",
+            "no": "Utvikling med kunstig intelligens",
+            "fi": "Kehitys tekoälyn avulla",
+            "ko": "인공지능을 활용한 개발",
+            "tr": "Yapay Zeka ile Geliştirme",
+            "cs": "Vývoj s umělou inteligencí",
+            "hu": "Fejlesztés mesterséges intelligenciával",
+            "el": "Ανάπτυξη με Τεχνητή Νοημοσύνη"
         },
         "description": {
             "es": "Programa de posgrado avanzado enfocado en la especialización profesional en el campo de la inteligencia artificial y el aprendizaje automático (machine learning), con una orientación práctica hacia su aplicación directa en el desarrollo de software moderno y soluciones tecnológicas innovadoras. El máster abarca el estudio profundo de algoritmos de aprendizaje supervisado y no supervisado, redes neuronales profundas (deep learning), procesamiento de lenguaje natural (NLP), visión artificial, análisis predictivo, big data, frameworks y librerías especializadas como TensorFlow, PyTorch y scikit-learn. Se enfatiza el desarrollo de proyectos reales que integran capacidades de IA en aplicaciones empresariales, sistemas de recomendación, automatización inteligente, análisis de datos masivos y la implementación de modelos de machine learning en entornos de producción escalables, siguiendo las mejores prácticas de MLOps y arquitecturas cloud.",
@@ -289,7 +509,17 @@
             "nl": "Geavanceerd postacademisch programma gericht op professionele specialisatie op het gebied van kunstmatige intelligentie en machine learning, met een praktische oriëntatie op de directe toepassing ervan in moderne softwareontwikkeling en innovatieve technologische oplossingen. De master omvat diepgaande studie van gecontroleerde en ongecontroleerde leeralgoritmen, diepe neurale netwerken (deep learning), natuurlijke taalverwerking (NLP), computer vision, voorspellende analyse, big data en gespecialiseerde frameworks en bibliotheken zoals TensorFlow, PyTorch en scikit-learn. De nadruk ligt op de ontwikkeling van echte projecten die AI-mogelijkheden integreren in zakelijke toepassingen, aanbevelingssystemen, intelligente automatisering, massale gegevensanalyse en het implementeren van machine learning-modellen in schaalbare productieomgevingen, volgens MLOps-best practices en cloud-architecturen.",
             "pl": "Zaawansowany program podyplomowy skoncentrowany na profesjonalnej specjalizacji w dziedzinie sztucznej inteligencji i uczenia maszynowego (machine learning), z praktyczną orientacją na jego bezpośrednie zastosowanie w nowoczesnym tworzeniu oprogramowania i innowacyjnych rozwiązaniach technologicznych. Program magisterski obejmuje dogłębne studium algorytmów uczenia nadzorowanego i nienadzorowanego, głębokich sieci neuronowych (deep learning), przetwarzania języka naturalnego (NLP), wizji komputerowej, analizy predykcyjnej, big data oraz specjalistycznych frameworków i bibliotek, takich jak TensorFlow, PyTorch i scikit-learn. Nacisk kładzie się na tworzenie rzeczywistych projektów integrujących możliwości AI w aplikacjach biznesowych, systemach rekomendacji, inteligentnej automatyzacji, analizie masowych danych i wdrażaniu modeli uczenia maszynowego w skalowalnych środowiskach produkcyjnych, zgodnie z najlepszymi praktykami MLOps i architekturami chmury.",
             "ru": "Продвинутая аспирантская программа, ориентированная на профессиональную специализацию в области искусственного интеллекта и машинного обучения, с практической направленностью на его прямое применение в современной разработке программного обеспечения и инновационных технологических решениях. Магистратура охватывает углубленное изучение алгоритмов контролируемого и неконтролируемого обучения, глубоких нейронных сетей (deep learning), обработки естественного языка (NLP), компьютерного зрения, прогностической аналитики, больших данных и специализированных фреймворков и библиотек, таких как TensorFlow, PyTorch и scikit-learn. Акцент делается на разработке реальных проектов, которые интегрируют возможности ИИ в бизнес-приложения, системы рекомендаций, интеллектуальную автоматизацию, анализ массовых данных и внедрение моделей машинного обучения в масштабируемые производственные среды, следуя лучшим практикам MLOps и облачным архитектурам.",
-            "ja": "モダンなソフトウェア開発と革新的な技術ソリューションへの直接的な応用に向けた実践的な方向性を持つ、人工知能と機械学習分野における専門的特化に焦点を当てた高度な大学院プログラム。修士課程では、教師あり学習と教師なし学習アルゴリズム、深層ニューラルネットワーク（ディープラーニング）、自然言語処理（NLP）、コンピュータビジョン、予測分析、ビッグデータ、TensorFlow、PyTorch、scikit-learnなどの専門的なフレームワークとライブラリの徹底的な研究をカバーします。ビジネスアプリケーション、推奨システム、インテリジェント自動化、大規模データ分析にAI機能を統合し、MLOpsのベストプラクティスとクラウドアーキテクチャに従ってスケーラブルな本番環境に機械学習モデルを実装する実際のプロジェクトの開発に重点が置かれています。"
+            "ja": "モダンなソフトウェア開発と革新的な技術ソリューションへの直接的な応用に向けた実践的な方向性を持つ、人工知能と機械学習分野における専門的特化に焦点を当てた高度な大学院プログラム。修士課程では、教師あり学習と教師なし学習アルゴリズム、深層ニューラルネットワーク（ディープラーニング）、自然言語処理（NLP）、コンピュータビジョン、予測分析、ビッグデータ、TensorFlow、PyTorch、scikit-learnなどの専門的なフレームワークとライブラリの徹底的な研究をカバーします。ビジネスアプリケーション、推奨システム、インテリジェント自動化、大規模データ分析にAI機能を統合し、MLOpsのベストプラクティスとクラウドアーキテクチャに従ってスケーラブルな本番環境に機械学習モデルを実装する実際のプロジェクトの開発に重点が置かれています。",
+            "zh": "高级研究生课程，专注于人工智能与机器学习的专业化，强调其在现代软件开发和创新技术解决方案中的实际应用。课程深入研究监督与无监督学习算法、深度神经网络（深度学习）、自然语言处理（NLP）、计算机视觉、预测分析、大数据以及 TensorFlow、PyTorch、scikit-learn 等专用框架与库。课程强调开发将 AI 能力集成到企业应用、推荐系统、智能自动化和大规模数据分析中的真实项目，并在可扩展的生产环境中部署机器学习模型，遵循 MLOps 与云架构的最佳实践。",
+            "ar": "برنامج دراسات عليا متقدم يركز على التخصص المهني في مجال الذكاء الاصطناعي وتعلم الآلة، مع توجه عملي نحو تطبيقه المباشر في تطوير البرمجيات الحديثة والحلول التكنولوجية المبتكرة. يغطي المقرر دراسة معمقة لخوارزميات التعلم الخاضع وغير الخاضع للمراقبة، الشبكات العصبية العميقة، معالجة اللغة الطبيعية، رؤية الحاسوب، التحليلات التنبؤية، البيانات الضخمة، وأطر عمل متخصصة مثل TensorFlow وPyTorch وscikit-learn. يتم التركيز على تطوير مشاريع حقيقية تدمج قدرات الذكاء الاصطناعي في تطبيقات الأعمال، أنظمة التوصية، الأتمتة الذكية وتحليل البيانات الضخمة، وتنفيذ نماذج تعلم الآلة في بيئات إنتاج قابلة للتوسع، مع اتباع ممارسات MLOps ومعماريات السحابة.",
+            "sv": "Avancerat forskarprogram inriktat på professionell specialisering inom artificiell intelligens och maskininlärning, med praktisk orientering mot dess direkta tillämpning i modern programvaruutveckling och innovativa tekniska lösningar. Programmet täcker djupgående studier av övervakade och icke-övervakade inlärningsalgoritmer, djupa neurala nätverk (deep learning), NLP, datorseende, prediktiv analys, big data och specialiserade ramverk som TensorFlow, PyTorch och scikit-learn. Betoning läggs på att utveckla verkliga projekt som integrerar AI-funktioner i affärsapplikationer, rekommendationssystem, intelligent automation och massiv dataanalys samt implementering av maskininlärningsmodeller i skalbara produktionsmiljöer enligt MLOps och molnarkitekturers bästa praxis.",
+            "no": "Avansert forskerprogram fokusert på faglig spesialisering innen kunstig intelligens og maskinlæring, med praktisk orientering mot direkte anvendelse i moderne programvareutvikling og innovative teknologiske løsninger. Programmet dekker dyptgående studier av overvåkede og ikke-overvåkede læringsalgoritmer, dype nevrale nettverk, NLP, datamaskinsyn, prediktiv analyse, big data og rammeverk som TensorFlow, PyTorch og scikit-learn. Det legges vekt på utvikling av reelle prosjekter som integrerer AI i forretningsapplikasjoner, anbefalingssystemer, intelligent automatisering og storskala dataanalyse, samt implementering av maskinlæringsmodeller i skalerbare produksjonsmiljøer i tråd med MLOps-best practices og skyarkitektur.",
+            "fi": "Edistynyt jatko-opinto-ohjelma, joka keskittyy ammatilliseen erikoistumiseen tekoälyn ja koneoppimisen alalla, ja jossa on käytännönläheinen suuntaus suoraan soveltamiseen modernissa ohjelmistokehityksessä ja innovatiivisissa teknologiaratkaisuissa. Ohjelma kattaa syvällisen opiskelun valvotuista ja valvomattomista oppimisalgoritmeista, syvistä neuroverkostoista (deep learning), NLP:stä, konevisiosta, ennakoivasta analytiikasta, big datasta ja erikoistuneista kehyksistä kuten TensorFlow, PyTorch ja scikit-learn. Painopiste on todellisten projektien kehittämisessä, jotka integroivat AI-ominaisuuksia liiketoimintasovelluksiin, suositusjärjestelmiin, älykkääseen automaatioon ja suurten tietomassojen analysointiin sekä koneoppimismallien käyttöönottoon skaalautuvissa tuotantoympäristöissä MLOps-käytänteiden ja pilviarkkitehtuurin mukaisesti.",
+            "ko": "현대 소프트웨어 개발 및 혁신 기술 솔루션에 직접 적용할 수 있는 실무 지향의 인공지능 및 머신러닝 전문화 과정인 고급 대학원 프로그램입니다. 이 석사 과정은 지도 및 비지도 학습 알고리즘, 딥 뉴럴 네트워크(딥러닝), 자연어 처리(NLP), 컴퓨터 비전, 예측 분석, 빅데이터 및 TensorFlow, PyTorch, scikit-learn과 같은 전문 프레임워크 및 라이브러리에 대한 심층 학습을 포함합니다. 실제 프로젝트 개발을 통해 AI 기능을 비즈니스 애플리케이션, 추천 시스템, 지능형 자동화 및 대규모 데이터 분석에 통합하고, MLOps 모범 사례 및 클라우드 아키텍처를 준수하여 확장 가능한 생산 환경에 머신러닝 모델을 배포하는 데 중점을 둡니다.",
+            "tr": "Yapay zeka ve makine öğrenmesi alanında profesyonel uzmanlaşmaya odaklanan, modern yazılım geliştirme ve yenilikçi teknolojik çözümler için doğrudan uygulamaya yönelik pratik bir yönelime sahip ileri düzey lisansüstü program. Yüksek lisans programı denetimli ve denetimsiz öğrenme algoritmaları, derin sinir ağları (deep learning), doğal dil işleme (NLP), bilgisayarlı görü, öngörücü analiz, büyük veri ve TensorFlow, PyTorch, scikit-learn gibi özel çerçeveler ve kütüphaneler gibi konuları derinlemesine kapsar. Vurgulanan nokta, AI yeteneklerini iş uygulamalarına, öneri sistemlerine, akıllı otomasyona ve büyük veri analizine entegre eden gerçek projeler geliştirmek ve MLOps uygulamaları ile bulut mimarileri doğrultusunda ölçeklenebilir üretim ortamlarında makine öğrenmesi modellerini uygulamaktır.",
+            "cs": "Pokročilý postgraduální program zaměřený na profesionální specializaci v oblasti umělé inteligence a strojového učení s praktickou orientací na přímou aplikaci v moderním vývoji softwaru a inovativních technologických řešeních. Magisterské studium zahrnuje podrobné studium dozorovaných a nedozorovaných učících algoritmů, hlubokých neuronových sítí, zpracování přirozeného jazyka, počítačového vidění, prediktivní analýzy, big data a specializovaných rámců a knihoven jako TensorFlow, PyTorch a scikit-learn. Důraz je kladen na vývoj reálných projektů integrujících AI do podnikových aplikací, doporučovacích systémů, inteligentní automatizace a analýzy velkých dat a na implementaci modelů strojového učení v škálovatelných produkčních prostředích podle osvědčených postupů MLOps a cloudových architektur.",
+            "hu": "Fejlett posztgraduális program, amely a mesterséges intelligencia és gépi tanulás szakmai specializációjára összpontosít, gyakorlati orientációval a modern szoftverfejlesztésben és innovatív technológiai megoldásokban való közvetlen alkalmazásra. A mesterképzés alaposan tárgyalja a felügyelt és felügyelet nélküli tanulási algoritmusokat, a mély neurális hálókat (deep learning), a természetes nyelvfeldolgozást (NLP), a számítógépes látást, az prediktív analitikát, a big data-t és a TensorFlow, PyTorch, scikit-learn jellegű speciális keretrendszereket és könyvtárakat. Kiemelt szerepet kapnak az AI-képességeket vállalati alkalmazásokba, ajánlórendszerekbe és intelligens automatizálásba integráló valós projektek fejlesztése, valamint a gépi tanulási modellek skálázható üzemeltetési környezetbe történő telepítése MLOps és cloud architektúrák legjobb gyakorlatai szerint.",
+            "el": "Πρόγραμμα μεταπτυχιακών σπουδών προχωρημένου επιπέδου, επικεντρωμένο σε επαγγελματική εξειδίκευση στον τομέα της τεχνητής νοημοσύνης και της μηχανικής μάθησης, με πρακτική προσανατολισμό προς την άμεση εφαρμογή τους στην σύγχρονη ανάπτυξη λογισμικού και καινοτόμες τεχνολογικές λύσεις. Το πρόγραμμα καλύπτει σε βάθος μελέτη επιβλεπόμενων και μη επιβλεπόμενων αλγορίθμων μάθησης, βαθιών νευρωνικών δικτύων (deep learning), επεξεργασίας φυσικής γλώσσας (NLP), όραση υπολογιστή, προγνωστική ανάλυση, big data και εξειδικευμένα frameworks όπως TensorFlow, PyTorch και scikit-learn. Η έμφαση δίνεται στην ανάπτυξη πραγματικών έργων που ενσωματώνουν δυνατότητες AI σε επιχειρησιακές εφαρμογές, συστήματα σύστασης, έξυπνη αυτοματοποίηση και ανάλυση μαζικών δεδομένων, καθώς και στην εφαρμογή μοντέλων μηχανικής μάθησης σε επεκτάσιμα περιβάλλοντα παραγωγής, ακολουθώντας βέλτιστες πρακτικές MLOps και αρχιτεκτονικές cloud."
         },
         "startDate": "2025-10-01",
         "endDate": null,
@@ -303,7 +533,17 @@
             "nl": "Telematica, Spanje",
             "pl": "Telematyka, Hiszpania",
             "ru": "Телематика, Испания",
-            "ja": "テレマティクス、スペイン"
+            "ja": "テレマティクス、スペイン",
+            "zh": "在线，西班牙",
+            "ar": "عبر الإنترنت، إسبانيا",
+            "sv": "Online, Spanien",
+            "no": "Online, Spania",
+            "fi": "Online, Espanja",
+            "ko": "온라인, 스페인",
+            "tr": "Çevrimiçi, İspanya",
+            "cs": "Online, Španělsko",
+            "hu": "Online, Spanyolország",
+            "el": "Online, Ισπανία"
         },
         "achievements": [
             {
@@ -316,7 +556,17 @@
                 "nl": "Specialisatie in AI en machine learning",
                 "pl": "Specjalizacja w AI i uczeniu maszynowym",
                 "ru": "Специализация на искусственном интеллекте и машинном обучении",
-                "ja": "AIと機械学習の専門化"
+                "ja": "AIと機械学習の専門化",
+                "zh": "人工智能与机器学习专业化",
+                "ar": "تخصص في الذكاء الاصطناعي وتعلم الآلة",
+                "sv": "Specialisering inom AI och maskininlärning",
+                "no": "Spesialisering i AI og maskinlæring",
+                "fi": "Erikoistuminen tekoälyyn ja koneoppimiseen",
+                "ko": "AI 및 머신러닝 전문화",
+                "tr": "Yapay zeka ve makine öğrenmesi uzmanlaşması",
+                "cs": "Specializace v AI a strojovém učení",
+                "hu": "Szakosodás a mesterséges intelligencia és a gépi tanulás területén",
+                "el": "Εξειδίκευση στην Τεχνητή Νοημοσύνη και στη μηχανική μάθηση"
             },
             {
                 "es": "Desarrollo de aplicaciones inteligentes",
@@ -328,7 +578,17 @@
                 "nl": "Ontwikkeling van intelligente toepassingen",
                 "pl": "Opracowywanie inteligentnych aplikacji",
                 "ru": "Разработка интеллектуальных приложений",
-                "ja": "インテリジェントアプリケーションの開発"
+                "ja": "インテリジェントアプリケーションの開発",
+                "zh": "智能应用开发",
+                "ar": "تطوير تطبيقات ذكية",
+                "sv": "Utveckling av intelligenta applikationer",
+                "no": "Utvikling av intelligente applikasjoner",
+                "fi": "Älykkäiden sovellusten kehitys",
+                "ko": "지능형 애플리케이션 개발",
+                "tr": "Akıllı uygulama geliştirme",
+                "cs": "Vývoj inteligentních aplikací",
+                "hu": "Intelligens alkalmazások fejlesztése",
+                "el": "Ανάπτυξη έξυπνων εφαρμογών"
             },
             {
                 "es": "Formación actualizada en tecnologías emergentes",
@@ -340,7 +600,17 @@
                 "nl": "Actuele training in opkomende technologieën",
                 "pl": "Zaktualizowane szkolenie z technologii wschodzących",
                 "ru": "Обновленное обучение новым технологиям",
-                "ja": "新興技術の最新トレーニング"
+                "ja": "新興技術の最新トレーニング",
+                "zh": "新兴技术的最新培训",
+                "ar": "تدريب مُحدَّث في التقنيات الناشئة",
+                "sv": "Uppdaterad utbildning i framväxande teknologier",
+                "no": "Oppdatert opplæring i nye teknologier",
+                "fi": "Ajantasainen koulutus nousevissa teknologioissa",
+                "ko": "신기술에 대한 최신 교육",
+                "tr": "Gelişen teknolojiler hakkında güncel eğitim",
+                "cs": "Aktualizované školení v nových technologiích",
+                "hu": "Frissített képzés a feltörekvő technológiákban",
+                "el": "Ενημερωμένη εκπαίδευση σε αναδυόμενες τεχνολογίες"
             }
         ]
     }

@@ -1,4 +1,5 @@
 ---
+export const prerender = false;
 import Layout from '@/presentation/layouts/Layout.astro';
 import { supportedLanguages } from '@/domain';
 
@@ -9,7 +10,7 @@ if (req && req.headers) {
   if (accept) {
     const langs = accept.split(',').map((s) => s.split(';')[0].trim().split('-')[0]);
     for (const l of langs) {
-      if ((supportedLanguages as any).includes(l)) {
+      if ((supportedLanguages as string[]).includes(l)) {
         return Astro.redirect(`/${l}/`, 302);
       }
     }

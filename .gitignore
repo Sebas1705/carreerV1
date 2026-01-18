@@ -47,3 +47,21 @@ coverage/
 
 # OS
 Thumbs.db
+
+# Playwright reports (E2E output)
+playwright-report/
+app/playwright-report/
+
+# Test results and CI reports
+test-results/
+app/test-results/
+
+# Build outputs inside app
+app/dist/
+
+# Vite / build caches
+.vite/
+app/.cache/
+
+# TypeScript incremental build info
+*.tsbuildinfo

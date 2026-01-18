@@ -9,7 +9,17 @@
         "nl": "Contact",
         "pl": "Kontakt",
         "ru": "Контакты",
-        "ja": "お問い合わせ"
+        "ja": "お問い合わせ",
+        "zh": "联系",
+        "ar": "اتصال",
+        "sv": "Kontakt",
+        "no": "Kontakt",
+        "fi": "Yhteystiedot",
+        "ko": "연락처",
+        "tr": "İletişim",
+        "cs": "Kontakt",
+        "hu": "Kapcsolat",
+        "el": "Επικοινωνία"
     },
     "subtitle": {
         "es": "¿Hablamos?",
@@ -21,7 +31,17 @@
         "nl": "Laten we praten",
         "pl": "Porozmawiajmy",
         "ru": "Давайте поговорим",
-        "ja": "お話しましょう"
+        "ja": "お話しましょう",
+        "zh": "聊一聊吧",
+        "ar": "هل نتحادث؟",
+        "sv": "Ska vi prata?",
+        "no": "Skal vi snakke?",
+        "fi": "Puhutaanko?",
+        "ko": "대화할까요?",
+        "tr": "Konuşalım mı?",
+        "cs": "Povídat si?",
+        "hu": "Beszéljünk?",
+        "el": "Μιλάμε;"
     },
     "email": {
         "es": "Correo Electrónico",
@@ -33,7 +53,17 @@
         "nl": "E-mail",
         "pl": "E-mail",
         "ru": "Электронная Почта",
-        "ja": "メール"
+        "ja": "メール",
+        "zh": "电子邮件",
+        "ar": "البريد الإلكتروني",
+        "sv": "E-post",
+        "no": "E-post",
+        "fi": "Sähköposti",
+        "ko": "이메일",
+        "tr": "E-posta",
+        "cs": "E-mail",
+        "hu": "E-mail",
+        "el": "Ηλεκτρονικό ταχυδρομείο"
     },
     "phone": {
         "es": "Teléfono",
@@ -45,7 +75,17 @@
         "nl": "Telefoon",
         "pl": "Telefon",
         "ru": "Телефон",
-        "ja": "電話"
+        "ja": "電話",
+        "zh": "电话",
+        "ar": "هاتف",
+        "sv": "Telefon",
+        "no": "Telefon",
+        "fi": "Puhelin",
+        "ko": "전화",
+        "tr": "Telefon",
+        "cs": "Telefon",
+        "hu": "Telefon",
+        "el": "Τηλέφωνο"
     },
     "location": {
         "es": "Ubicación",
@@ -57,7 +97,17 @@
         "nl": "Locatie",
         "pl": "Lokalizacja",
         "ru": "Местоположение",
-        "ja": "場所"
+        "ja": "場所",
+        "zh": "位置",
+        "ar": "الموقع",
+        "sv": "Plats",
+        "no": "Plassering",
+        "fi": "Sijainti",
+        "ko": "위치",
+        "tr": "Konum",
+        "cs": "Umístění",
+        "hu": "Helyszín",
+        "el": "Τοποθεσία"
     },
     "social": {
         "es": "Redes Sociales",
@@ -69,7 +119,17 @@
         "nl": "Sociale Media",
         "pl": "Media Społecznościowe",
         "ru": "Социальные Сети",
-        "ja": "ソーシャルメディア"
+        "ja": "ソーシャルメディア",
+        "zh": "社交媒体",
+        "ar": "وسائل التواصل الاجتماعي",
+        "sv": "Sociala medier",
+        "no": "Sosiale medier",
+        "fi": "Sosiaalinen media",
+        "ko": "소셜 미디어",
+        "tr": "Sosyal Medya",
+        "cs": "Sociální média",
+        "hu": "Közösségi média",
+        "el": "Κοινωνικά μέσα"
     },
     "message": {
         "es": "Mensaje",
@@ -81,6 +141,16 @@
         "nl": "Bericht",
         "pl": "Wiadomość",
         "ru": "Сообщение",
-        "ja": "メッセージ"
+        "ja": "メッセージ",
+        "zh": "消息",
+        "ar": "رسالة",
+        "sv": "Meddelande",
+        "no": "Melding",
+        "fi": "Viesti",
+        "ko": "메시지",
+        "tr": "Mesaj",
+        "cs": "Zpráva",
+        "hu": "Üzenet",
+        "el": "Μήνυμα"
     }
 }

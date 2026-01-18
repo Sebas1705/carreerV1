@@ -1,5 +1,5 @@
 ---
-import type { Language, WorkExperience, CommonLabels } from '@/domain';
+import type { Language, WorkExperience, CommonLabels, Translations } from '@/domain';
 import { translate } from '@/domain';
 import { formatDateRange, linkify } from '@/core';
 import Section from '../common/Section.astro';
@@ -21,7 +21,7 @@ const experiences  = await new GetWorkExperiencesUseCase(new InMemoryWorkExperie
 <Section id="work" background="binary-code" topFade bottomFade title={translate(workLabels.title, lang)} subtitle={translate(workLabels.subtitle, lang)}>
     
     <div class="relative px-5 md:px-10 lg:px-15">
-        {experiences.map((experience) => 
+        {experiences.map((experience: WorkExperience) => 
             (
                 <div class="relative mb-15">
                     <div class="bg-bg-surface-alt-v rounded-lg p-6 shadow-md relative overflow-hidden border-l-4 border-primary-dark-v hover:border-primary-v transform transition-transform duration-200 hover:translate-x-2 hover:-translate-y-1">
@@ -49,7 +49,7 @@ const experiences  = await new GetWorkExperiencesUseCase(new InMemoryWorkExperie
                             <div class="mb-5">
                                 <h4 class="text-lg font-semibold text-secondary-v my-5">{translate(workLabels.achievements, lang)}</h4>
                                 <ul class="p-0 mt-2 list-none">
-                                    {experience.achievements.map((achievement: any) => (
+                                    {experience.achievements.map((achievement: Translations) => (
                                         <li set:html={linkify(translate(achievement, lang))} class="relative pl-5 before:content-['•'] before:absolute 
                                         before:left-0 before:top-0 before:text-accent-v
                                         before:text-xl text-bg-inverse-alt-v mb-2"></li>

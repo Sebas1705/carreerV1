@@ -19,33 +19,16 @@ const paragraphs = translate(personalInfo.description, lang).split('\n\n');
 
 <Section id="about" class="relative" background='pixel-rain' bottomFade topFade title={translate(aboutLabels.subtitle, lang)} subtitle={paragraphs[0]}>
    
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3
+    <div class="grid grid-cols-1 lg:grid-cols-3 pt-10
     gap-6 md:gap-8 relative z-10 px-5 md:px-10 lg:px-15">
-        {paragraphs.slice(1).map((paragraph, index) => (
-            <p class="font-semibold text-lg opacity-0 animate-slideIn 
-            bg-bg-surface-alt-v text-bg-inverse-alt-v rounded-2xl p-5 text-justify leading-10
-            shadow-md shadow-secondary-v" 
-            style={`animation-delay: ${(index + 1) * 0.15}s`}>
+        {paragraphs.slice(1).map((paragraph) => (
+            <p class="animate-slideIn 
+            text-lg md:text-xl lg:text-2xl font-thin
+            bg-bg-surface-alt-v text-bg-inverse-alt-v rounded-2xl 
+            p-5 justified-tight leading-10 shadow-md shadow-secondary-v ">
                 {paragraph}
             </p>
         ))}
     </div>
         
 </Section>
-
-<style>
-    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-    .animate-fadeInUp { animation: fadeInUp 0.8s ease-out 0.2s both; }
-
-    @keyframes slideIn { from { opacity: 0; transform: translateX(-20px); } to { opacity: 1; transform: translateX(0); } }
-    .animate-slideIn { animation: slideIn 0.6s ease-out forwards; }
-
-    .animated-border {
-        background: linear-gradient(90deg, transparent, rgba(59,130,246,0.9) 20%, transparent 50%, rgba(139,92,246,0.9) 80%, transparent) border-box;
-        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-        -webkit-mask-composite: xor;
-        mask-composite: exclude;
-        animation: borderFlow 4s linear infinite;
-    }
-    @keyframes borderFlow { 0% { background-position: 200% center; } 100% { background-position: -200% center; } }
-</style>

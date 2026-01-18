@@ -1,5 +1,5 @@
 ---
-import type { CommonLabels, Language, Project, ProjectLabels, Skill } from '@/domain';
+import type { CommonLabels, Language, Project, ProjectLabels, Skill, Translations } from '@/domain';
 import TechBadge from '../ui/TechBadge.astro';
 
 interface Props {
@@ -24,7 +24,13 @@ const {
     skills = []
 } = Astro.props;
 
-const translate = (obj: any, lang: Language) => obj[lang] || obj.en || Object.values(obj)[0];
+const translate = (obj: Translations | Record<string, string>, lang: Language) => {
+    const map = obj as Record<string, string>;
+    if (map[lang]) return map[lang];
+    if (map.en) return map.en;
+    const vals = Object.values(map);
+    return (vals && vals[0]) || '';
+};
 ---
 
 <article class="group bg-bg-surface-v rounded-lg shadow-sm overflow-hidden flex flex-col">
@@ -50,7 +56,7 @@ const translate = (obj: any, lang: Language) => obj[lang] || obj.en || Object.va
         {showTechnologies && project.technologies && project.technologies.length > 0 && (
             <div class="flex flex-wrap gap-2 mt-2 justify-center md:justify-start">
                 {project.technologies.slice(0, maxTech).map((techId: string) => {
-                    const skill = skills.find((s: any) => s.id === techId);
+                    const skill = skills.find((s: Skill) => s.id === techId);
                     return (
                         <TechBadge 
                             text={skill?.name || techId} 
