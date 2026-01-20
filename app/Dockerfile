@@ -15,11 +15,18 @@ COPY . ./
 RUN pnpm install --frozen-lockfile
 RUN pnpm run build
 
-FROM nginx:stable-alpine AS runner
+FROM node:18-alpine AS runner
 
-# Copy built site
-COPY --from=builder /app/dist /usr/share/nginx/html
+WORKDIR /app
 
-EXPOSE 80
+# Copy built site (server + client) from builder
+COPY --from=builder /app/dist ./dist
 
-CMD ["nginx", "-g", "daemon off;"]
+ENV HOST=0.0.0.0
+ENV PORT=4321
+
+# Expose the port the Astro standalone server uses (default in build: 4321)
+EXPOSE 4321
+
+# Start the Node server (entrypoint produced by Astro standalone adapter)
+CMD ["node", "./dist/server/entry.mjs"]
