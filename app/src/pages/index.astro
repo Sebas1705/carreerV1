@@ -38,7 +38,7 @@ try {
       (function(){
         try {
           const el = document.getElementById('redirect');
-          const base = el?.dataset.base || '/';
+          const base = (el?.dataset.base || '/').replace(/\/?$/, '/');
           const supported = JSON.parse(el?.dataset.supported || '[]');
           const nav = (navigator.language || (navigator.languages && navigator.languages[0]) || '').split('-')[0];
           if (nav && supported.indexOf(nav) !== -1) {
