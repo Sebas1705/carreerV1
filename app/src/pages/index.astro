@@ -1,55 +1,20 @@
 ---
-import Layout from '@/presentation/layouts/Layout.astro';
-import { supportedLanguages } from '@/domain';
-
-const defaultLang = 'es';
-const BASE = import.meta.env.BASE_URL; // e.g. '/carreerV1/'
-
-// In static mode Astro.request has no real headers; skip and let the client redirect.
-try {
-  const accept = Astro.request.headers.get('accept-language') || '';
-  if (accept) {
-    const langs = accept.split(',').map((s: string) => s.split(';')[0].trim().split('-')[0]);
-    for (const l of langs) {
-      if ((supportedLanguages as string[]).includes(l)) {
-        return Astro.redirect(`${BASE}${l}/`, 302);
-      }
-    }
-  }
-} catch (_) { /* static build — no headers available */ }
+// Static root — redirect to default language without any JS or BASE_URL
+// Using a relative URL (./es/) so it works at any base path automatically
 ---
-
-<Layout lang={defaultLang} title="Redirecting…">
-  <main class="min-h-screen flex items-center justify-center bg-(--color-bg-primary)">
-    <div
-      id="redirect"
-      data-supported={JSON.stringify(supportedLanguages)}
-      data-base={BASE}
-      class="text-center p-6"
-    >
-      <div class="flex flex-col items-center gap-4">
-        <div class="w-12 h-12 border-4 border-(--color-primary) border-t-transparent rounded-full animate-spin" aria-hidden="true"></div>
-        <p class="text-(--color-text-primary) font-medium">Redirecting…</p>
-        <a id="link" href={`${BASE}es/`} class="btn-outline mt-2">Click here if not redirected</a>
-      </div>
-    </div>
-
-    <script is:inline>
-      (function(){
-        try {
-          const el = document.getElementById('redirect');
-          const base = (el?.dataset.base || '/').replace(/\/?$/, '/');
-          const supported = JSON.parse(el?.dataset.supported || '[]');
-          const nav = (navigator.language || (navigator.languages && navigator.languages[0]) || '').split('-')[0];
-          if (nav && supported.indexOf(nav) !== -1) {
-            window.location.replace(base + nav + '/');
-          } else {
-            window.location.replace(base + 'es/');
-          }
-        } catch (e) {
-          window.location.replace(document.getElementById('redirect')?.dataset.base + 'es/' || '/es/');
-        }
-      })();
-    </script>
-  </main>
-</Layout>
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="refresh" content="0; url=./es/" />
+    <title>Redirigiendo…</title>
+    <style>
+      body { margin: 0; display: flex; align-items: center; justify-content: center; min-height: 100vh; font-family: sans-serif; background: #0f172a; color: #94a3b8; }
+      a { color: #6366f1; }
+    </style>
+  </head>
+  <body>
+    <p>Redirigiendo… <a href="./es/">Haz clic aquí si no fuiste redirigido</a></p>
+  </body>
+</html>

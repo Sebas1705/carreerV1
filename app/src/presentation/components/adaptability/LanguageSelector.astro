@@ -15,7 +15,7 @@ const orderedLanguages = [
 ];
 ---
 
-<div class="language-selector relative inline-block" data-base={import.meta.env.BASE_URL}>
+<div class="language-selector relative inline-block">
     <button
         class="language-button w-18 xs:w-22 responsive-header-h"
         aria-label="Change language"
@@ -75,16 +75,17 @@ const orderedLanguages = [
                 const lang = option.getAttribute('data-lang');
                 if (!lang) return;
 
-                const base = (sel.dataset.base || '/').replace(/\/$/, ''); // e.g. '/carreerV1'
-                const currentPath = window.location.pathname;
-                const localPath = currentPath.startsWith(base) ? currentPath.slice(base.length) : currentPath;
-                const pathSegments = localPath.split('/').filter(Boolean);
-
-                // If first segment is a two-letter language code, remove it
-                if (pathSegments[0] && pathSegments[0].length === 2) pathSegments.shift();
-
-                const newPath = `${base}/${lang}/${pathSegments.join('/')}`;
-                window.location.href = newPath;
+                // Replace the language segment in the current URL using regex.
+                // Matches /es/, /en/, /fr/, etc. and replaces it with the new lang.
+                // Works at any base path without needing to know the base.
+                const current = window.location.href;
+                const langPattern = /\/(es|en|fr|de|it|pt|nl|pl|ru|ja)(\/|$)/;
+                if (langPattern.test(current)) {
+                    window.location.href = current.replace(langPattern, `/${lang}$2`);
+                } else {
+                    // Fallback: go to the lang home
+                    window.location.href = window.location.origin + window.location.pathname.replace(/\/?$/, '/') + lang + '/';
+                }
             });
         });
     });

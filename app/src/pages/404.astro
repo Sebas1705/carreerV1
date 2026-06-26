@@ -1,12 +1,13 @@
 ---
 import Layout from '@/presentation/layouts/Layout.astro';
+import { siteUrl } from '@/core';
 ---
 
 <Layout title="404 - Página no encontrada" description="La página que estás buscando no existe.">
     <main class="min-h-screen gap-5 flex flex-col items-center justify-center bg-linear-to-br from-(--color-bg-primary) to-(--color-bg-secondary) text-center px-4">
         <h1 class="text-6xl md:text-8xl font-extrabold text-(--color-text-primary) mb-4">404</h1>
         <p class="text-xl md:text-2xl text-(--color-text-secondary) mb-8">Lo sentimos, la página que estás buscando no existe.</p>
-        <a href={import.meta.env.BASE_URL} class="btn-primary">
+        <a href={siteUrl('/es/')} class="btn-primary">
             <span class="p-20">
                 Volver al inicio
             </span>
