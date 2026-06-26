@@ -88,17 +88,10 @@ test.describe('Site Pages', () => {
         }
     });
 
-    test('root should redirect to a supported language', async ({ page }) => {
-        // Root uses <meta http-equiv="refresh"> to redirect to /es/
+    test('root page shows language selector links', async ({ page }) => {
         await page.goto('');
-        // Wait for meta-refresh redirect (browsers follow it automatically)
-        try {
-            await page.waitForURL(/\/(es|en|fr|de|it|pt|nl|pl|ru|ja)\//, { timeout: 5000 });
-        } catch {
-            // meta-refresh may be slow in CI — also acceptable to stay at root
-        }
-        const url = page.url();
-        const ok = /\/(es|en|fr|de|it|pt|nl|pl|ru|ja)\//.test(url) || url.includes('carreerV1') || url.endsWith('/');
-        expect(ok).toBe(true);
+        // Root is a static language picker — verify it loads and has language links
+        const langLinks = page.locator('a[href*="/es/"], a[href*="/en/"]');
+        await expect(langLinks.first()).toBeVisible({ timeout: 5000 });
     });
 });

@@ -1,6 +1,7 @@
 ---
 import type { Language } from '@/domain';
 import { supportedLanguages, languageNames } from '@/domain';
+import { siteUrl } from '@/core';
 
 interface Props {
     currentLang: Language;
@@ -8,10 +9,23 @@ interface Props {
 
 const { currentLang } = Astro.props;
 
-// Sort languages with current language first
+// Build static href for each language by replacing the lang segment in the current path.
+// Astro.url.pathname e.g. '/carreerV1/en/projects/some-id'
+const currentPath = Astro.url.pathname;
+const langSegmentPattern = /\/(es|en|fr|de|it|pt|nl|pl|ru|ja)(\/|$)/;
+
+function langHref(lang: string): string {
+    if (langSegmentPattern.test(currentPath)) {
+        // Replace existing lang segment: /carreerV1/en/foo → /carreerV1/fr/foo
+        return currentPath.replace(langSegmentPattern, `/${lang}$2`);
+    }
+    // Fallback: go to that language's home
+    return siteUrl(`/${lang}/`);
+}
+
 const orderedLanguages = [
     currentLang,
-    ...supportedLanguages.filter(lang => lang !== currentLang)
+    ...supportedLanguages.filter(l => l !== currentLang),
 ];
 ---
 
@@ -19,74 +33,67 @@ const orderedLanguages = [
     <button
         class="language-button w-18 xs:w-22 responsive-header-h"
         aria-label="Change language"
-        title="Change language"
+        aria-expanded="false"
+        aria-haspopup="listbox"
     >
         <span class="current-lang text-sm xs:text-xl">{currentLang.toUpperCase()}</span>
         <svg class="h-4 xs:h-6 sm:h-8 md:h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <polyline points="6 9 12 15 18 9"/>
         </svg>
     </button>
-    
-    <div class="language-dropdown absolute top-full right-0 mt-2 bg-bg-surface-alt-v border-2 border-primary-v rounded-md shadow-lg" hidden>
+
+    <ul
+        role="listbox"
+        aria-label="Languages"
+        class="language-dropdown absolute top-full right-0 mt-2 bg-bg-surface-alt-v border-2 border-primary-v rounded-md shadow-lg list-none"
+        hidden
+    >
         {orderedLanguages.map((lng) => (
-            <button class="language-option" data-lang={lng} data-active={lng === currentLang ? 'true' : 'false'}>
-                <span class="lang-code" data-active={lng === currentLang ? 'true' : 'false'}>{lng.toUpperCase()}</span>
-                <span class="lang-name" data-active={lng === currentLang ? 'true' : 'false'}>{languageNames[lng]}</span>
-                {lng === currentLang ? (
-                    <svg class="w-4 h-4" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polyline points="20 6 9 17 4 12"/>
-                    </svg>
-                ) : (
-                    <svg class="w-4 h-4 hidden" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polyline points="20 6 9 17 4 12"/>
-                    </svg>
-                )}
-            </button>
+            <li role="option" aria-selected={lng === currentLang}>
+                <a
+                    href={langHref(lng)}
+                    class={`language-option flex items-center gap-2 px-4 py-2 w-full text-left no-underline ${lng === currentLang ? 'text-primary-v font-semibold' : 'text-bg-inverse-alt-v'}`}
+                    aria-current={lng === currentLang ? 'true' : undefined}
+                >
+                    <span class="lang-code text-sm font-mono">{lng.toUpperCase()}</span>
+                    <span class="lang-name text-sm">{languageNames[lng]}</span>
+                    {lng === currentLang && (
+                        <svg class="w-4 h-4 ml-auto shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                    )}
+                </a>
+            </li>
         ))}
-    </div>
+    </ul>
 </div>
 
 <script>
-    // Wire the selector per-instance to avoid duplicated ids issues when component is used multiple times
-    const selectors = Array.from(document.querySelectorAll('.language-selector')) as HTMLElement[];
+    // Only JS needed: toggle open/close of the dropdown
+    document.querySelectorAll<HTMLElement>('.language-selector').forEach(sel => {
+        const btn = sel.querySelector<HTMLButtonElement>('.language-button');
+        const dropdown = sel.querySelector<HTMLElement>('.language-dropdown');
+        if (!btn || !dropdown) return;
 
-    selectors.forEach(sel => {
-        const languageToggle = sel.querySelector('.language-button') as HTMLButtonElement | null;
-        const languageDropdown = sel.querySelector('.language-dropdown') as HTMLElement | null;
-        const languageOptions = Array.from(sel.querySelectorAll('.language-option')) as HTMLElement[];
-
-        if (!languageToggle || !languageDropdown) return;
-
-        languageToggle.addEventListener('click', (e) => {
+        btn.addEventListener('click', (e) => {
             e.stopPropagation();
-            const isHidden = languageDropdown.hasAttribute('hidden');
-            if (isHidden) languageDropdown.removeAttribute('hidden'); else languageDropdown.setAttribute('hidden', '');
+            const open = !dropdown.hasAttribute('hidden');
+            dropdown.toggleAttribute('hidden', open);
+            btn.setAttribute('aria-expanded', String(!open));
         });
 
-        // Close dropdown when clicking outside
         document.addEventListener('click', (e) => {
             if (!sel.contains(e.target as Node)) {
-                languageDropdown.setAttribute('hidden', '');
+                dropdown.setAttribute('hidden', '');
+                btn.setAttribute('aria-expanded', 'false');
             }
         });
 
-        languageOptions.forEach(option => {
-            option.addEventListener('click', () => {
-                const lang = option.getAttribute('data-lang');
-                if (!lang) return;
-
-                // Replace the language segment in the current URL using regex.
-                // Matches /es/, /en/, /fr/, etc. and replaces it with the new lang.
-                // Works at any base path without needing to know the base.
-                const current = window.location.href;
-                const langPattern = /\/(es|en|fr|de|it|pt|nl|pl|ru|ja)(\/|$)/;
-                if (langPattern.test(current)) {
-                    window.location.href = current.replace(langPattern, `/${lang}$2`);
-                } else {
-                    // Fallback: go to the lang home
-                    window.location.href = window.location.origin + window.location.pathname.replace(/\/?$/, '/') + lang + '/';
-                }
-            });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                dropdown.setAttribute('hidden', '');
+                btn.setAttribute('aria-expanded', 'false');
+            }
         });
     });
 </script>

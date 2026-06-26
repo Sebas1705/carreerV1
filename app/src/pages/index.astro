@@ -1,20 +1,64 @@
 ---
-// Static root — redirect to default language without any JS or BASE_URL
-// Using a relative URL (./es/) so it works at any base path automatically
+import { supportedLanguages, languageNames } from '@/domain';
+import { siteUrl } from '@/core';
 ---
 <!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="refresh" content="0; url=./es/" />
-    <title>Redirigiendo…</title>
+    <title>Sebastián — Elige idioma / Choose language</title>
+    <link rel="icon" type="image/svg+xml" href={siteUrl('/favicon.svg')} />
     <style>
-      body { margin: 0; display: flex; align-items: center; justify-content: center; min-height: 100vh; font-family: sans-serif; background: #0f172a; color: #94a3b8; }
-      a { color: #6366f1; }
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      body {
+        min-height: 100svh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2.5rem;
+        background: #0f172a;
+        color: #e2e8f0;
+        font-family: system-ui, sans-serif;
+        padding: 2rem;
+      }
+      h1 { font-size: clamp(1.25rem, 4vw, 2rem); font-weight: 700; color: #818cf8; text-align: center; }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 0.75rem;
+        width: 100%;
+        max-width: 640px;
+      }
+      a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.25rem;
+        padding: 0.9rem 1rem;
+        border: 2px solid #334155;
+        border-radius: 0.75rem;
+        background: #1e293b;
+        color: #e2e8f0;
+        text-decoration: none;
+        font-size: 0.95rem;
+        font-weight: 500;
+        transition: border-color 0.15s, background 0.15s, transform 0.15s;
+      }
+      a:hover { border-color: #818cf8; background: #2d3a56; transform: translateY(-2px); }
+      .code { font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em; }
     </style>
   </head>
   <body>
-    <p>Redirigiendo… <a href="./es/">Haz clic aquí si no fuiste redirigido</a></p>
+    <h1>Elige tu idioma · Choose your language</h1>
+    <nav class="grid" aria-label="Language selection">
+      {supportedLanguages.map((lang) => (
+        <a href={siteUrl(`/${lang}/`)}>
+          {languageNames[lang]}
+          <span class="code">{lang}</span>
+        </a>
+      ))}
+    </nav>
   </body>
 </html>
