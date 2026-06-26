@@ -11,12 +11,12 @@ interface Props {
 
 const { lang, commonLabels } = Astro.props;
 
-import { InMemoryEducationLabelsRepository, InMemoryAcademicExperienceRepository, InMemoryProjectRepository } from '@/data';
+import { InMemoryEducationLabelsRepository, ApiAcademicExperienceRepository, ApiProjectRepository } from '@/data';
 import { GetEducationLabelsUseCase, GetAcademicExperiencesUseCase, GetProjectsByTypeUseCase } from '@/domain';
 
 const educationLabels = await new GetEducationLabelsUseCase(new InMemoryEducationLabelsRepository()).execute();
-const experiences = await new GetAcademicExperiencesUseCase(new InMemoryAcademicExperienceRepository()).execute();
-const projects = await new GetProjectsByTypeUseCase(new InMemoryProjectRepository()).execute('academic');
+const experiences = await new GetAcademicExperiencesUseCase(new ApiAcademicExperienceRepository()).execute();
+const projects = await new GetProjectsByTypeUseCase(new ApiProjectRepository()).execute('academic');
 ---
 
 <Section id="education" bottomFade topFade background='diagonal' title={translate(educationLabels.title, lang)} subtitle={translate(educationLabels.subtitle, lang)}>

@@ -11,13 +11,13 @@ export async function getStaticPaths() {
 
 const lang: Language = Astro.params.lang as Language;
 
-import { InMemorySkillRepository, InMemorySkillsLabelsRepository, InMemoryPersonalInfoRepository, InMemoryCommonLabelsRepository } from '@/data';
+import { ApiSkillRepository, InMemorySkillsLabelsRepository, InMemoryPersonalInfoRepository, InMemoryCommonLabelsRepository } from '@/data';
 import { GetSkillsUseCase, GetSkillsLabelsUseCase, GetPersonalInfoUseCase, GetCommonLabelsUseCase } from '@/domain';
 import Section from '@/presentation/components/common/Section.astro';
 import BackLink from '@/presentation/components/ui/BackLink.astro';
 
 const skillsLabels = await new GetSkillsLabelsUseCase(new InMemorySkillsLabelsRepository()).execute();
-const skills = await new GetSkillsUseCase(new InMemorySkillRepository()).execute();
+const skills = await new GetSkillsUseCase(new ApiSkillRepository()).execute();
 const personalInfo = await new GetPersonalInfoUseCase(new InMemoryPersonalInfoRepository()).execute();
 const commonLabels = await new GetCommonLabelsUseCase(new InMemoryCommonLabelsRepository()).execute();
 

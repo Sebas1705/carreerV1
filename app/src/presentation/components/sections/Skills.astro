@@ -12,11 +12,11 @@ interface Props {
 
 const { lang, featured = 12, commonLabels } = Astro.props;
 
-import { InMemorySkillsLabelsRepository, InMemorySkillRepository } from '@/data';
+import { InMemorySkillsLabelsRepository, ApiSkillRepository } from '@/data';
 import { GetSkillsLabelsUseCase, GetSkillsUseCase } from '@/domain';
 
 const skillsLabels = await new GetSkillsLabelsUseCase(new InMemorySkillsLabelsRepository()).execute();
-const skills = await new GetSkillsUseCase(new InMemorySkillRepository()).execute();
+const skills = await new GetSkillsUseCase(new ApiSkillRepository()).execute();
 ---
 
 <Section id="skills" topFade bottomFade background='circuit' title={translate(skillsLabels.title, lang)} subtitle={translate(skillsLabels.subtitle, lang)}>

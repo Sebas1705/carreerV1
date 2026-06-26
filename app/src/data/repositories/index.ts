@@ -1,3 +1,10 @@
+// API Repositories (live data from career-api.sebas1705.workers.dev)
+export { ApiWorkExperienceRepository } from './api/ApiWorkExperienceRepository';
+export { ApiProjectRepository } from './api/ApiProjectRepository';
+export { ApiSkillRepository } from './api/ApiSkillRepository';
+export { ApiAcademicExperienceRepository } from './api/ApiAcademicExperienceRepository';
+export { ApiCourseRepository } from './api/ApiCourseRepository';
+
 // Entity Repositories (Implementations)
 export { InMemoryProjectRepository } from './project/InMemoryProjectRepository';
 export { InMemoryWorkExperienceRepository } from './work-experience/InMemoryWorkExperienceRepository';

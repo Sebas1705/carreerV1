@@ -9,12 +9,12 @@ interface Props {
 
 const { lang } = Astro.props;
 
-import { InMemoryProjectRepository, InMemoryProjectLabelsRepository, InMemoryCommonLabelsRepository } from '@/data';
+import { ApiProjectRepository, InMemoryProjectLabelsRepository, InMemoryCommonLabelsRepository } from '@/data';
 import { GetProjectsByTypeUseCase, GetProjectLabelsUseCase, GetCommonLabelsUseCase } from '@/domain';
 
 const commonLabels = await new GetCommonLabelsUseCase(new InMemoryCommonLabelsRepository()).execute();
 const projectLabels = await new GetProjectLabelsUseCase(new InMemoryProjectLabelsRepository()).execute();
-const projects = await new GetProjectsByTypeUseCase(new InMemoryProjectRepository()).execute('academic');
+const projects = await new GetProjectsByTypeUseCase(new ApiProjectRepository()).execute('academic');
 ---
 
 <Section id="projects" background='blueprint' bottomFade topFade title={translate(projectLabels.title, lang)} subtitle={translate(projectLabels.subtitle, lang)}>

@@ -12,14 +12,14 @@ export async function getStaticPaths() {
 }
 const lang: Language = Astro.params.lang as Language;
 
-import { InMemoryCourseRepository, InMemoryPersonalInfoRepository, InMemoryCourseLabelsRepository, InMemoryCommonLabelsRepository, InMemorySkillRepository } from '@/data';
+import { ApiCourseRepository, ApiSkillRepository, InMemoryPersonalInfoRepository, InMemoryCourseLabelsRepository, InMemoryCommonLabelsRepository } from '@/data';
 import { GetAllCoursesUseCase, GetPersonalInfoUseCase, GetCourseLabelsUseCase, GetCommonLabelsUseCase, GetAllSkillsUseCase } from '@/domain';
 import Section from '@/presentation/components/common/Section.astro';
 import BackLink from '@/presentation/components/ui/BackLink.astro';
 import PageHeader from '@/presentation/components/ui/PageHeader.astro';
 
-const courses = await new GetAllCoursesUseCase(new InMemoryCourseRepository()).execute();
-const skills = await new GetAllSkillsUseCase(new InMemorySkillRepository()).execute();
+const courses = await new GetAllCoursesUseCase(new ApiCourseRepository()).execute();
+const skills = await new GetAllSkillsUseCase(new ApiSkillRepository()).execute();
 const personalInfo = await new GetPersonalInfoUseCase(new InMemoryPersonalInfoRepository()).execute();
 const coursesLabels = await new GetCourseLabelsUseCase(new InMemoryCourseLabelsRepository()).execute();
 const commonLabels = await new GetCommonLabelsUseCase(new InMemoryCommonLabelsRepository()).execute();

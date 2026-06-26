@@ -12,14 +12,14 @@ import type { Language } from '@domain/models/Language';
 import { supportedLanguages, translate } from '@domain/models/Language';
 import { formatDateRange, linkify } from '@/core';
 
-import { InMemoryWorkExperienceRepository, InMemoryProjectRepository, InMemoryPersonalInfoRepository, InMemorySkillRepository } from '@/data';
+import { ApiWorkExperienceRepository, ApiProjectRepository, ApiSkillRepository, InMemoryPersonalInfoRepository } from '@/data';
 import { GetWorkExperiencesUseCase, GetProjectsByTypeUseCase, GetPersonalInfoUseCase, GetSkillsUseCase  } from '@/domain';
 
 const personalInfo = await new GetPersonalInfoUseCase(new InMemoryPersonalInfoRepository()).execute();
-const skills = await new GetSkillsUseCase(new InMemorySkillRepository()).execute();
+const skills = await new GetSkillsUseCase(new ApiSkillRepository()).execute();
 
 export async function getStaticPaths() {
-    const workExperiences = await new GetWorkExperiencesUseCase(new InMemoryWorkExperienceRepository()).execute();
+    const workExperiences = await new GetWorkExperiencesUseCase(new ApiWorkExperienceRepository()).execute();
     const paths = [];
     for (const l of supportedLanguages) {
         for (const work of workExperiences) {
@@ -33,12 +33,12 @@ const workId = Astro.params.id as string;
 
 
 // Find the current work experience
-const workExperiences = await new GetWorkExperiencesUseCase(new InMemoryWorkExperienceRepository()).execute();
+const workExperiences = await new GetWorkExperiencesUseCase(new ApiWorkExperienceRepository()).execute();
 const workExperience = workExperiences.find((w: any) => w.id === workId);
 if (!workExperience) return Astro.redirect(`/${lang}/`);
 
 // Get related projects
-const projects = await new GetProjectsByTypeUseCase(new InMemoryProjectRepository()).execute('work');
+const projects = await new GetProjectsByTypeUseCase(new ApiProjectRepository()).execute('work');
 const relatedProjects = projects.filter((project: any) =>
     project.relatedTo?.includes(workExperience.id)
 );

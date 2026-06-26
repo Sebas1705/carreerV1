@@ -11,14 +11,14 @@ export async function getStaticPaths() {
 }
 const lang: Language = Astro.params.lang as Language;
 
-import { InMemoryProjectRepository } from '@/data';
+import { ApiProjectRepository } from '@/data';
 import { GetProjectsByTypeUseCase } from '@/domain';
 
 // Group projects by type
 const projectsByType = {
-    personal: await new GetProjectsByTypeUseCase(new InMemoryProjectRepository()).execute('personal'),
-    work: await new GetProjectsByTypeUseCase(new InMemoryProjectRepository()).execute('work'),
-    academic: await new GetProjectsByTypeUseCase(new InMemoryProjectRepository()).execute('academic')
+    personal: await new GetProjectsByTypeUseCase(new ApiProjectRepository()).execute('personal'),
+    work: await new GetProjectsByTypeUseCase(new ApiProjectRepository()).execute('work'),
+    academic: await new GetProjectsByTypeUseCase(new ApiProjectRepository()).execute('academic')
 };
 
 import { InMemoryPersonalInfoRepository, InMemoryCommonLabelsRepository, InMemoryProjectLabelsRepository } from '@/data';

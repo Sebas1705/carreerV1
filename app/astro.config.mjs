@@ -3,8 +3,8 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://portfolio.amksandbox.cloud/',
-  base: '/',
+  site: 'https://sebas1705.github.io',
+  base: '/carreerV1',
   output: 'static',
   build: {
     assets: 'assets'

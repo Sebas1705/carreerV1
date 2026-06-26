@@ -11,11 +11,11 @@ interface Props {
 
 const { lang, commonLabels } = Astro.props;
 
-import { InMemoryWorkLabelsRepository, InMemoryWorkExperienceRepository } from '@/data';
+import { InMemoryWorkLabelsRepository, ApiWorkExperienceRepository } from '@/data';
 import { GetWorkLabelsUseCase, GetWorkExperiencesUseCase } from '@/domain';
 
 const workLabels = await new GetWorkLabelsUseCase(new InMemoryWorkLabelsRepository()).execute();
-const experiences  = await new GetWorkExperiencesUseCase(new InMemoryWorkExperienceRepository()).execute();
+const experiences  = await new GetWorkExperiencesUseCase(new ApiWorkExperienceRepository()).execute();
 ---
 
 <Section id="work" background="binary-code" topFade bottomFade title={translate(workLabels.title, lang)} subtitle={translate(workLabels.subtitle, lang)}>

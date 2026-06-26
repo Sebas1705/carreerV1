@@ -11,11 +11,11 @@ interface Props {
 
 const { lang, commonLabels } = Astro.props;
 
-import { InMemoryCourseRepository, InMemoryCourseLabelsRepository } from '@/data';
+import { ApiCourseRepository, InMemoryCourseLabelsRepository } from "@/data";
 import { GetAllCoursesUseCase, GetCourseLabelsUseCase } from '@/domain';
 
 const courseLabels = await new GetCourseLabelsUseCase(new InMemoryCourseLabelsRepository()).execute();
-const courses = await new GetAllCoursesUseCase(new InMemoryCourseRepository()).execute();
+const courses = await new GetAllCoursesUseCase(new ApiCourseRepository()).execute();
 
 const visibleCourses = courses
     .sort((a, b) => new Date(b.completionDate).getTime() - new Date(a.completionDate).getTime())

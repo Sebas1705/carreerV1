@@ -7,11 +7,11 @@ import type { Language, Skill, Translations } from '@/domain';
 import { supportedLanguages, translate } from '@/domain';
 import { formatMonthYear } from '@/core';
 
-import { InMemoryProjectRepository } from '@/data';
+import { ApiProjectRepository } from '@/data';
 import { GetAllProjectsUseCase } from '@/domain';
 
 export async function getStaticPaths() {
-    const projects = await new GetAllProjectsUseCase(new InMemoryProjectRepository()).execute();
+    const projects = await new GetAllProjectsUseCase(new ApiProjectRepository()).execute();
     const paths = [];
     for (const l of supportedLanguages) {
         for (const project of projects) {
@@ -23,20 +23,20 @@ export async function getStaticPaths() {
 const lang: Language = Astro.params.lang as Language;
 const { id } = Astro.params as { id: string };
 
-import { InMemoryPersonalInfoRepository, InMemoryCommonLabelsRepository, InMemoryProjectLabelsRepository, InMemorySkillRepository } from '@/data';
+import { InMemoryPersonalInfoRepository, InMemoryCommonLabelsRepository, InMemoryProjectLabelsRepository, ApiSkillRepository } from '@/data';
 import { GetPersonalInfoUseCase, GetCommonLabelsUseCase, GetProjectLabelsUseCase, GetAllSkillsUseCase } from '@/domain';
 import Section from '@/presentation/components/common/Section.astro';
 import BackLink from '@/presentation/components/ui/BackLink.astro';
 import SkillsGrid from '@/presentation/components/skills/SkillsGrid.astro';
 
 const personalInfo = await new GetPersonalInfoUseCase(new InMemoryPersonalInfoRepository()).execute();
-const projects = await new GetAllProjectsUseCase(new InMemoryProjectRepository()).execute();
+const projects = await new GetAllProjectsUseCase(new ApiProjectRepository()).execute();
 const project = projects.find((p: any) => p.id === id);
 if (!project) return Astro.redirect(`/${lang}/`);
 
 const commonLabels = await new GetCommonLabelsUseCase(new InMemoryCommonLabelsRepository()).execute();
 const projectLabels = await new GetProjectLabelsUseCase(new InMemoryProjectLabelsRepository()).execute();
-const skills = await new GetAllSkillsUseCase(new InMemorySkillRepository()).execute();
+const skills = await new GetAllSkillsUseCase(new ApiSkillRepository()).execute();
 
 const typeLabels: Record<string, Translations> = {
     personal: projectLabels.personalProjects,
