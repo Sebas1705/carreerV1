@@ -2,21 +2,21 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Site Pages', () => {
     test('should load skills page', async ({ page }) => {
-        await page.goto('/en/skills');
+        await page.goto('en/skills');
         await expect(page).toHaveURL(/\/en\/skills/);
         const heading = page.locator('h1').first();
         await expect(heading).toBeVisible();
     });
 
     test('should load courses page', async ({ page }) => {
-        await page.goto('/en/courses');
+        await page.goto('en/courses');
         await expect(page).toHaveURL(/\/en\/courses/);
         const heading = page.locator('h1').first();
         await expect(heading).toBeVisible();
     });
 
     test('should load projects list and open a project detail', async ({ page }) => {
-        await page.goto('/en/projects');
+        await page.goto('en/projects');
         await expect(page).toHaveURL(/\/en\/projects/);
 
         // Buscar enlaces a proyectos (resiliente a markup)
@@ -51,7 +51,7 @@ test.describe('Site Pages', () => {
 
     test('should open work detail page if a sample exists', async ({ page }) => {
         // Intentar encontrar enlaces a work items desde home
-        await page.goto('/en/');
+        await page.goto('en/');
         const workLinks = page.locator('a[href*="/work/"], a:has-text("Work"), [data-testid="work-link"]');
         if (await workLinks.count() > 0) {
             await workLinks.first().click();
@@ -76,13 +76,13 @@ test.describe('Site Pages', () => {
 
     test('should return 404 for unknown route', async ({ request, page }) => {
         // Navegar a ruta inexistente
-        const resp = await request.get('/en/this-route-does-not-exist');
+        const resp = await request.get('en/this-route-does-not-exist');
         // Si el servidor devuelve 404, OK; si static site devuelve HTML, comprobar título/404
         if (resp.status() === 404) {
             expect(resp.status()).toBe(404);
         } else {
             // Intentar cargar en browser y verificar que muestra contenido 404
-            await page.goto('/en/this-route-does-not-exist');
+            await page.goto('en/this-route-does-not-exist');
             const bodyText = await page.locator('body').innerText();
             expect(bodyText.toLowerCase()).toContain('404');
         }
@@ -90,7 +90,7 @@ test.describe('Site Pages', () => {
 
     test('root should redirect to a supported language', async ({ page }) => {
         // Navegar a la raíz y esperar redirección por cliente (script) o por servidor
-        await page.goto('/');
+        await page.goto('');
         // esperar un poco para que el script de redirección se ejecute
         await page.waitForTimeout(500);
         const url = page.url();

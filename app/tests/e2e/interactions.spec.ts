@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Theme Toggle', () => {
     test.beforeEach(async ({ page }) => {
-        await page.goto('/en/');
+        await page.goto('en/');
     });
 
     test('should toggle between light and dark theme', async ({ page }) => {
@@ -43,7 +43,7 @@ test.describe('Theme Toggle', () => {
 
 test.describe('Language Selector', () => {
     test.beforeEach(async ({ page }) => {
-            await page.goto('/en/');
+            await page.goto('en/');
     });
 
     test('should change language', async ({ page }) => {

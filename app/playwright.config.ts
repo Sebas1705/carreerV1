@@ -14,8 +14,8 @@ export default defineConfig({
   
   use: {
     baseURL: process.env.CI
-      ? 'http://localhost:4321/carreerV1'
-      : 'http://localhost:4321',
+      ? 'http://localhost:4321/carreerV1/'
+      : 'http://localhost:4321/',
     trace: 'on-first-retry',
   },
 

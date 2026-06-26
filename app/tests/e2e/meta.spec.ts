@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Meta and html attributes', () => {
     test.beforeEach(async ({ page }) => {
-        await page.goto('/en/');
+        await page.goto('en/');
     });
 
     test('html has lang attribute matching route', async ({ page }) => {

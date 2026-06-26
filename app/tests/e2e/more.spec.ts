@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe('More E2E checks', () => {
     test('language selector navigates to selected lang', async ({ page }) => {
-        await page.goto('/en/');
+        await page.goto('en/');
 
         const langToggle = page.locator('.language-button, .language-selector, button[aria-label*="language"]').first();
         if (await langToggle.count() > 0) {
@@ -23,7 +23,7 @@ test.describe('More E2E checks', () => {
     });
 
     test('project cards have alt text matching titles', async ({ page }) => {
-        await page.goto('/en/projects');
+        await page.goto('en/projects');
         const cards = page.locator('article, .project-card, [data-testid="project-card"]');
         const count = await cards.count();
         expect(count).toBeGreaterThan(0);
@@ -43,7 +43,7 @@ test.describe('More E2E checks', () => {
     });
 
     test('nav link becomes active after scrolling to section', async ({ page }) => {
-        await page.goto('/en/');
+        await page.goto('en/');
         // scroll to projects section
         const projects = page.locator('#projects, [data-section="projects"]').first();
         if (await projects.count() === 0) test.skip();
@@ -62,7 +62,7 @@ test.describe('More E2E checks', () => {
 
     test('mobile menu toggles hamburger/close icons', async ({ page }) => {
         await page.setViewportSize({ width: 375, height: 667 });
-        await page.goto('/en/');
+        await page.goto('en/');
 
         const toggle = page.locator('#mobile-menu-toggle').first();
         if (await toggle.count() === 0) test.skip();
