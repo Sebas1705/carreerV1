@@ -19,6 +19,5 @@ export type Translations = {
 };
 
 export function translate(translations: Translations, lang: Language): string {
-    if (translations[lang]) return translations[lang];
-    return 'String not found';
+    return translations[lang] || translations['en'] || translations['es'] || '';
 };

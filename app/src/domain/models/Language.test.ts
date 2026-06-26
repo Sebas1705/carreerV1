@@ -112,7 +112,7 @@ describe('Language utilities', () => {
             expect(translate(translations, 'ja')).toBe('こんにちは');
         });
 
-        it('should return "String not found" when translation is missing', () => {
+        it('should return empty string when all translations are missing', () => {
             const translations: Translations = {
                 es: '',
                 en: '',
@@ -126,8 +126,7 @@ describe('Language utilities', () => {
                 ja: ''
             };
 
-            // @ts-ignore - testing runtime behavior
-            expect(translate(translations, 'es')).toBe('String not found');
+            expect(translate(translations, 'es')).toBe('');
         });
 
         it('should handle partial translations gracefully', () => {
