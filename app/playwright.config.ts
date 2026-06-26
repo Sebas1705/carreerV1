@@ -27,8 +27,13 @@ export default defineConfig({
   ],
 
   webServer: {
-    command: process.env.CI ? 'pnpm run preview' : 'pnpm run dev',
-    url: 'http://localhost:4321',
+    command: process.env.CI
+      ? 'pnpm exec astro preview --port 4321 --host 0.0.0.0'
+      : 'pnpm run dev',
+    url: process.env.CI
+      ? 'http://localhost:4321/carreerV1/'
+      : 'http://localhost:4321',
     reuseExistingServer: !process.env.CI,
+    timeout: 120_000,
   },
 });
