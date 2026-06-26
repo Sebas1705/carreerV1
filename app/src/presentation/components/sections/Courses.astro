@@ -11,6 +11,7 @@ interface Props {
 
 const { lang, commonLabels } = Astro.props;
 
+import { siteUrl } from '@/core';
 import { ApiCourseRepository, InMemoryCourseLabelsRepository } from "@/data";
 import { GetAllCoursesUseCase, GetCourseLabelsUseCase } from '@/domain';
 
@@ -32,7 +33,7 @@ const visibleCourses = courses
         </div>
 
         <div class="text-center">
-            <a href={`/${lang}/courses`} class="hover:bg-secondary-v
+            <a href={siteUrl(`/${lang}/courses`)} class="hover:bg-secondary-v
             font-bold bg-primary-v rounded-md px-4 py-2 text-white" >
                 {translate(commonLabels.viewMore, lang)}<span class="ml-2 transition-transform">→</span>
             </a>

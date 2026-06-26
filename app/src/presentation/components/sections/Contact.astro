@@ -13,6 +13,7 @@ interface Props {
 
 const { lang, personalInfo } = Astro.props;
 
+import { siteUrl } from '@/core';
 import { InMemoryContactLabelsRepository } from '@/data';
 import { GetContactLabelsUseCase } from '@/domain';
 
@@ -74,7 +75,7 @@ const contactLabels = await new GetContactLabelsUseCase(new InMemoryContactLabel
                         <LinkedinIcon />
                     </SocialLink>
                 )}
-                <SocialLink href="/" label="Website">
+                <SocialLink href={siteUrl(`/${lang}/`)} label="Website">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <circle cx="12" cy="12" r="10"/>
                         <line x1="2" y1="12" x2="22" y2="12"/>

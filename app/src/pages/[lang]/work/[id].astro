@@ -10,12 +10,12 @@ import ProjectsGrid from '@/presentation/components/projects/ProjectsGrid.astro'
 
 import type { Language } from '@domain/models/Language';
 import { supportedLanguages, translate } from '@domain/models/Language';
-import { formatDateRange, linkify } from '@/core';
+import { formatDateRange, linkify, siteUrl } from '@/core';
 
-import { ApiWorkExperienceRepository, ApiProjectRepository, ApiSkillRepository, InMemoryPersonalInfoRepository } from '@/data';
+import { ApiWorkExperienceRepository, ApiProjectRepository, ApiSkillRepository, ApiPersonalInfoRepository } from '@/data';
 import { GetWorkExperiencesUseCase, GetProjectsByTypeUseCase, GetPersonalInfoUseCase, GetSkillsUseCase  } from '@/domain';
 
-const personalInfo = await new GetPersonalInfoUseCase(new InMemoryPersonalInfoRepository()).execute();
+const personalInfo = await new GetPersonalInfoUseCase(new ApiPersonalInfoRepository()).execute();
 const skills = await new GetSkillsUseCase(new ApiSkillRepository()).execute();
 
 export async function getStaticPaths() {
@@ -35,7 +35,7 @@ const workId = Astro.params.id as string;
 // Find the current work experience
 const workExperiences = await new GetWorkExperiencesUseCase(new ApiWorkExperienceRepository()).execute();
 const workExperience = workExperiences.find((w: any) => w.id === workId);
-if (!workExperience) return Astro.redirect(`/${lang}/`);
+if (!workExperience) return Astro.redirect(siteUrl(`/${lang}/`));
 
 // Get related projects
 const projects = await new GetProjectsByTypeUseCase(new ApiProjectRepository()).execute('work');
@@ -56,7 +56,7 @@ const workLabels = await new GetWorkLabelsUseCase(new InMemoryWorkLabelsReposito
 
     <Section background="binary-rain">
         <div class="px-5 md:px-10 lg:px-15 mt-5">
-            <BackLink href={`/${lang}/#work`} text={translate(commonLabels.back, lang)} />
+            <BackLink href={siteUrl(`/${lang}/#work`)} text={translate(commonLabels.back, lang)} />
             <section class="mb-5 mt-5">
                 <div class="bg-bg-surface-alt-v border border-primary-v rounded-2xl p-9">
                     <div class="flex flex-col gap-2 mb-4">

@@ -3,43 +3,51 @@ import Layout from '@/presentation/layouts/Layout.astro';
 import { supportedLanguages } from '@/domain';
 
 const defaultLang = 'es';
-const req = Astro.request;
-if (req && req.headers) {
-  const accept = req.headers.get('accept-language') || '';
+const BASE = import.meta.env.BASE_URL; // e.g. '/carreerV1/'
+
+// In static mode Astro.request has no real headers; skip and let the client redirect.
+try {
+  const accept = Astro.request.headers.get('accept-language') || '';
   if (accept) {
-    const langs = accept.split(',').map((s) => s.split(';')[0].trim().split('-')[0]);
+    const langs = accept.split(',').map((s: string) => s.split(';')[0].trim().split('-')[0]);
     for (const l of langs) {
-      if ((supportedLanguages as any).includes(l)) {
-        return Astro.redirect(`/${l}/`, 302);
+      if ((supportedLanguages as string[]).includes(l)) {
+        return Astro.redirect(`${BASE}${l}/`, 302);
       }
     }
   }
-}
+} catch (_) { /* static build — no headers available */ }
 ---
 
-<Layout lang={defaultLang} title="Redirigiendo…">
+<Layout lang={defaultLang} title="Redirecting…">
   <main class="min-h-screen flex items-center justify-center bg-(--color-bg-primary)">
-    <div id="redirect" data-supported={JSON.stringify(supportedLanguages)} class="text-center p-6">
+    <div
+      id="redirect"
+      data-supported={JSON.stringify(supportedLanguages)}
+      data-base={BASE}
+      class="text-center p-6"
+    >
       <div class="flex flex-col items-center gap-4">
         <div class="w-12 h-12 border-4 border-(--color-primary) border-t-transparent rounded-full animate-spin" aria-hidden="true"></div>
-        <p class="text-(--color-text-primary) font-medium">Redirigiendo…</p>
-        <a id="link" href="/es/" class="btn-outline mt-2">Si no te redirige, haz clic aquí</a>
+        <p class="text-(--color-text-primary) font-medium">Redirecting…</p>
+        <a id="link" href={`${BASE}es/`} class="btn-outline mt-2">Click here if not redirected</a>
       </div>
     </div>
 
     <script is:inline>
       (function(){
         try {
-          const raw = document.getElementById('redirect')?.dataset.supported || '[]';
-          const supported = JSON.parse(raw);
+          const el = document.getElementById('redirect');
+          const base = el?.dataset.base || '/';
+          const supported = JSON.parse(el?.dataset.supported || '[]');
           const nav = (navigator.language || (navigator.languages && navigator.languages[0]) || '').split('-')[0];
           if (nav && supported.indexOf(nav) !== -1) {
-            window.location.replace('/' + nav + '/');
+            window.location.replace(base + nav + '/');
           } else {
-            window.location.replace('/es/');
+            window.location.replace(base + 'es/');
           }
         } catch (e) {
-          window.location.replace('/es/');
+          window.location.replace(document.getElementById('redirect')?.dataset.base + 'es/' || '/es/');
         }
       })();
     </script>

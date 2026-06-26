@@ -5,7 +5,7 @@ import Footer from '@/presentation/components/sections/Footer.astro';
 
 import type { Language, Skill, Translations } from '@/domain';
 import { supportedLanguages, translate } from '@/domain';
-import { formatMonthYear } from '@/core';
+import { formatMonthYear, siteUrl } from '@/core';
 
 import { ApiProjectRepository } from '@/data';
 import { GetAllProjectsUseCase } from '@/domain';
@@ -23,16 +23,16 @@ export async function getStaticPaths() {
 const lang: Language = Astro.params.lang as Language;
 const { id } = Astro.params as { id: string };
 
-import { InMemoryPersonalInfoRepository, InMemoryCommonLabelsRepository, InMemoryProjectLabelsRepository, ApiSkillRepository } from '@/data';
+import { ApiPersonalInfoRepository, InMemoryCommonLabelsRepository, InMemoryProjectLabelsRepository, ApiSkillRepository } from '@/data';
 import { GetPersonalInfoUseCase, GetCommonLabelsUseCase, GetProjectLabelsUseCase, GetAllSkillsUseCase } from '@/domain';
 import Section from '@/presentation/components/common/Section.astro';
 import BackLink from '@/presentation/components/ui/BackLink.astro';
 import SkillsGrid from '@/presentation/components/skills/SkillsGrid.astro';
 
-const personalInfo = await new GetPersonalInfoUseCase(new InMemoryPersonalInfoRepository()).execute();
+const personalInfo = await new GetPersonalInfoUseCase(new ApiPersonalInfoRepository()).execute();
 const projects = await new GetAllProjectsUseCase(new ApiProjectRepository()).execute();
 const project = projects.find((p: any) => p.id === id);
-if (!project) return Astro.redirect(`/${lang}/`);
+if (!project) return Astro.redirect(siteUrl(`/${lang}/`));
 
 const commonLabels = await new GetCommonLabelsUseCase(new InMemoryCommonLabelsRepository()).execute();
 const projectLabels = await new GetProjectLabelsUseCase(new InMemoryProjectLabelsRepository()).execute();
@@ -50,7 +50,7 @@ const typeLabels: Record<string, Translations> = {
     
     <Section background='dotted' bottomFade>
         <div class="w-full flex flex-col gap-5 px-5 md:px-10 lg:px-15 mt-5">
-            <BackLink href={`/${lang}/projects`} text={translate(commonLabels.back, lang)} className="w-min" />
+            <BackLink href={siteUrl(`/${lang}/projects`)} text={translate(commonLabels.back, lang)} className="w-min" />
             <div class="flex justify-between gap-4 mt-3">
                 <span class="px-3 py-1 rounded-md text-lg sm:text-4xl font-semibold uppercase tracking-wide text-primary-v">{translate(typeLabels[project.type], lang)}</span>
                 <span class="text-secondary-v text-lg sm:text-4xl">{formatMonthYear(project.startDate, lang)}</span>

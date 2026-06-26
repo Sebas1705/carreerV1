@@ -9,11 +9,11 @@ interface Props {
 
 const { lang } = Astro.props;
 
-import { InMemorySoftSkillsLabelsRepository, InMemorySoftSkillRepository } from '@/data';
+import { InMemorySoftSkillsLabelsRepository, ApiSoftSkillRepository } from '@/data';
 import { GetSoftSkillsLabelsUseCase, GetSoftSkillsUseCase } from '@/domain';
 
 const softSkillsLabels = await new GetSoftSkillsLabelsUseCase(new InMemorySoftSkillsLabelsRepository()).execute();
-const softSkills = await new GetSoftSkillsUseCase(new InMemorySoftSkillRepository()).execute();
+const softSkills = await new GetSoftSkillsUseCase(new ApiSoftSkillRepository()).execute();
 ---
 
 <Section id="soft-skills" background='notebook' title={translate(softSkillsLabels.title, lang)} subtitle={translate(softSkillsLabels.subtitle, lang)}>

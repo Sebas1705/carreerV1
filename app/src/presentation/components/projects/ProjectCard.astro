@@ -25,6 +25,7 @@ const {
 } = Astro.props;
 
 const translate = (obj: any, lang: Language) => obj[lang] || obj.en || Object.values(obj)[0];
+import { siteUrl } from '@/core';
 ---
 
 <article class="group bg-bg-surface-v rounded-lg shadow-sm overflow-hidden flex flex-col">
@@ -68,7 +69,7 @@ const translate = (obj: any, lang: Language) => obj[lang] || obj.en || Object.va
         )}
         
         <div class="flex flex-wrap gap-3 mt-auto pt-4 border-t border-secondary-v justify-center md:justify-start">
-            <a href={`/${lang}/projects/${project.id}`} class="inline-flex items-center gap-2 text-md font-medium text-white bg-primary-v py-2 px-5 hover:bg-secondary-v rounded-full transition-colors">
+            <a href={siteUrl(`/${lang}/projects/${project.id}`)} class="inline-flex items-center gap-2 text-md font-medium text-white bg-primary-v py-2 px-5 hover:bg-secondary-v rounded-full transition-colors">
                 {translate(commonLabels.viewMore, lang)}
             </a>
             {project.demoUrl && (

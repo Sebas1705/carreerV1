@@ -1,7 +1,7 @@
 ---
 import type { AcademicExperience, Language, CommonLabels } from '@/domain';
 import { translate } from '@/domain';
-import { formatDateRange } from '@/core';
+import { formatDateRange, siteUrl } from '@/core';
 
 interface Props {
     experience: AcademicExperience;
@@ -25,7 +25,7 @@ const { experience, lang, commonLabels } = Astro.props;
             <span>{translate(experience.location, lang)}</span>
         </div>
     </div>
-    <a href={`/${lang}/education/${experience.id}`} class="inline-block text-primary font-semibold mt-3 hover:text-primary-dark">
+    <a href={siteUrl(`/${lang}/education/${experience.id}`)} class="inline-block text-primary font-semibold mt-3 hover:text-primary-dark">
         {translate(commonLabels.viewMore, lang)} →
     </a>
 </div>

@@ -15,7 +15,7 @@ const orderedLanguages = [
 ];
 ---
 
-<div class="language-selector relative inline-block">
+<div class="language-selector relative inline-block" data-base={import.meta.env.BASE_URL}>
     <button
         class="language-button w-18 xs:w-22 responsive-header-h"
         aria-label="Change language"
@@ -75,13 +75,15 @@ const orderedLanguages = [
                 const lang = option.getAttribute('data-lang');
                 if (!lang) return;
 
+                const base = (sel.dataset.base || '/').replace(/\/$/, ''); // e.g. '/carreerV1'
                 const currentPath = window.location.pathname;
-                const pathSegments = currentPath.split('/').filter(Boolean);
+                const localPath = currentPath.startsWith(base) ? currentPath.slice(base.length) : currentPath;
+                const pathSegments = localPath.split('/').filter(Boolean);
 
-                // If first segment is a two-letter code, remove it
+                // If first segment is a two-letter language code, remove it
                 if (pathSegments[0] && pathSegments[0].length === 2) pathSegments.shift();
 
-                const newPath = `/${lang}/${pathSegments.join('/')}`;
+                const newPath = `${base}/${lang}/${pathSegments.join('/')}`;
                 window.location.href = newPath;
             });
         });

@@ -5,10 +5,10 @@ interface Props {
     lang: Language;
 }
 
-import { InMemoryFooterLabelsRepository, InMemoryPersonalInfoRepository } from '@/data';
+import { InMemoryFooterLabelsRepository, ApiPersonalInfoRepository } from '@/data';
 import { GetFooterLabelsUseCase, GetPersonalInfoUseCase } from '@/domain';
 const footerLabels = await new GetFooterLabelsUseCase(new InMemoryFooterLabelsRepository()).execute();
-const personalInfo = await new GetPersonalInfoUseCase(new InMemoryPersonalInfoRepository()).execute();
+const personalInfo = await new GetPersonalInfoUseCase(new ApiPersonalInfoRepository()).execute();
 
 const { lang } = Astro.props;
 const currentYear = new Date().getFullYear();

@@ -9,6 +9,7 @@ interface Props {
 
 const { lang } = Astro.props;
 
+import { siteUrl } from '@/core';
 import { ApiProjectRepository, InMemoryProjectLabelsRepository, InMemoryCommonLabelsRepository } from '@/data';
 import { GetProjectsByTypeUseCase, GetProjectLabelsUseCase, GetCommonLabelsUseCase } from '@/domain';
 
@@ -69,7 +70,7 @@ const projects = await new GetProjectsByTypeUseCase(new ApiProjectRepository()).
                         </div>
 
                         <div class="flex justify-end mb-5 pr-5">
-                            <a href={`/${lang}/projects/${project.id}`} class="hover:bg-secondary-v
+                            <a href={siteUrl(`/${lang}/projects/${project.id}`)} class="hover:bg-secondary-v
                             font-bold bg-primary-v rounded-md px-4 py-2 text-white" >
                                 {translate(commonLabels.viewMore, lang)}<span class="ml-2 transition-transform">→</span>
                             </a>
@@ -80,7 +81,7 @@ const projects = await new GetProjectsByTypeUseCase(new ApiProjectRepository()).
         </div>
         <!-- Link to Full Skills Page -->
         <div class="text-center mt-8">
-            <a href={`/${lang}/projects`} class="hover:bg-secondary-v
+            <a href={siteUrl(`/${lang}/projects`)} class="hover:bg-secondary-v
             font-bold bg-primary-v rounded-md px-4 py-2 text-white" >
                 {translate(commonLabels.viewMore, lang)}<span class="ml-2 transition-transform">→</span>
             </a>

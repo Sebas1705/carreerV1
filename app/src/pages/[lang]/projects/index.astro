@@ -4,6 +4,7 @@ import Header from '@/presentation/components/sections/Header.astro';
 import BackLink from '@/presentation/components/ui/BackLink.astro';
 import PageHeader from '@/presentation/components/ui/PageHeader.astro';
 import type { Language, Translations } from '@/domain';
+import { siteUrl } from '@/core';
 import { supportedLanguages, translate } from '@/domain';
 
 export async function getStaticPaths() {
@@ -21,13 +22,13 @@ const projectsByType = {
     academic: await new GetProjectsByTypeUseCase(new ApiProjectRepository()).execute('academic')
 };
 
-import { InMemoryPersonalInfoRepository, InMemoryCommonLabelsRepository, InMemoryProjectLabelsRepository } from '@/data';
+import { ApiPersonalInfoRepository, InMemoryCommonLabelsRepository, InMemoryProjectLabelsRepository } from '@/data';
 import { GetPersonalInfoUseCase, GetCommonLabelsUseCase, GetProjectLabelsUseCase } from '@/domain';
 import Section from '@/presentation/components/common/Section.astro';
 import Footer from '@/presentation/components/sections/Footer.astro';
 import NotebookPaperBackground from '@/presentation/backgrounds/NotebookPaperBackground.astro';
 
-const personalInfo = await new GetPersonalInfoUseCase(new InMemoryPersonalInfoRepository()).execute();
+const personalInfo = await new GetPersonalInfoUseCase(new ApiPersonalInfoRepository()).execute();
 const commonLabels = await new GetCommonLabelsUseCase(new InMemoryCommonLabelsRepository()).execute();
 const projectLabels = await new GetProjectLabelsUseCase(new InMemoryProjectLabelsRepository()).execute();
 
@@ -43,7 +44,7 @@ const typeLabels: Record<string, Translations> = {
     
     <Section background='blueprint' bottomFade>
         <div class="w-full px-5 md:px-10 lg:px-15 mt-5">
-            <BackLink href={`/${lang}/#projects`} text={translate(commonLabels.back, lang)} />
+            <BackLink href={siteUrl(`/${lang}/#projects`)} text={translate(commonLabels.back, lang)} />
             <PageHeader 
                 title={translate(projectLabels.title, lang)}
                 subtitle={translate(projectLabels.subtitle, lang)}
@@ -107,7 +108,7 @@ const typeLabels: Record<string, Translations> = {
                                     </div>
 
                                     <div class="flex justify-end mb-5 pr-5">
-                                        <a href={`/${lang}/projects/${project.id}`} class="hover:bg-secondary-v
+                                        <a href={siteUrl(`/${lang}/projects/${project.id}`)} class="hover:bg-secondary-v
                                         font-bold bg-primary-v rounded-md px-4 py-2 text-white" >
                                             {translate(commonLabels.viewMore, lang)}<span class="ml-2 transition-transform">→</span>
                                         </a>

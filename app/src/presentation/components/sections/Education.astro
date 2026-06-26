@@ -1,7 +1,7 @@
 ---
 import type { Language, CommonLabels } from '@/domain';
 import { translate } from '@/domain';
-import { formatDateRange } from '@/core';
+import { formatDateRange, siteUrl } from '@/core';
 import Section from '../common/Section.astro';
 
 interface Props {
@@ -69,7 +69,7 @@ const projects = await new GetProjectsByTypeUseCase(new ApiProjectRepository()).
                                             )}
                                         </div>
                                         <div class="flex justify-end">
-                                            <a href={`/${lang}/projects/${project.id}`} class="hover:bg-secondary-v
+                                            <a href={siteUrl(`/${lang}/projects/${project.id}`)} class="hover:bg-secondary-v
                                             font-bold bg-primary-v rounded-md px-4 py-2 text-white" >
                                                 {translate(commonLabels.viewMore, lang)}<span class="ml-2 transition-transform">→</span>
                                             </a>

@@ -20,10 +20,10 @@ export async function getStaticPaths() {
 }
 const lang: Language = Astro.params.lang as Language;
 
-import { InMemoryPersonalInfoRepository, InMemoryCommonLabelsRepository } from '@/data';
+import { ApiPersonalInfoRepository, InMemoryCommonLabelsRepository } from '@/data';
 import { GetPersonalInfoUseCase, GetCommonLabelsUseCase } from '@/domain';
 
-const personalInfo = await new GetPersonalInfoUseCase(new InMemoryPersonalInfoRepository()).execute();
+const personalInfo = await new GetPersonalInfoUseCase(new ApiPersonalInfoRepository()).execute();
 const commonLabels = await new GetCommonLabelsUseCase(new InMemoryCommonLabelsRepository()).execute();
 ---
 

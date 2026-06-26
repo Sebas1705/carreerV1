@@ -9,6 +9,7 @@ interface Props {
     personalInfo: PersonalInfo;
 }
 
+import { siteUrl } from '@/core';
 import { InMemoryNavigationLabelsRepository } from '@/data';
 import { GetNavigationLabelsUseCase } from '@/domain';
 
@@ -52,22 +53,22 @@ const { lang, personalInfo } = Astro.props;
 
         <ul id="nav-links" class="hidden lg:flex gap-4 items-center">
             <li>
-                <a href={`/${lang}/#home`} class="nav-link">{translate(navigationLabels.home, lang)}</a>
+                <a href={siteUrl(`/${lang}/#home`)} class="nav-link">{translate(navigationLabels.home, lang)}</a>
             </li>
             <li>
-                <a href={`/${lang}/#about`} class="nav-link">{translate(navigationLabels.about, lang)}</a>
+                <a href={siteUrl(`/${lang}/#about`)} class="nav-link">{translate(navigationLabels.about, lang)}</a>
             </li>
             <li>
-                <a href={`/${lang}/#work`} class="nav-link">{translate(navigationLabels.work, lang)}</a>
+                <a href={siteUrl(`/${lang}/#work`)} class="nav-link">{translate(navigationLabels.work, lang)}</a>
             </li>
             <li>
-                <a href={`/${lang}/#education`} class="nav-link">{translate(navigationLabels.education, lang)}</a>
+                <a href={siteUrl(`/${lang}/#education`)} class="nav-link">{translate(navigationLabels.education, lang)}</a>
             </li>
             <li>
-                <a href={`/${lang}/#projects`} class="nav-link">{translate(navigationLabels.projects, lang)}</a>
+                <a href={siteUrl(`/${lang}/#projects`)} class="nav-link">{translate(navigationLabels.projects, lang)}</a>
             </li>
             <li>
-                <a href={`/${lang}/#contact`} class="nav-link">{translate(navigationLabels.contact, lang)}</a>
+                <a href={siteUrl(`/${lang}/#contact`)} class="nav-link">{translate(navigationLabels.contact, lang)}</a>
             </li>
         </ul>
 
