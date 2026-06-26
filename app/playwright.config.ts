@@ -13,7 +13,9 @@ export default defineConfig({
   reporter: 'html',
   
   use: {
-    baseURL: 'http://localhost:4321',
+    baseURL: process.env.CI
+      ? 'http://localhost:4321/carreerV1'
+      : 'http://localhost:4321',
     trace: 'on-first-retry',
   },
 
@@ -25,7 +27,7 @@ export default defineConfig({
   ],
 
   webServer: {
-    command: 'npm run dev',
+    command: process.env.CI ? 'pnpm run preview' : 'pnpm run dev',
     url: 'http://localhost:4321',
     reuseExistingServer: !process.env.CI,
   },

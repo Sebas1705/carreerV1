@@ -25,7 +25,10 @@ export default defineConfig({
                 'src/data/datasources/**',
                 'src/data/datasources/**/*.json',
                 'src/domain/i-repositories/**',
-                'src/domain/models/**'
+                'src/domain/models/**',
+                // HTTP adapter layer — covered by E2E, not unit tests
+                'src/data/datasources/api/**',
+                'src/data/repositories/api/**'
             ],
             thresholds: {
                 lines: 80,
