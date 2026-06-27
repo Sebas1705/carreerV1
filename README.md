@@ -1,3 +1,6 @@
+> ⚠️ **LEGACY** — This is the v1 portfolio (Astro + GitHub Pages). The current active portfolio is **[carreerV2](https://github.com/Sebas1705/carreerV2)**. This repo is kept for reference only and is no longer maintained.
+
+---
 # carreerV1 - Personal Portfolio
 
 Personal portfolio built with **Astro 4**, **TypeScript**, and **Clean Architecture**. Fully static site (SSG) deployed on GitHub Pages, with live data fetched from the career API at build time.
