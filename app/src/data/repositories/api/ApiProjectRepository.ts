@@ -8,9 +8,20 @@ interface ApiProject {
     name: string;
     context: 'work' | 'academic' | 'personal';
     desc: LocalizedString;
+    long_desc?: LocalizedString;
     tags: string[];
     github: string | null;
     demo: string | null;
+    imageUrl?: string | null;
+}
+
+const BASE = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+const LOCAL_IMAGES = new Set(['agedi', 'sisley', 'youknow', 'iberext', 'epdm', 'vpsorchestrator', 'portfolio', 'codewars']);
+
+function projectImageUrl(id: string, apiImage?: string | null): string | undefined {
+    if (apiImage) return apiImage;
+    if (LOCAL_IMAGES.has(id)) return `${BASE}projects/${id}.webp`;
+    return undefined;
 }
 
 function fill(en: string): Translations {
@@ -36,6 +47,7 @@ export class ApiProjectRepository implements IProjectRepository {
             type: p.context,
             repoUrl: p.github ?? undefined,
             demoUrl: p.demo ?? undefined,
+            imageUrl: projectImageUrl(p.id, p.imageUrl),
             startDate: new Date('2024-01-01'),
         }));
     }

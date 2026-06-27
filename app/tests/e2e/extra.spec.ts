@@ -56,10 +56,11 @@ test.describe('Extra coverage', () => {
         const desc = await page.locator('head meta[name="description"]').first().getAttribute('content');
         if (desc) expect(desc.length).toBeGreaterThan(10);
 
-        // Proyecto detalle (si existe alguno)
+        // Proyecto detalle (si existe alguno) — exclude language-selector links
         await page.goto('en/projects');
-        const projectLink = page.locator('a[href*="/projects/"]').first();
-        if (await projectLink.count() > 0) {
+        const projectLink = page.locator('main a[href*="/projects/"], [data-testid="project-link"]').first();
+        const isVisible = await projectLink.isVisible().catch(() => false);
+        if (isVisible) {
             await projectLink.click();
             await page.waitForLoadState('networkidle');
             const ptitle = await page.title();
